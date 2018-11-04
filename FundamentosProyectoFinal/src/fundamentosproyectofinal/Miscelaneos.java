@@ -5,22 +5,25 @@
  */
 package fundamentosproyectofinal;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author rogerjoseulaterivera
  */
-public class Backend {
+public class Miscelaneos {
+      
     
-    // Mensajes
+    /******************************************************/
+    /*                                                    */        
+    /*                       MENSAJES                     */
+    /*                                                    */
+    /******************************************************/
+
+    
     public void saludoInicial() {
         
-        System.out.println("\n");
-	System.out.println("* --------------------------------------- *");
-	System.out.println("|                                         |");
-	System.out.println("|           Inicializando Sistema         |");
-	System.out.println("|                                         |");
-	System.out.println("* --------------------------------------- *");
-	System.out.println("\n");
+        JOptionPane.showMessageDialog(null, "Bienvenido al sistema de control de video.", "Bienvenida", JOptionPane.INFORMATION_MESSAGE);
         
     }
     
@@ -85,8 +88,5 @@ public class Backend {
         System.out.println("\n");
         
     }
-    
-    
-    
     
 }
