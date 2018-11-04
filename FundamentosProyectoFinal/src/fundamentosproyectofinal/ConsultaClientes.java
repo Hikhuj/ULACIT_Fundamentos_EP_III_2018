@@ -3,43 +3,39 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fundamentosproyectofinal;
+package proyectofinal;
 
 /**
  *
- * @author rogerjoseulaterivera
+ * @author Karla
  */
-public class Usuario {
+public class ConsultaClientes {
     
-    
-    // Lista atributos
     private int id;
+
     private String apellido;
+
     private String segundoNombre;
+
     private String nombre;
+
     private int telefono;
+
     private char genero;
+
     private String direccion1;
+
     private String direccion2;
+
     private String ciudad;
+
     private int provincia;
+
     private int tipoTelefono;
+
     private String correoElectronico;
 
-
-    // Constructor
-    public Usuario(int id, 
-                    String apellido, 
-                    String segundoNombre, 
-                    String nombre, 
-                    int telefono, 
-                    char genero, 
-                    String direccion1, 
-                    String direccion2, 
-                    String ciudad, 
-                    int provincia, 
-                    int tipoTelefono, 
-                    String correoElectronico) {
+    public ConsultaClientes(int id, String apellido, String segundoNombre, String nombre, int telefono, char genero, String direccion1, String direccion2, String ciudad, int provincia, int tipoTelefono, String correoElectronico) {
         this.id = id;
         this.apellido = apellido;
         this.segundoNombre = segundoNombre;
@@ -53,9 +49,7 @@ public class Usuario {
         this.tipoTelefono = tipoTelefono;
         this.correoElectronico = correoElectronico;
     }
-    
-    
-    // Metodos
+
     public int getId() {
         return id;
     }
@@ -151,5 +145,9 @@ public class Usuario {
     public void setCorreoElectronico(String correoElectronico) {
         this.correoElectronico = correoElectronico;
     }
+
+
+    
+    
     
 }
