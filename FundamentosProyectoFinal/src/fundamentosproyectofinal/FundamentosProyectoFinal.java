@@ -5,6 +5,9 @@
  */
 package fundamentosproyectofinal;
 
+import java.io.*;
+import java.util.*;
+
 /**
  *
  * @author rogerjoseulaterivera
@@ -14,13 +17,21 @@ public class FundamentosProyectoFinal {
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String[] args) {
-        // TODO code application logic here
-        Menus menus = new Menus();
+
+        // Menus menus = new Menus();
+        EscritorACsvJava backendCSV = new EscritorACsvJava();
         
+        String [] array = null;
         
-        menus.inicializador();
+        array = backendCSV.leerCSV("9044526861");
+        
+        System.out.println("Imprimiendo arreglo obtenido");
+        backendCSV.imprimirArreglo(array);
+        
+        // menus.inicializador();
         
     }
-    
+
 }
