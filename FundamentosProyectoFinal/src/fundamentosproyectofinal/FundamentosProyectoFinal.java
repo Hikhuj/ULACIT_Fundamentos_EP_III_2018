@@ -16,10 +16,14 @@ public class FundamentosProyectoFinal {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Menus menus = new Menus();
+       // Menus menus = new Menus();
+//        Peliculas prueba= new Peliculas ();
+//        prueba.setYear(0);
+        Clientes prueba1= new Clientes ();
+       // prueba1.setTelefono(0);
+        prueba1.setSegundoNombre("");
         
-        
-        menus.inicializador();
+       // menus.inicializador();
         
     }
     
