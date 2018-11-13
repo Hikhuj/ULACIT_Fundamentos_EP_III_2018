@@ -34,11 +34,7 @@ public class FundamentosProyectoFinal {
         
         // menus.inicializador();
         
-        String [] prueba = {"Maria","tenia","un","corderito","blanco","y","color","negro"};
-        String [] prueba2 = {"Maria","tenia","un","corderito","blanco"};
         
-        // backendCSV.usuarioNuevo(prueba);
-        backendCSV.peliculaNueva(prueba2);
         
         
     }
