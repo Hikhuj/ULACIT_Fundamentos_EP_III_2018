@@ -21,16 +21,25 @@ public class FundamentosProyectoFinal {
     public static void main(String[] args) {
 
         // Menus menus = new Menus();
-        EscritorACsvJava backendCSV = new EscritorACsvJava();
+        InteraccionConCSV backendCSV = new InteraccionConCSV();
         
+        /*
         String [] array = null;
         
         array = backendCSV.leerCSV("9044526861");
         
         System.out.println("Imprimiendo arreglo obtenido");
         backendCSV.imprimirArreglo(array);
+        */
         
         // menus.inicializador();
+        
+        String [] prueba = {"Maria","tenia","un","corderito","blanco","y","color","negro"};
+        String [] prueba2 = {"Maria","tenia","un","corderito","blanco"};
+        
+        // backendCSV.usuarioNuevo(prueba);
+        backendCSV.peliculaNueva(prueba2);
+        
         
     }
 

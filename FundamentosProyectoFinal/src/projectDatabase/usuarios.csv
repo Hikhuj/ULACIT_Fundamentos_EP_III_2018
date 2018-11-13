@@ -1,4 +1,4 @@
-﻿id,apellido,nombre,telefono_primario,telefono_tipo,email,estado_cliente,peliculas_rentadas
+id,apellido,nombre,telefono_primario,telefono_tipo,email,estado_cliente,peliculas_rentadas
 9044526861,Astin,Shavez,22503745,2,petersko@outlook.com,false,false
 9044852026,Walker,Aubrey,22508589,3,openldap@outlook.com,false,false
 9044054379,Johnson,Khamesha,22507272,2,uqmcolyv@optonline.net,false,false
@@ -32,3 +32,4 @@
 9098615162,Cesguera,Ricardo,,2,roger@ulate.com,true,false
 2080663251,Monster,Ducati,12345678,1,roger@ducati.com,true,false
 4733262879,Lalala,Cecece,123456789,3,kjaekeq@kjwyfckje.com,true,false
+Maria,tenia,un,corderito,blanco,y,color,negro
