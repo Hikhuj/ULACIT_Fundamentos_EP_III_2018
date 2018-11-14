@@ -128,71 +128,32 @@ public class InteraccionConCSV {
     }
     
     
-    public boolean actualizarCSV(String [] array, String idUsuario) {
+    public boolean editarCSV(String [] array, String idUsuario) {
         
         /* 
             BufferedWriter: Escribe texto a una salida de texto, almacenando los mismo datos 
             a como se reciben para una eficaz escritura de los caracteres, arreglos y lineas
         */
         
-        // Variables
-        boolean primeraLinea = true;
-        boolean idEncontrado = false;
-        String [] informacionUsuario = null;
+        String tempFile = "src/projectDatabase/";
+        File oldFile = new File(pathDBPeliculas);
+        File newFile = new File(tempFile);
         
-        // Inicializaciones
-        BufferedReader bufferLectura = null;
-        
-        try {
+        try{
+            FileWriter fw = new FileWriter(tempFile,true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            PrintWriter pw = new PrintWriter(bw);
+            x = new Scanner(new File(pathDBPeliculas));
+            x.useDelimiter("[,\n]");
             
-            // Abrir el .csv en buffer de lectura
-            bufferLectura = new BufferedReader(new FileReader(pathDBUsuarios));
-
-            // Leer una linea del archivo
-            String linea = bufferLectura.readLine();
-            int position
-            
-            // Leer las lineas del objeto iterable mientras que no sea Null
-            while (linea != null) {
-                
-                // La siguiente linea evita leer la primera linea, la cual son los
-                // Headers del archivo CSV.
-                if(primeraLinea){
-                    primeraLinea = false;
-                }else{
-                    
-                    // Separar la linea leída con el separador definido previamente
-                    String[] campos = linea.split(SEPARADOR);
-
-                    idEncontrado = idEncontrado(campos, idUsuario);
-                    
-                    if (idEncontrado(campos, idUsuario) == true) {
-
-                        campos = array;
-                        bufferLectura.close();
-                        break;
-                        
-                    }
-
-                }
-                
-                // Volver a leer otra línea del fichero
-                linea = bufferLectura.readLine();
+            int i = 0;
+            while(x.hasNext()) {
                 
             }
+        }catch(Exception e) {
             
-        } catch (IOException err1) {
-            // Cierro el buffer de lectura
-            if (bufferLectura != null) {
-                try {
-                    bufferLectura.close();
-                } catch (IOException err2) {
-                    JOptionPane.showMessageDialog(null, "El archivo no existe", "Advertencia", JOptionPane.ERROR_MESSAGE);
-                }
-            }
         }
         
-        return informacionUsuario;
         
     }
     
@@ -245,21 +206,20 @@ public class InteraccionConCSV {
 
         try {
             FileWriter fw = new FileWriter(pathDBPeliculas, true);
-            BufferedWriter bw = new BufferedWriter(fw);
-            
-            bw.write("\n");
-
-            int contadorComas = (informacionPelicula.length - 1);
-
-            for(int i = 0; i < informacionPelicula.length; i++) {
-                bw.write(informacionPelicula[i]);
-                if(i < contadorComas ) {
-                    bw.write(",");
+            try (BufferedWriter bw = new BufferedWriter(fw)) {
+                bw.write("\n");
+                
+                int contadorComas = (informacionPelicula.length - 1);
+                
+                for(int i = 0; i < informacionPelicula.length; i++) {
+                    bw.write(informacionPelicula[i]);
+                    if(i < contadorComas ) {
+                        bw.write(",");
+                    }
                 }
+                
+                bw.flush();
             }
-
-            bw.flush();
-            bw.close();
             
         }catch(Exception e) {
             JOptionPane.showMessageDialog(null, "El archivo no existe", "Advertencia", JOptionPane.ERROR_MESSAGE);

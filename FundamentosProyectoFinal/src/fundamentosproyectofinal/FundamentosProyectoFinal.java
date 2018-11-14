@@ -23,6 +23,9 @@ public class FundamentosProyectoFinal {
         // Menus menus = new Menus();
         InteraccionConCSV backendCSV = new InteraccionConCSV();
         
+        String [] informacionPelicula = {"demo1", "demo2", "demo3", "demo4", "demo5"};
+        
+        
         /*
         String [] array = null;
         
@@ -34,7 +37,7 @@ public class FundamentosProyectoFinal {
         
         // menus.inicializador();
         
-        
+        backendCSV.editarCSV(informacionPelicula, "33033");
         
         
     }
