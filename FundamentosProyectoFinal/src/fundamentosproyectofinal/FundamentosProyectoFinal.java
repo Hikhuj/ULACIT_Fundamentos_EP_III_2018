@@ -21,7 +21,7 @@ public class FundamentosProyectoFinal {
 //        prueba.setYear(0);
         Clientes prueba1= new Clientes ();
        // prueba1.setTelefono(0);
-        prueba1.setSegundoNombre("");
+        prueba1.setApellido("");
         
        // menus.inicializador();
         

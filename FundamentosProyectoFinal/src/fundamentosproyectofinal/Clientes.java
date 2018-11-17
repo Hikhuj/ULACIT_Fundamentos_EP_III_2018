@@ -81,57 +81,60 @@ public class Clientes {
                 || this.apellido.contains("5")|| this.apellido.contains("6")
                 || this.apellido.contains("7")|| this.apellido.contains("8")
                 || this.apellido.contains("9")|| this.apellido.contains("0")) {
-            if (this.apellido.contains("1")) {
-                JOptionPane.showMessageDialog(null, "El apellido no debe contener números. "
-                        + "Ingréselo de nuevo");
-                this.apellido = JOptionPane.showInputDialog("Ingrese el apellido del cliente");
-            }
-
-            if (this.apellido.contains("2")) {
-                JOptionPane.showMessageDialog(null, "El apellido no debe contener números. "
-                        + "Ingréselo de nuevo.");
-                this.apellido = JOptionPane.showInputDialog("Ingrese el apellido del cliente");
-            } 
-            if (this.apellido.contains("3")){
-                    JOptionPane.showMessageDialog(null,"El apellido no debe contener números. "
-                + "Ingréselo de nuevo.");
-                this.apellido= JOptionPane.showInputDialog("Ingrese el apellido del cliente");}
-          
-            if (this.apellido.contains("4")){
-             JOptionPane.showMessageDialog(null,"El apellido no debe contener números. "
-                          + "Ingréselo de nuevo.");
-                this.apellido= JOptionPane.showInputDialog("Ingrese el apellido del cliente");
-            }
-            
-            if (this.apellido.contains("5")){
-              JOptionPane.showMessageDialog(null,"El apellido no debe contener números. "
-                                    + "Ingréselo de nuevo.");
-                this.apellido= JOptionPane.showInputDialog("Ingrese el apellido del cliente");}
-            
-            if (this.apellido.contains("6")){
-                            JOptionPane.showMessageDialog(null,"El apellido no debe contener números. "
-                                    + "Ingréselo de nuevo.");
-                this.apellido= JOptionPane.showInputDialog("Ingrese el apellido del cliente");}
-            
-            if (this.apellido.contains("7")){
-                            JOptionPane.showMessageDialog(null,"El apellido no debe contener números. "
-                                    + "Ingréselo de nuevo.");
-                this.apellido= JOptionPane.showInputDialog("Ingrese el apellido del cliente");}
-            if (this.apellido.contains("8")){
-                            JOptionPane.showMessageDialog(null,"El apellido no debe contener números. "
-                                    + "Ingréselo de nuevo.");
-                this.apellido= JOptionPane.showInputDialog("Ingrese el apellido del cliente");}
-            if (this.apellido.contains("9")){
-                            JOptionPane.showMessageDialog(null,"El apellido no debe contener números. "
-                                    + "Ingréselo de nuevo.");
-                this.apellido= JOptionPane.showInputDialog("Ingrese el apellido del cliente");}
-            if (this.apellido.contains("0")){
-                            JOptionPane.showMessageDialog(null,"El apellido no debe contener números. "
-                                    + "Ingréselo de nuevo.");
-                this.apellido= JOptionPane.showInputDialog("Ingrese el apellido del cliente");}
-            else {
-                JOptionPane.showMessageDialog(null, "El apellido ingresado es: " + this.apellido);
-            }
+             JOptionPane.showMessageDialog(null, "El apellido no debe contener números. "
+                       + "Ingréselo de nuevo");
+             this.apellido = JOptionPane.showInputDialog("Ingrese el apellido del cliente");
+//            if (this.apellido.contains("1")) {
+//                JOptionPane.showMessageDialog(null, "El apellido no debe contener números. "
+//                        + "Ingréselo de nuevo");
+//                this.apellido = JOptionPane.showInputDialog("Ingrese el apellido del cliente");
+//            }
+//
+//            if (this.apellido.contains("2")) {
+//                JOptionPane.showMessageDialog(null, "El apellido no debe contener números. "
+//                        + "Ingréselo de nuevo.");
+//                this.apellido = JOptionPane.showInputDialog("Ingrese el apellido del cliente");
+//            } 
+//            if (this.apellido.contains("3")){
+//                    JOptionPane.showMessageDialog(null,"El apellido no debe contener números. "
+//                + "Ingréselo de nuevo.");
+//                this.apellido= JOptionPane.showInputDialog("Ingrese el apellido del cliente");}
+//          
+//            if (this.apellido.contains("4")){
+//             JOptionPane.showMessageDialog(null,"El apellido no debe contener números. "
+//                          + "Ingréselo de nuevo.");
+//                this.apellido= JOptionPane.showInputDialog("Ingrese el apellido del cliente");
+//            }
+//            
+//            if (this.apellido.contains("5")){
+//              JOptionPane.showMessageDialog(null,"El apellido no debe contener números. "
+//                                    + "Ingréselo de nuevo.");
+//                this.apellido= JOptionPane.showInputDialog("Ingrese el apellido del cliente");}
+//            
+//            if (this.apellido.contains("6")){
+//                            JOptionPane.showMessageDialog(null,"El apellido no debe contener números. "
+//                                    + "Ingréselo de nuevo.");
+//                this.apellido= JOptionPane.showInputDialog("Ingrese el apellido del cliente");}
+//            
+//            if (this.apellido.contains("7")){
+//                            JOptionPane.showMessageDialog(null,"El apellido no debe contener números. "
+//                                    + "Ingréselo de nuevo.");
+//                this.apellido= JOptionPane.showInputDialog("Ingrese el apellido del cliente");}
+//            if (this.apellido.contains("8")){
+//                            JOptionPane.showMessageDialog(null,"El apellido no debe contener números. "
+//                                    + "Ingréselo de nuevo.");
+//                this.apellido= JOptionPane.showInputDialog("Ingrese el apellido del cliente");}
+//            if (this.apellido.contains("9")){
+//                            JOptionPane.showMessageDialog(null,"El apellido no debe contener números. "
+//                                    + "Ingréselo de nuevo.");
+//                this.apellido= JOptionPane.showInputDialog("Ingrese el apellido del cliente");}
+//            if (this.apellido.contains("0")){
+//                            JOptionPane.showMessageDialog(null,"El apellido no debe contener números. "
+//                                    + "Ingréselo de nuevo.");
+//                this.apellido= JOptionPane.showInputDialog("Ingrese el apellido del cliente");}
+//            else {
+//                JOptionPane.showMessageDialog(null, "El apellido ingresado es: " + this.apellido);
+            //}
 
         }
     }
