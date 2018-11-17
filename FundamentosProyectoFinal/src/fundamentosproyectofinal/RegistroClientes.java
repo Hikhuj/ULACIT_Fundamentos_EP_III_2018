@@ -214,6 +214,4 @@ public class RegistroClientes {
         return peliculasRentadas;
     }
     
-    
-    
 }

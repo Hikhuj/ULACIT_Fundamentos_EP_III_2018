@@ -22,13 +22,14 @@ public class InteraccionConCSV {
     private final String pathDBUsuarios = "src/projectDatabase/usuarios.csv";
     private final String pathDBPeliculas = "src/projectDatabase/peliculas.csv";
     public static final String SEPARADOR = ",";
+    private static Scanner x;
     
     
     /*
         Funciones
     */
     
-    public String[] leerCSV(String idUsuario) {
+    public String[] buscarUsuario(String idUsuario) {
 
         // BufferedReader: Lee el texto de una entrada de texto, almacenando 
         // los mismo datos a como se reciben para una mejor eficiencia de los
@@ -101,9 +102,10 @@ public class InteraccionConCSV {
             Funcion recibe un arreglo y lo imprime en consola
         */
         
-        for(int i = 0; i < array.length; i++){
-            System.out.print(array[i] + ",");
+        for (String array1 : array) {
+            System.out.print(array1 + ",");
         }
+        
         System.out.println();
     
     }
@@ -128,43 +130,22 @@ public class InteraccionConCSV {
     }
     
     
-    public boolean editarCSV(String [] array, String idUsuario) {
+    public boolean editarUsuario(String [] array, String idUsuario) {
         
         /* 
             BufferedWriter: Escribe texto a una salida de texto, almacenando los mismo datos 
             a como se reciben para una eficaz escritura de los caracteres, arreglos y lineas
         */
         
-        String tempFile = "src/projectDatabase/";
-        File oldFile = new File(pathDBPeliculas);
-        File newFile = new File(tempFile);
+        boolean resultado = false;
+
         
-        try{
-            FileWriter fw = new FileWriter(tempFile,true);
-            BufferedWriter bw = new BufferedWriter(fw);
-            PrintWriter pw = new PrintWriter(bw);
-            x = new Scanner(new File(pathDBPeliculas));
-            x.useDelimiter("[,\n]");
-            
-            int i = 0;
-            while(x.hasNext()) {
-                
-            }
-        }catch(Exception e) {
-            
-        }
         
+        return resultado;
         
     }
-    
-    
-    public void reemplazarValoresCSV(String [] array) {
-    
-        
-    
-    }
-    
-    
+
+
     public void usuarioNuevo(String [] informacionUsuario) {
         
         /*
@@ -174,28 +155,27 @@ public class InteraccionConCSV {
 
         try {
             FileWriter fw = new FileWriter(pathDBUsuarios, true);
-            BufferedWriter bw = new BufferedWriter(fw);
-            
-            bw.write("\n");
-
-            int contadorComas = (informacionUsuario.length - 1);
-
-            for(int i = 0; i < informacionUsuario.length; i++) {
-                bw.write(informacionUsuario[i]);
-                if(i < contadorComas ) {
-                    bw.write(",");
+            try (BufferedWriter bw = new BufferedWriter(fw)) {
+                bw.write("\n");
+                
+                int contadorComas = (informacionUsuario.length - 1);
+                
+                for(int i = 0; i < informacionUsuario.length; i++) {
+                    bw.write(informacionUsuario[i]);
+                    if(i < contadorComas ) {
+                        bw.write(",");
+                    }
                 }
+                
+                bw.flush();
             }
-
-            bw.flush();
-            bw.close();
             
-        }catch(Exception e) {
+        }catch(IOException e) {
             JOptionPane.showMessageDialog(null, "El archivo no existe", "Advertencia", JOptionPane.ERROR_MESSAGE);
         }
 
     }
-    
+
     
     public void peliculaNueva(String [] informacionPelicula) {
         
@@ -221,7 +201,7 @@ public class InteraccionConCSV {
                 bw.flush();
             }
             
-        }catch(Exception e) {
+        }catch(IOException e) {
             JOptionPane.showMessageDialog(null, "El archivo no existe", "Advertencia", JOptionPane.ERROR_MESSAGE);
         }
 
