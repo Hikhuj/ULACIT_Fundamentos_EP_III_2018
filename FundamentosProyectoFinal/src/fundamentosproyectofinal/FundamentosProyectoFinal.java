@@ -19,23 +19,6 @@ public class FundamentosProyectoFinal {
      */
     
     public static void main(String[] args) {
-
-        // Menus menus = new Menus();
-        InteraccionConCSV backendCSV = new InteraccionConCSV();
-        
-        /*
-        String [] array = null;
-        
-        array = backendCSV.leerCSV("9044526861");
-        
-        System.out.println("Imprimiendo arreglo obtenido");
-        backendCSV.imprimirArreglo(array);
-        */
-        
-        // menus.inicializador();
-        
-        
-        
         
     }
 
