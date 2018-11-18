@@ -57,8 +57,7 @@ public class Peliculas {
         return year;
     }
 
-    public void setYear(int year) {
-        int i = 0;
+    public void setYear() {
         boolean done = false;
         do {
             try {
@@ -77,15 +76,26 @@ public class Peliculas {
 public String getDirector() {
         return director;
     }
-    public void setDirector(String director) {
-        this.director = director;
+    public void setDirector() {
+        
+         this.director = JOptionPane.showInputDialog("Ingrese el nombre del director.");
+        while (this.director.contains("1") || this.director.contains("2") 
+                || this.director.contains("3")|| this.director.contains("4")
+                || this.director.contains("5")|| this.director.contains("6")
+                || this.director.contains("7")|| this.director.contains("8")
+                || this.director.contains("9")|| this.director.contains("0")) {
+             JOptionPane.showMessageDialog(null, "El nombre no debe contener números. "
+                       + "Ingréselo de nuevo.");
+             this.director = JOptionPane.showInputDialog("Ingrese el nombre del director.");
+        }
+        JOptionPane.showMessageDialog(null,"El nombre ingresado fue: " +this.director);
     }
 
     public String getSinopsis() {
         return sinopsis;
     }
 
-    public void setSinopsis(String sinopsis) {
+    public void setSinopsis( ) {
         this.sinopsis = sinopsis;
     }
 
@@ -93,8 +103,48 @@ public String getDirector() {
         return generoPelicula;
     }
 
-    public void setGeneroPelicula(String generoPelicula) {
-        this.generoPelicula = generoPelicula;
+    public void setGeneroPelicula() {
+        
+         int opcion=Integer.parseInt (JOptionPane.showInputDialog("Ingrese el número correspondiente al género"
+                 + " de la película: "
+                + " \n 1. Comedia. \n 2. Romance \n 3. Drama. \n 4. Scifi. \n 5. Terror."
+                + "\n 6. Fantasía. \n 7. Independiente."));
+                switch (opcion){
+                    case 1:
+                        this.generoPelicula= "Comedia";
+                        JOptionPane.showMessageDialog(null, "El género elegido fue: " + this.generoPelicula);
+                        break;
+                    case 2:
+                        this.generoPelicula= "Romance";
+                        JOptionPane.showMessageDialog(null, "El género elegido  fue: " + this.generoPelicula);
+                        break;
+                        
+                        case 3:
+                        this.generoPelicula= "Drama";
+                        JOptionPane.showMessageDialog(null, "El género elegido fue: " + this.generoPelicula);
+                        break;
+
+                        case 4:
+                        this.generoPelicula= "Scifi";
+                        JOptionPane.showMessageDialog(null, "El género elegido fue: " + this.generoPelicula);
+                        break;
+                        
+                        case 5:
+                        this.generoPelicula= "Terror";
+                        JOptionPane.showMessageDialog(null, "El género elegido fue: " + this.generoPelicula);
+                        break;
+
+                        case 6:
+                        this.generoPelicula= "Fantasía";
+                       JOptionPane.showMessageDialog(null, "El género elegido fue: " + this.generoPelicula);
+                        break;
+
+                        case 7:
+                        this.generoPelicula= "Independiente";
+                        JOptionPane.showMessageDialog(null, "El género elegido fue: " + this.generoPelicula);
+                        break;
+                
+                }
     }
     
  

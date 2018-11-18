@@ -20,9 +20,17 @@ public class FundamentosProyectoFinal {
 //        Peliculas prueba= new Peliculas ();
 //        prueba.setYear(0);
         Clientes prueba1= new Clientes ();
-       // prueba1.setTelefono(0);
-        prueba1.setApellido("");
-        
+        //prueba1.setTelefono(0);
+        //prueba1.setApellido();
+       // prueba1.setNombre();
+//       prueba1.setProvincia();
+//       prueba1.setGenero();
+//       prueba1.setTelefono();
+      // prueba1.setTipoTelefono();
+        Peliculas pruebas3= new Peliculas();
+        //pruebas3.setDirector();
+        pruebas3.setGeneroPelicula();
+       // pruebas3.setYear();
        // menus.inicializador();
         
     }
