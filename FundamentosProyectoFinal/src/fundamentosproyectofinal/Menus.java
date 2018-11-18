@@ -34,20 +34,7 @@ public class Menus {
                 
     }
     
-    
-    public String menuDePeliculasOpciones() {
-        
-        String resultado = "Menu de peliculas:"
-                            + "\n1. Buscar pelicula"
-                            + "\n2. Ingresar nueva pelicula"
-                            + "\n3. Editar informacion de pelicula"
-                            + "\n4. Volver al menu principal";
-                
-        return resultado;
-        
-    }
-    
-    
+
     public void inicializador() {
         
         miscelaneos.saludoInicial();
@@ -101,10 +88,23 @@ public class Menus {
         
     }
     
-    
+    // FUNCION PENDIENTE
     public void registrarCliente() {
         
         
+        
+    }
+    
+    
+    public String menuDePeliculasOpciones() {
+        
+        String resultado = "Menu de peliculas:"
+                            + "\n1. Buscar pelicula"
+                            + "\n2. Ingresar nueva pelicula"
+                            + "\n3. Editar informacion de pelicula"
+                            + "\n4. Volver al menu principal";
+                
+        return resultado;
         
     }
     
@@ -131,18 +131,21 @@ public class Menus {
                 switch(opcionMenu) {
                     case 1:
                         // PENDIENTE: crear funcion
-                        registrarCliente();
+                        // buscarPelicula();
+                        menu();
                         break;
                     case 2:
                         // PENDIENTE: crear funcion
-                        menuDePeliculas();
+                        // ingresarNuevaPelicula();
+                        menu();
                         break;
                     case 3:
                         // PENDIENTE: crear funcion
                         menuConsultar();
+                        menu();
                         break;
                     case 4:
-                       
+                        menu();
                         break;
                     default:
                         System.exit(1); 
@@ -150,13 +153,13 @@ public class Menus {
                 
             }catch (Exception error) {
                 JOptionPane.showMessageDialog(null, "Ingreso un numero o no erroneo", "Advertencia", JOptionPane.ERROR_MESSAGE);
-                menu(); 
+                menuDePeliculas();
             }
         }
         
     }
     
-    
+    // FUNCION PENDIENTE
     public void menuConsultar() {
         
         // COmentario
