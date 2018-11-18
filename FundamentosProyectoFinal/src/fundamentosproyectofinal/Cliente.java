@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  *
  * @author Karla
  */
-public class Clientes {
+public class Cliente {
     //se crean los atributos de la clase clientes que serán usados en el método de crear cliente
     // o en el método de consultar clientes. 
     private int id;
@@ -29,7 +29,7 @@ public class Clientes {
    
 // constructor con todos los datos
 
-    public Clientes(int id, String nombre, String segundoNombre, String apellido, int telefono, String tipoTelefono, char genero, String provincia, String ciudad, String direccion1, String direccion2, String correoElectronico) {
+    public Cliente(int id, String nombre, String segundoNombre, String apellido, int telefono, String tipoTelefono, char genero, String provincia, String ciudad, String direccion1, String direccion2, String correoElectronico) {
         this.id = id;
         this.nombre = nombre;
         this.segundoNombre = segundoNombre;
@@ -45,7 +45,7 @@ public class Clientes {
     }
 
    
-      public Clientes() {
+      public Cliente() {
     }
     
     public int getId() {

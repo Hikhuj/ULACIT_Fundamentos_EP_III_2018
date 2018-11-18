@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 /**
  *
  */
-public class Peliculas {
+public class Pelicula {
 
     // Se crea la clase pelìculas con los atributos necesarios tanto para poder 
     // crear peliculas nuevas mediante el método correspondiente como para poder buscarla 
@@ -23,7 +23,7 @@ public class Peliculas {
     private String sinopsis;
     private String generoPelicula;
 
-    public Peliculas(String nombrePelicula, int idPelicula, int year, String director, String sinopsis, String generoPelicula) {
+    public Pelicula(String nombrePelicula, int idPelicula, int year, String director, String sinopsis, String generoPelicula) {
         this.nombrePelicula = nombrePelicula;
         this.idPelicula = idPelicula;
         this.year = year;
@@ -32,7 +32,7 @@ public class Peliculas {
         this.generoPelicula = generoPelicula;
     }
 
-    public Peliculas() {
+    public Pelicula() {
     }
 
     public String getNombrePelicula() {

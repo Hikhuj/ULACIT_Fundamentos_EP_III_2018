@@ -17,9 +17,9 @@ public class FundamentosProyectoFinal {
     public static void main(String[] args) {
         // TODO code application logic here
        // Menus menus = new Menus();
-//        Peliculas prueba= new Peliculas ();
+//        Pelicula prueba= new Pelicula ();
 //        prueba.setYear(0);
-        Clientes prueba1= new Clientes ();
+        Cliente prueba1= new Cliente ();
         //prueba1.setTelefono(0);
         //prueba1.setApellido();
        // prueba1.setNombre();
@@ -27,7 +27,7 @@ public class FundamentosProyectoFinal {
 //       prueba1.setGenero();
 //       prueba1.setTelefono();
       // prueba1.setTipoTelefono();
-        Peliculas pruebas3= new Peliculas();
+        Pelicula pruebas3= new Pelicula();
         //pruebas3.setDirector();
         pruebas3.setGeneroPelicula();
        // pruebas3.setYear();
