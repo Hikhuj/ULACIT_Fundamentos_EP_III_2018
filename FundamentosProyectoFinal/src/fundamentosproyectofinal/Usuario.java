@@ -9,7 +9,7 @@ package fundamentosproyectofinal;
  *
  * @author Karla
  */
-public class RegistroClientes {
+public class Usuario {
     
     /*
         Atributos
@@ -35,12 +35,12 @@ public class RegistroClientes {
         Constructores
     */
     
-    public RegistroClientes() {
+    public Usuario() {
    
     }
     
     
-    public RegistroClientes(int id, String apellido,
+    public Usuario(int id, String apellido,
                             String segundoNombre,
                             String nombre,
                             int telefono,
@@ -70,7 +70,7 @@ public class RegistroClientes {
     }
     
     
-    public RegistroClientes(int id, String apellido,
+    public Usuario(int id, String apellido,
                             String segundoNombre,
                             String nombre,
                             int telefono,
@@ -157,7 +157,7 @@ public class RegistroClientes {
     public void setPeliculasRentadas(boolean peliculasRentadas) {
         this.peliculasRentadas = peliculasRentadas;
     }
-
+    
     public int getId() {
         return id;
     }

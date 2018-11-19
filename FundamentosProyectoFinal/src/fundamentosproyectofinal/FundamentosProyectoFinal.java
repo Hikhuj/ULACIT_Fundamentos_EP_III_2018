@@ -5,9 +5,6 @@
  */
 package fundamentosproyectofinal;
 
-import java.io.*;
-import java.util.*;
-
 /**
  *
  * @author rogerjoseulaterivera
@@ -22,9 +19,8 @@ public class FundamentosProyectoFinal {
 
         // Menus menus = new Menus();
         InteraccionConCSV backendCSV = new InteraccionConCSV();
-        
-        String [] informacionPelicula = {"demo1", "demo2", "demo3", "demo4", "demo5"};
-        
+
+        String [] actualizarUsuario = {"1", "Monster", "Ducati", "D", "12345678", "m", "afsdgsdfg", "dsfgdfgdfg", "dfgdfg", "fs", "1", "roger@ducati.com", "true", "false"};
         
         /*
         String [] array = null;
@@ -37,8 +33,9 @@ public class FundamentosProyectoFinal {
         
         // menus.inicializador();
         
-        backendCSV.editarCSV(informacionPelicula, "33033");
+        backendCSV.guardarDatosUsuario(actualizarUsuario,"1");
         
+
         
     }
 
