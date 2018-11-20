@@ -22,6 +22,14 @@ public class Menus {
     /******************************************************/
 
     
+    public void inicializador() {
+        
+        miscelaneos.saludoInicial();
+        menu();
+        
+    }
+    
+    
     public String menuOpciones() {
         
         String resultado = "Menu Principal:"
@@ -33,15 +41,7 @@ public class Menus {
         return resultado;
                 
     }
-    
 
-    public void inicializador() {
-        
-        miscelaneos.saludoInicial();
-        menu();
-        
-    }
-    
     
     public void menu() {
         

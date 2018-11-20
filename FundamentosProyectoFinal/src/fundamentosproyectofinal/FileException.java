@@ -9,15 +9,6 @@ package fundamentosproyectofinal;
  *
  * @author rogerjoseulaterivera
  */
-public class FundamentosProyectoFinal {
-
-    /**
-     * @param args the command line arguments
-     */
+class FileException {
     
-    public static void main(String[] args) {
-
-        
-    }
-
 }
