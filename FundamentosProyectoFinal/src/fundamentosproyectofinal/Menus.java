@@ -17,12 +17,12 @@ public class Menus {
     Usuario usuario = new Usuario();
     InteraccionConCSV interaccionCSV = new InteraccionConCSV();
     
+    
     /******************************************************/
     /*                                                    */        
     /*                        MENUS                       */
     /*                                                    */
     /******************************************************/
-
     
     public void inicializador() {
         
@@ -31,8 +31,8 @@ public class Menus {
         
     }
     
-    
-    public String menuOpciones() {
+    // Opciones de menu principal
+    public String opcionesMenuPrincipal() {
         
         String resultado = "Menu Principal:"
                             + "\n1. Registrar clientes nuevos"
@@ -44,7 +44,6 @@ public class Menus {
                 
     }
 
-    
     // Menu principal
     public void menuPrincipal() {
         
@@ -63,7 +62,7 @@ public class Menus {
             
             try {
                 
-                opcionMenu = Integer.parseInt(JOptionPane.showInputDialog(menuOpciones()));
+                opcionMenu = Integer.parseInt(JOptionPane.showInputDialog(opcionesMenuPrincipal()));
                 
                 switch(opcionMenu) {
                     case 1:
@@ -145,23 +144,6 @@ public class Menus {
         
     }
     
-    
-    // Funcion de Menu: 1.2 Menu de peliculas
-    public void menuPeliculas() {
-        
-        
-        
-    }
-    
-    
-    // Funcion de Menu: 1.3 Consultar Informacion
-    public void consultarInformacion() {
-        
-        
-        
-    }
-    
-    
     public String menuDePeliculasOpciones() {
         
         String resultado = "Menu de peliculas:"
@@ -173,7 +155,6 @@ public class Menus {
         return resultado;
         
     }
-    
     
     public void menuDePeliculas() {
         
@@ -225,11 +206,6 @@ public class Menus {
         
     }
     
-    // FUNCION PENDIENTE
-    public void menuConsultar() {
-        
-        // COmentario
-        
-    }
+    
     
 }
