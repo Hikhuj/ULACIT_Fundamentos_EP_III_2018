@@ -14,6 +14,8 @@ import javax.swing.JOptionPane;
 public class Menus {
     
     Miscelaneos miscelaneos = new Miscelaneos();
+    Usuario usuario = new Usuario();
+    InteraccionConCSV interaccionCSV = new InteraccionConCSV();
     
     /******************************************************/
     /*                                                    */        
@@ -25,7 +27,7 @@ public class Menus {
     public void inicializador() {
         
         miscelaneos.saludoInicial();
-        menu();
+        menuPrincipal();
         
     }
     
@@ -43,7 +45,8 @@ public class Menus {
     }
 
     
-    public void menu() {
+    // Menu principal
+    public void menuPrincipal() {
         
         /*
         Opciones de menu
@@ -80,16 +83,79 @@ public class Menus {
                 }
                 
             }catch (Exception error) {
+                
                 JOptionPane.showMessageDialog(null, "Ingreso un numero o no erroneo", "Advertencia", JOptionPane.ERROR_MESSAGE);
-                menu(); 
+                menuPrincipal();
+                
             }
             
         }
         
     }
     
-    // FUNCION PENDIENTE
+    // Funcion de Menu: 1.1 Registrar clientes nuevos
     public void registrarCliente() {
+        
+        // Variables
+        String [] nuevoUsuario = new String[14];
+        
+        int id;
+        String apellido; 
+        String segundoNombre;
+        String nombre;
+        int telefono;
+        char genero;
+        String direccion1;
+        String direccion2;
+        String ciudad;
+        int provincia;
+        int tipoTelefono;
+        String correoElectronico;
+        boolean estadoCliente;
+        boolean peliculasRentadas;
+        
+        
+        JOptionPane.showMessageDialog(null, "Registrando cliente nuevo", "Nuevo Cliente", JOptionPane.INFORMATION_MESSAGE);
+        
+        try{
+            
+            id = interaccionCSV.setIdNuevo();
+            String apellido = ;
+            String segundoNombre;
+            String nombre;
+            int telefono;
+            char genero;
+            String direccion1;
+            String direccion2;
+            String ciudad;
+            int provincia;
+            int tipoTelefono;
+            String correoElectronico;
+            boolean estadoCliente;
+            boolean peliculasRentadas;
+            
+            
+            
+        }catch() {
+            
+            
+            
+        }
+        
+        
+    }
+    
+    
+    // Funcion de Menu: 1.2 Menu de peliculas
+    public void menuPeliculas() {
+        
+        
+        
+    }
+    
+    
+    // Funcion de Menu: 1.3 Consultar Informacion
+    public void consultarInformacion() {
         
         
         
@@ -132,20 +198,20 @@ public class Menus {
                     case 1:
                         // PENDIENTE: crear funcion
                         // buscarPelicula();
-                        menu();
+                        menuPrincipal();
                         break;
                     case 2:
                         // PENDIENTE: crear funcion
                         // ingresarNuevaPelicula();
-                        menu();
+                        menuPrincipal();
                         break;
                     case 3:
                         // PENDIENTE: crear funcion
                         menuConsultar();
-                        menu();
+                        menuPrincipal();
                         break;
                     case 4:
-                        menu();
+                        menuPrincipal();
                         break;
                     default:
                         System.exit(1); 

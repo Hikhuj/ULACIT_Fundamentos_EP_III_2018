@@ -122,7 +122,6 @@ def mensaje_function_menu_peliculas_sistema():
 	print("\n")
 '''
 
-
 # Menu 1: Submenu 2
 def function_menu_peliculas_sistema():
 
