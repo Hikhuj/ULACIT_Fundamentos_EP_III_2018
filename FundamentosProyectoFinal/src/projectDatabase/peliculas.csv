@@ -1,7 +1,7 @@
 id,nombre,anio,descripcion,director,tipo_disco,estado_pelicula
 22812,The Wizard of Oz (1939),1939,"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",director1,1,1
 23337,Citizen Kane (1941),1941,"Duis dapibus nulla ut urna finibus, ac venenatis nisl tristique.",director2,1,1
-31750,Get Out (2017),2017,Ut a libero sit amet est blandit faucibus.,director3,2,1
+23,Demo nombre,Demo anio,Demo descripcion,demoDirector,1,0
 48694,The Third Man (1949),1949,Morbi et odio vitae sem vestibulum rhoncus.,director4,2,0
 93959,Mad Max: Fury Road (2015),2015,"Proin sed elit eleifend, vestibulum mauris ac, interdum ipsum.",director5,2,1
 Maria,tenia,2018,un,director6,2,1

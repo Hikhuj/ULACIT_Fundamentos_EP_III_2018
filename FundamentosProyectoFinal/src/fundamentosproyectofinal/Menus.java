@@ -25,7 +25,7 @@ public class Menus {
     public void inicializador() {
         
         miscelaneos.saludoInicial();
-        menu();
+        menuPrincipal();
         
     }
     
@@ -43,7 +43,8 @@ public class Menus {
     }
 
     
-    public void menu() {
+    // Menu principal
+    public void menuPrincipal() {
         
         /*
         Opciones de menu
@@ -81,15 +82,31 @@ public class Menus {
                 
             }catch (Exception error) {
                 JOptionPane.showMessageDialog(null, "Ingreso un numero o no erroneo", "Advertencia", JOptionPane.ERROR_MESSAGE);
-                menu(); 
+                menuPrincipal();
             }
             
         }
         
     }
     
-    // FUNCION PENDIENTE
+    // Funcion de Menu: 1.1 Registrar clientes nuevos
     public void registrarCliente() {
+        
+        
+        
+    }
+    
+    
+    // Funcion de Menu: 1.2 Menu de peliculas
+    public void menuPeliculas() {
+        
+        
+        
+    }
+    
+    
+    // Funcion de Menu: 1.3 Consultar Informacion
+    public void consultarInformacion() {
         
         
         

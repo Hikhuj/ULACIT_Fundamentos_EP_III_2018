@@ -6,7 +6,6 @@
 package fundamentosproyectofinal;
 
 import java.io.*;
-import java.util.*;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,9 +20,7 @@ public class InteraccionConCSV {
     
     private final String pathDBUsuarios = "src/projectDatabase/usuarios.csv";
     private final String pathDBPeliculas = "src/projectDatabase/peliculas.csv";
-    private final String pathDBTemp = "src/projectDatabase/tempDB.csv";
     public static final String SEPARADOR = ",";
-    private int posicionUsuario;
     private int cantidadLineasUsuarioCSV;
     private int cantidadColumnasUsuarioCSV;
     private int cantidadLineasPeliculaCSV;
@@ -34,7 +31,7 @@ public class InteraccionConCSV {
         Funciones
     */
     
-    public String[] buscarUsuario(String idUsuario) {
+    public String[] buscarUsuario(String idRecibido) {
 
         // BufferedReader: Lee el texto de una entrada de texto, almacenando 
         // los mismo datos a como se reciben para una mejor eficiencia de los
@@ -42,7 +39,7 @@ public class InteraccionConCSV {
         
         // Variables
         boolean primeraLinea = true;
-        String [] informacionUsuario = null;
+        String [] informacionObtenida = null;
         
         // Inicializaciones
         BufferedReader bufferLectura = null;
@@ -67,10 +64,9 @@ public class InteraccionConCSV {
                     // Separar la linea leída con el separador definido previamente
                     String[] campos = linea.split(SEPARADOR);
                     
-                    if (idEncontrado(campos, idUsuario) == true) {
+                    if (idEncontrado(campos, idRecibido) == true) {
                         
-                        informacionUsuario = campos;
-                        
+                        informacionObtenida = campos;
                         bufferLectura.close();
                         break;
                         
@@ -94,27 +90,76 @@ public class InteraccionConCSV {
             }
         }
         
-        return informacionUsuario;
+        return informacionObtenida;
         
     }
     
- 
-    public void imprimirArreglo(String [] array) {
+    
+    public String[] buscarPelicula(String idRecibido) {
+
+        // BufferedReader: Lee el texto de una entrada de texto, almacenando 
+        // los mismo datos a como se reciben para una mejor eficiencia de los
+        // caracteres, arreglos y lineas
         
-        /*
-            Funcion recibe un arreglo y lo imprime en consola
-        */
+        // Variables
+        boolean primeraLinea = true;
+        String [] informacionObtenida = null;
         
-        for (String array1 : array) {
-            System.out.print(array1 + ",");
+        // Inicializaciones
+        BufferedReader bufferLectura = null;
+        
+        try {
+            
+            // Abrir el .csv en buffer de lectura
+            bufferLectura = new BufferedReader(new FileReader(pathDBPeliculas));
+
+            // Leer una linea del archivo
+            String linea = bufferLectura.readLine();
+            
+            // Leer las lineas del objeto iterable mientras que no sea Null
+            while (linea != null) {
+                
+                // La siguiente linea evita leer la primera linea, la cual son los
+                // Headers del archivo CSV.
+                if(primeraLinea){
+                    primeraLinea = false;
+                }else{
+                    
+                    // Separar la linea leída con el separador definido previamente
+                    String[] campos = linea.split(SEPARADOR);
+                    
+                    if (idEncontrado(campos, idRecibido) == true) {
+                        
+                        informacionObtenida = campos;
+                        bufferLectura.close();
+                        break;
+                        
+                    }
+
+                }
+                
+                // Volver a leer otra línea del fichero
+                linea = bufferLectura.readLine();
+                
+            }
+            
+        } catch (IOException err1) {
+            // Cierro el buffer de lectura
+            if (bufferLectura != null) {
+                try {
+                    bufferLectura.close();
+                } catch (IOException err2) {
+                    JOptionPane.showMessageDialog(null, "El archivo no existe", "Advertencia", JOptionPane.ERROR_MESSAGE);
+                }
+            }
         }
         
-        System.out.println();
-    
+        return informacionObtenida;
+        
     }
     
     
-    private boolean idEncontrado(String [] array, String idUsuario) {
+    private boolean idEncontrado(String [] array, String idRecibido) {
         
         /*
             Funcion recibe un arreglo y lo imprime en consola
@@ -122,7 +167,7 @@ public class InteraccionConCSV {
         
         boolean resultado = false;
         
-        if (idUsuario.equals(array[0])) {
+        if (idRecibido.equals(array[0])) {
             resultado = true;
         }
 
@@ -131,7 +176,7 @@ public class InteraccionConCSV {
     }
     
     
-    public boolean guardarDatosUsuario(String [] array, String idUsuario) {
+    public boolean actualizarDatosUsuario(String [] array, String idRecibido) {
         
         /* 
             BufferedWriter: Escribe texto a una salida de texto, almacenando los mismo datos 
@@ -142,7 +187,7 @@ public class InteraccionConCSV {
         boolean result = false;
         BufferedReader br = null;
         boolean primeraLinea = true;
-        String tempPath;
+        String tempPath = "src/projectDatabase/tempFile.csv";
         
         // BufferedReader debe ir en Try con el fin de probar el codigo, puede llegar a devolver errores
         try{
@@ -155,8 +200,8 @@ public class InteraccionConCSV {
             // Almacenar una linea del objeto 'br' en una variable tipo String.
             String linea = br.readLine();
             
-            // Se crea el archivo temporal que almacenara
-            tempPath = crearArchivoTemp();
+            // Crear archivo temporal, retorna pathTemporal
+            tempPath = crearArchivoTemp(tempPath);
             
             // Crear un ciclo que permita leer cada linea del objeto mientras no sea NULA
             while(linea != null) {
@@ -171,7 +216,7 @@ public class InteraccionConCSV {
                     
                 }else{
                     
-                    if(idEncontrado(campos, idUsuario) == true) {
+                    if(idEncontrado(campos, idRecibido) == true) {
                         
                         escribirEnTemp(array,tempPath);
                         
@@ -189,6 +234,85 @@ public class InteraccionConCSV {
             }
 
             br.close();
+            borrarArchivo(pathDBUsuarios);
+            renombrarArchivoTemporalUsuarios(tempPath, pathDBUsuarios);
+            
+        }catch(IOException e) {
+            // Cierro el buffer de lectura
+            if (br != null) {
+                try {
+                    br.close();
+                } catch (IOException err2) {
+                    JOptionPane.showMessageDialog(null, "El archivo no existe", "Advertencia", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        }
+        
+        return result;
+        
+    }
+
+    
+    public boolean actualizarDatosPelicula(String [] array, String idRecibido) {
+        
+        /* 
+            BufferedWriter: Escribe texto a una salida de texto, almacenando los mismo datos 
+            a como se reciben para una eficaz escritura de los caracteres, arreglos y lineas
+        */
+        
+        // Crear archivo temporal donde se escribiran todos los datos y los nuevos
+        boolean result = false;
+        BufferedReader br = null;
+        boolean primeraLinea = true;
+        String tempPath = "src/projectDatabase/tempFile.csv";
+        
+        // BufferedReader debe ir en Try con el fin de probar el codigo, puede llegar a devolver errores
+        try{
+            
+            // BufferedReader me permite leer datos de una entrada de datos recibida (como un archivo en este caso)
+            // FileReader: permite leer "Streams" de datos y de archivos (Steam: fuente o destino de bytes) Streams
+            // mas comunes --> archivos.
+            br = new BufferedReader(new FileReader(pathDBPeliculas));
+            
+            // Almacenar una linea del objeto 'br' en una variable tipo String.
+            String linea = br.readLine();
+            
+            // Se crea el archivo temporal que almacenara
+            tempPath = crearArchivoTemp(tempPath);
+            
+            // Crear un ciclo que permita leer cada linea del objeto mientras no sea NULA
+            while(linea != null) {
+                
+                // Separar la linea leída con el separador definido previamente
+                String[] campos = linea.split(SEPARADOR);
+                
+                if(primeraLinea){
+                    
+                    escribirEnTemp(campos,tempPath);
+                    primeraLinea = false;
+                    
+                }else{
+                    
+                    if(idEncontrado(campos, idRecibido) == true) {
+                        
+                        escribirEnTemp(array,tempPath);
+                        
+                    }else{
+                        
+                        escribirEnTemp(campos,tempPath);
+                        
+                    }
+                    
+                }
+                
+                // Volver a leer otra línea del fichero
+                linea = br.readLine();
+
+            }
+
+            br.close();
+            borrarArchivo(pathDBPeliculas);
+            renombrarArchivoTemporalUsuarios(tempPath, pathDBPeliculas);
             
         }catch(IOException e) {
             // Cierro el buffer de lectura
@@ -243,11 +367,9 @@ public class InteraccionConCSV {
     }
     
     
-    public String crearArchivoTemp() {
+    public String crearArchivoTemp(String path) {
         
         File temp;
-        
-        String path = "src/projectDatabase/tempFile.csv";
         
         try {
         
@@ -265,6 +387,34 @@ public class InteraccionConCSV {
         }
         
         return path;
+        
+    }
+    
+    
+    public void renombrarArchivoTemporalUsuarios(String pathViejo, String pathNuevo) {
+        
+        // Renombrar el nuevo archivo trabajado
+        File archivoViejo = new File(pathViejo);
+        File archivoNuevo = new File(pathNuevo);
+        
+        if(archivoViejo.renameTo(archivoNuevo)) {
+            System.out.println("Renombrado exitoso.");    
+        }else{
+            System.out.println("Renombrado fallido.");
+        }
+        
+    }
+
+    
+    public void borrarArchivo(String path) {
+        
+        File f = new File(path);
+        
+        if(f.delete()) {
+            System.out.println(path + ", ha sido borrado.");
+        }else{
+            System.out.println(path + ", no existe.");
+        }
         
     }
     
@@ -329,8 +479,9 @@ public class InteraccionConCSV {
         }
 
     }
-    
 
+    
+    /*
     public void contadorLineasColumnasUsuariosCSV() {
         
         // Variables
@@ -384,8 +535,9 @@ public class InteraccionConCSV {
         this.cantidadColumnasUsuarioCSV = cantidadColumnas;
         
     }
+    */
     
-    
+    /*
     public void contadorLineasColumnasPeliculasCSV() {
         
         // Variables
@@ -439,7 +591,7 @@ public class InteraccionConCSV {
         this.cantidadColumnasPeliculaCSV = cantidadColumnas;
         
     }
-    
+    */
     
     
     
