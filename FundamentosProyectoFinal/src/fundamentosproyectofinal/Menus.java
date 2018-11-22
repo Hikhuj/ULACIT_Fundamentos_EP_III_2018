@@ -81,8 +81,10 @@ public class Menus {
                 }
                 
             }catch (Exception error) {
+                
                 JOptionPane.showMessageDialog(null, "Ingreso un numero o no erroneo", "Advertencia", JOptionPane.ERROR_MESSAGE);
                 menuPrincipal();
+                
             }
             
         }
