@@ -94,7 +94,6 @@ public class InteraccionConCSV {
         
     }
     
-    
     public String[] buscarPelicula(String idRecibido) {
 
         // BufferedReader: Lee el texto de una entrada de texto, almacenando 
@@ -158,7 +157,6 @@ public class InteraccionConCSV {
         
     }
     
-    
     private boolean idEncontrado(String [] array, String idRecibido) {
         
         /*
@@ -174,7 +172,6 @@ public class InteraccionConCSV {
         return resultado;
         
     }
-    
     
     public boolean actualizarDatosUsuario(String [] array, String idRecibido) {
         
@@ -252,7 +249,6 @@ public class InteraccionConCSV {
         
     }
 
-    
     public boolean actualizarDatosPelicula(String [] array, String idRecibido) {
         
         /* 
@@ -329,8 +325,7 @@ public class InteraccionConCSV {
         return result;
         
     }
-
-
+    
     public void escribirEnTemp(String [] array, String path) {
         
         /*
@@ -366,7 +361,6 @@ public class InteraccionConCSV {
 
     }
     
-    
     public String crearArchivoTemp(String path) {
         
         File temp;
@@ -390,7 +384,6 @@ public class InteraccionConCSV {
         
     }
     
-    
     public void renombrarArchivoTemporalUsuarios(String pathViejo, String pathNuevo) {
         
         // Renombrar el nuevo archivo trabajado
@@ -405,7 +398,6 @@ public class InteraccionConCSV {
         
     }
 
-    
     public void borrarArchivo(String path) {
         
         File f = new File(path);
@@ -417,7 +409,6 @@ public class InteraccionConCSV {
         }
         
     }
-    
     
     public void crearUsuarioNuevo(String [] informacionUsuario) {
         
@@ -449,7 +440,6 @@ public class InteraccionConCSV {
 
     }
 
-    
     public void crearPeliculaNueva(String [] informacionPelicula) {
         
         /*
@@ -480,6 +470,61 @@ public class InteraccionConCSV {
 
     }
 
+    public int setIdNuevo() {
+        
+        // Variables
+        boolean primeraLinea = true;
+        String [] ultimaLinea = null;
+        int idNuevo;
+        
+        // Inicializaciones
+        BufferedReader br = null;
+        
+        try {
+            
+            // Abrir el .csv en buffer de lectura
+            br = new BufferedReader(new FileReader(pathDBUsuarios));
+
+            // Leer una linea del archivo
+            String linea = br.readLine();
+            
+            // Leer las lineas del objeto iterable mientras que no sea Null
+            while (linea != null) {
+                
+                // La siguiente linea evita leer la primera linea, la cual son los
+                // Headers del archivo CSV.
+                if(primeraLinea){
+                    primeraLinea = false;
+                }else{
+                    
+                    // Separar la linea leída con el separador definido previamente
+                    String[] campos = linea.split(SEPARADOR);
+                    ultimaLinea = campos;
+
+                }
+                
+                // Volver a leer otra línea del fichero
+                linea = br.readLine();
+                
+            }
+            
+        } catch (IOException err1) {
+            // Cierro el buffer de lectura
+            if (br != null) {
+                try {
+                    br.close();
+                } catch (IOException err2) {
+                    JOptionPane.showMessageDialog(null, "El archivo no existe", "Advertencia", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        }
+        
+        idNuevo = Integer.parseInt(ultimaLinea[0]);
+        idNuevo = idNuevo + 1;
+        
+        return idNuevo;
+        
+    }
     
     /*
     public void contadorLineasColumnasUsuariosCSV() {
