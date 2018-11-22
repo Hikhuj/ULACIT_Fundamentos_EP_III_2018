@@ -9,7 +9,7 @@ package fundamentosproyectofinal;
  *
  * @author rogerjoseulaterivera
  */
-public class UsuarioInteraccion {
+public class Interaccion {
     
     
     
