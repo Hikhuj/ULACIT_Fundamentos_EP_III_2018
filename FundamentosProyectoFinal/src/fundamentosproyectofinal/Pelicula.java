@@ -16,21 +16,28 @@ public class Pelicula {
     // Se crea la clase pelìculas con los atributos necesarios tanto para poder 
     // crear peliculas nuevas mediante el método correspondiente como para poder buscarla 
     //dentro del método de consulta de películas. 
-    private String nombrePelicula;
     private int idPelicula;
+    private String nombrePelicula;
     private int year;
     private String director;
     private String sinopsis;
     private String generoPelicula;
+    private int tipoDisco;
+    private int estadoPelicula;
 
-    public Pelicula(String nombrePelicula, int idPelicula, int year, String director, String sinopsis, String generoPelicula) {
-        this.nombrePelicula = nombrePelicula;
+    //constructores:
+    public Pelicula(int idPelicula, String nombrePelicula, int year, String director, String sinopsis, String generoPelicula, int tipoDisco, int estadoPelicula) {
         this.idPelicula = idPelicula;
+        this.nombrePelicula = nombrePelicula;
         this.year = year;
         this.director = director;
         this.sinopsis = sinopsis;
         this.generoPelicula = generoPelicula;
+        this.tipoDisco = tipoDisco;
+        this.estadoPelicula = estadoPelicula;
     }
+
+ 
 
     public Pelicula() {
     }
@@ -73,7 +80,7 @@ public class Pelicula {
     }
 
 
-public String getDirector() {
+    public String getDirector() {
         return director;
     }
     public void setDirector() {
