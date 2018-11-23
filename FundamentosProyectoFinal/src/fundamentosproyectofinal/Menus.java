@@ -104,6 +104,7 @@ public class Menus {
         String nombre;
         int telefono;
         char genero;
+        String generoString;
         String direccion1;
         String direccion2;
         String ciudad;
@@ -116,28 +117,39 @@ public class Menus {
         
         JOptionPane.showMessageDialog(null, "Registrando cliente nuevo", "Nuevo Cliente", JOptionPane.INFORMATION_MESSAGE);
         
+        /*
+        
+        Cambiar cualquier cosa a String:
+        
+        int no = 2;
+
+        String strValue = String.valueOf( no );
+        
+        */
+        
         try{
             
             id = interaccionCSV.setIdNuevo();
-            String apellido = ;
-            String segundoNombre;
-            String nombre;
-            int telefono;
-            char genero;
-            String direccion1;
-            String direccion2;
-            String ciudad;
-            int provincia;
-            int tipoTelefono;
-            String correoElectronico;
-            boolean estadoCliente;
-            boolean peliculasRentadas;
+            apellido = JOptionPane.showInputDialog("Ingrese apellido de usuario nuevo");
+            segundoNombre = JOptionPane.showInputDialog("Ingrese Segundo Nombre de usuario nuevo");
+            nombre = JOptionPane.showInputDialog("Ingrese nombre de usuario nuevo");
+            telefono = Integer.parseInt(JOptionPane.showInputDialog("Ingrese telefono nuevo"));
+            generoString = JOptionPane.showInputDialog("ingrese genero");
+            genero = generoString.charAt(0);
+            direccion1 = JOptionPane.showInputDialog("Ingrese Direccion 1 nueva");
+            direccion2 = JOptionPane.showInputDialog("Ingrese Direccion 2 nueva");
+            ciudad = JOptionPane.showInputDialog("Ingrese ciudad nueva");
+            provincia = Integer.parseInt(JOptionPane.showInputDialog("Ingrese provincia nueva"));
+            tipoTelefono = Integer.parseInt(JOptionPane.showInputDialog("Ingrese tipo de telefono"));
+            correoElectronico = JOptionPane.showInputDialog("Ingrese correo electronico nuevo");;
+            estadoCliente = true;
+            peliculasRentadas = false;
             
+            nuevoUsuario = {id, apellido, segundoNombre, nombre, telefono, generoString, genero, direccion1, direccion2};
             
+        }catch(Exception e) {
             
-        }catch() {
-            
-            
+            JOptionPane.showMessageDialog(null, "No se pudo crear usuario", "Eror", JOptionPane.ERROR_MESSAGE);
             
         }
         
