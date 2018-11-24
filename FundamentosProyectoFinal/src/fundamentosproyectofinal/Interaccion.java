@@ -23,12 +23,16 @@ public class Interaccion {
         // Usuario nuevo: Id
         int idUsuarioNuevo = interaccionCSV.setIdNuevo();
         informacionUsuarioNuevo[0] = String.valueOf(idUsuarioNuevo);
+        
         // Usuario nuevo: Nombre
         informacionUsuarioNuevo[1] = JOptionPane.showInputDialog("Ingrese apellido de usuario nuevo");
+        
         // Usuario nuevo: Apellido
         informacionUsuarioNuevo[2] = JOptionPane.showInputDialog("Ingrese Segundo Nombre de usuario nuevo");
+        
         // Usuario nuevo: Segundo Nombre
         informacionUsuarioNuevo[3] = JOptionPane.showInputDialog("Ingrese nombre de usuario nuevo");
+        
         // Usuario nuevo: numero Telefonico
         int telefonoUsuarioNuevo = Integer.parseInt(JOptionPane.showInputDialog("Ingrese telefono nuevo"));
         informacionUsuarioNuevo[4] = String.valueOf(telefonoUsuarioNuevo);
@@ -70,6 +74,12 @@ public class Interaccion {
         return informacionUsuarioNuevo;
         
     }
+    
+    /*
+    /*  METODOS INTECCION 
+    */
+    
+    
     
     
 }
