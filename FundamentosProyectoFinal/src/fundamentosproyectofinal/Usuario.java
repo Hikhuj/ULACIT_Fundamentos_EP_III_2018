@@ -66,25 +66,31 @@ public class Usuario {
         this.id = id;
     }
     
-   public void setNombre(String nombre) { this.nombre = JOptionPane.showInputDialog("Ingrese el primer nombre del cliente");
-      //se utiliza if String contains para evitar que el bibliotecólogo ingrese un dato tipo
-        //string con números. Se usa así pues al ingresar un número como tal Java no va a dar una
-        //excepcion pues acepta el número como un string, pero esto puede más adelante causar problemas
-        //porque si se quiere buscar a una persona por ejemplo usando el nombre y el dato contiene un número
-        // que se ingresó por error, no se va a poder encontrar a esa persona.
-   
-     while (this.nombre.contains("1") || this.nombre.contains("2") 
-                || this.nombre.contains("3")|| this.nombre.contains("4")
-                || this.nombre.contains("5")|| this.nombre.contains("6")
-                || this.nombre.contains("7")|| this.nombre.contains("8")
-                || this.nombre.contains("9")|| this.nombre.contains("0")) {
-                JOptionPane.showMessageDialog(null, "El nombre no debe contener números. "
-                        + "Ingréselo de nuevo");
-                this.nombre = JOptionPane.showInputDialog("Ingrese el nombre del cliente");
-        }
-         JOptionPane.showMessageDialog(null, "El nombre ingresado fue: " + this.nombre);
+//   public void setNombre(String nombre) { 
+//       this.nombre = JOptionPane.showInputDialog("Ingrese el primer nombre del cliente");
+//      //se utiliza if String contains para evitar que el bibliotecólogo ingrese un dato tipo
+//        //string con números. Se usa así pues al ingresar un número como tal Java no va a dar una
+//        //excepcion pues acepta el número como un string, pero esto puede más adelante causar problemas
+//        //porque si se quiere buscar a una persona por ejemplo usando el nombre y el dato contiene un número
+//        // que se ingresó por error, no se va a poder encontrar a esa persona.
+//   
+//     while (this.nombre.contains("1") || this.nombre.contains("2") 
+//                || this.nombre.contains("3")|| this.nombre.contains("4")
+//                || this.nombre.contains("5")|| this.nombre.contains("6")
+//                || this.nombre.contains("7")|| this.nombre.contains("8")
+//                || this.nombre.contains("9")|| this.nombre.contains("0")) {
+//                JOptionPane.showMessageDialog(null, "El nombre no debe contener números. "
+//                        + "Ingréselo de nuevo");
+//                this.nombre = JOptionPane.showInputDialog("Ingrese el nombre del cliente");
+//        }
+//         JOptionPane.showMessageDialog(null, "El nombre ingresado fue: " + this.nombre);
+    //}
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
    
+    
      public void setSegundoNombre(String segundoNombre) {
          //este es un caso similar al de nombre y apellido.
         this.segundoNombre = JOptionPane.showInputDialog("Ingrese el segundo nombre del cliente.");
