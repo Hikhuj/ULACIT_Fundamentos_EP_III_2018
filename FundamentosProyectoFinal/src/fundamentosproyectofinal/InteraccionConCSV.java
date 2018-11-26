@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 public class InteraccionConCSV {
     
     /*
-        Variables
+        VARIABLES
     */
     
     private final String pathDBUsuarios = "src/projectDatabase/usuarios.csv";
@@ -28,7 +28,7 @@ public class InteraccionConCSV {
     
     
     /*
-        Funciones
+        METODOS
     */
     
     public String[] buscarUsuario(String idRecibido) {
