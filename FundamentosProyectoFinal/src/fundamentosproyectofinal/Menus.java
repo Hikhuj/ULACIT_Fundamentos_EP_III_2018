@@ -13,7 +13,9 @@ import javax.swing.JOptionPane;
  */
 public class Menus {
     
-    // INSTANCIAS
+    /*
+        INSTANCIAS
+    */
     
     Miscelaneos miscelaneos = new Miscelaneos();
     Usuario usuario = new Usuario();
@@ -21,7 +23,9 @@ public class Menus {
     Interaccion interaccion = new Interaccion();
     
     
-    // METODOS
+    /*
+        METODOS
+    */
     
     public void inicializador() {
         
@@ -31,9 +35,7 @@ public class Menus {
     }
     
     
-    /*     
-        MENU PRINCIPAL
-    */
+    // MENU PRINCIPAL
     
     // Opciones: Menu principal
     public String opcionesMenuPrincipal() {
@@ -48,7 +50,6 @@ public class Menus {
                 
     }
 
-    
     // Menu Principal
     public void menuPrincipal() {
         
@@ -100,10 +101,9 @@ public class Menus {
         
     }
     
+
     
-    /*     
-        MENU: 1.1 REGISTAR CLIENTES NUEVOS
-    */
+    // MENU: 1.1 REGISTAR CLIENTES NUEVOS
     
     // Opciones: Menu 1.1
     public void registrarCliente() {
@@ -112,10 +112,9 @@ public class Menus {
         
     }
     
+
     
-    /*     
-        MENU: 1.1 REGISTAR CLIENTES NUEVOS
-    */
+    // MENU: 1.1 REGISTAR CLIENTES NUEVOS
     
     // Opciones: Menu 1.2
     public String opcionesSubMenuPeliculas() {
@@ -129,7 +128,6 @@ public class Menus {
         return resultado;
         
     }
-    
     
     // Menu 1.2 Menu de peliculas
     public void subMenuPeliculas() {
@@ -174,9 +172,8 @@ public class Menus {
     }
     
     
-    /*     
-        MENU: 1.3 CONSULTAR INFORMACION
-    */
+
+    // MENU: 1.3 CONSULTAR INFORMACION
     
     // Opciones: Menu 1.3
     public String opcionesSubMenuConsultar() {
@@ -189,7 +186,7 @@ public class Menus {
         
     }
     
-    
+    // Menu 1.3 Menu de consultas
     public void subMenuConsultar() {
         
         /*

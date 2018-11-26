@@ -12,12 +12,17 @@ import javax.swing.JOptionPane;
  * @author rogerjoseulaterivera
  */
 public class Interaccion {
-     Usuario  limpiezaUsuario= new Usuario();
-     Pelicula limpiezaPelicula= new Pelicula();
+    
+     /*
+        INSTANCIAS 
+    */
+    
+     Usuario limpiezaUsuario = new Usuario();
+     Pelicula limpiezaPelicula = new Pelicula();
         
     
     /*
-    /*  METODOS INTECCION 
+        METODOS 
     */
     
     //métodos para limpiar y atrapar errores en el código
