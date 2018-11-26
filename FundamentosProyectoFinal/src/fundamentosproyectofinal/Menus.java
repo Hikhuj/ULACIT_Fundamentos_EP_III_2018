@@ -64,7 +64,7 @@ public class Menus {
         // Variables
         int opcionMenu = 1;
         
-        while(opcionMenu > 0 && opcionMenu < 4) {
+        while(opcionMenu >= 1 && opcionMenu < 4) {
             
             try {
                 
