@@ -19,7 +19,7 @@ public class Menus {
     
     Miscelaneos miscelaneos = new Miscelaneos();
     Usuario usuario = null;
-    InteraccionConCSV interaccionCSV = new InteraccionConCSV();
+    InteraccionConCSV interaccionCSV = null;
     Interaccion interaccion = new Interaccion();
     
     
@@ -72,7 +72,6 @@ public class Menus {
                 
                 switch(opcionMenu) {
                     case 1:
-                        // PENDIENTE: crear funcion
                         registrarCliente();
                         menuPrincipal();
                         break;
@@ -118,27 +117,25 @@ public class Menus {
         miscelaneos.registroDeUsuarioNuevo();
         
         // Crear arreglo donde almacenar informacion de usuario
-        usuario = new Usuario(
-                            interaccionCSV.setIdNuevo(),
+        usuario = new Usuario(interaccionCSV.setIdNuevo(),
                             interaccion.apellidoUsuarioLimpio(),
                             interaccion.nombreUsuarioLimpio(),
                             interaccion.segundoNombreUsuarioLimpio(),
                             interaccion.telefonoLimpio(),
-                            interaccion.direccion2UsuarioLimpio(),
+                            interaccion.generoLimpio(),
                             interaccion.direccion1UsuarioLimpio(),
-                            );
+                            interaccion.direccion2UsuarioLimpio(),
+                            interaccion.ciudadLimpio(),
+                            interaccion.provinciaLimpio(),
+                            interaccion.tipoTelefonoLimpio(),
+                            interaccion.correoElectronico(),
+                            true,
+                            false);
         
-        String [] usuarioNuevo = new String[cantidadColumnasUsuario];
-        
-        usuarioNuevo[]
-        
-        
-        
-        
-        
-    }
+        // Escribir usuario nuevo
+        interaccionCSV.crearUsuarioNuevo(usuario.getUsuarioNuevo());
     
-
+    }
     
     // MENU: 1.1 REGISTAR CLIENTES NUEVOS
     

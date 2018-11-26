@@ -38,7 +38,7 @@ public class Usuario {
     public Usuario() {
         
     }
-    
+
     public Usuario(int id, String apellido, String nombre, String segundoNombre, int telefono, char genero, String direccion1, String direccion2, String ciudad, String provincia, int tipoTelefono, String correoElectronico, boolean estadoCliente, boolean peliculasRentadas) {
         this.id = id;
         this.apellido = apellido;
@@ -171,6 +171,32 @@ public class Usuario {
 
     public boolean isPeliculasRentadas() {
         return peliculasRentadas;
+    }
+    
+    public String [] getUsuarioNuevo() {
+        
+        String [] usuarioNuevo = {String.valueOf(getId()),
+                                    String.valueOf(getApellido()),
+                                    String.valueOf(getNombre()),
+                                    String.valueOf(getSegundoNombre()),
+                                    String.valueOf(getTelefono()),
+                                    String.valueOf(getGenero()),
+                                    String.valueOf(getDireccion1()),
+                                    String.valueOf(getDireccion2()),
+                                    String.valueOf(getCiudad()),
+                                    String.valueOf(getProvincia()),
+                                    String.valueOf(getTipoTelefono()),
+                                    String.valueOf(getCorreoElectronico()),
+                                    String.valueOf(isEstadoCliente()),
+                                    String.valueOf(isPeliculasRentadas())};
+        
+        return usuarioNuevo;
+        
+    }
+    
+    @Override
+    public String toString() {
+        return "Usuario{" + "id=" + id + ", apellido=" + apellido + ", nombre=" + nombre + ", segundoNombre=" + segundoNombre + ", telefono=" + telefono + ", genero=" + genero + ", direccion1=" + direccion1 + ", direccion2=" + direccion2 + ", ciudad=" + ciudad + ", provincia=" + provincia + ", tipoTelefono=" + tipoTelefono + ", correoElectronico=" + correoElectronico + ", estadoCliente=" + estadoCliente + ", peliculasRentadas=" + peliculasRentadas + '}';
     }
 
     // KARLA
@@ -325,6 +351,6 @@ public class Usuario {
     //                        break;
     //                
     //                }
-    //    } 
+    //    }
     
 }

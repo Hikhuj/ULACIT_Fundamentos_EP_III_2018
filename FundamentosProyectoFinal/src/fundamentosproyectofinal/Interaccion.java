@@ -90,12 +90,21 @@ public class Interaccion {
         // Variables
         boolean done = false;
         int telefono = 0;
+        String telefonoString;
 
         do {
-
+            
+            telefonoString = JOptionPane.showInputDialog("Ingrese el número de teléfono (sin espacios ni guiones):");
+            
             try {
-                telefono = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el número de teléfono (sin espacios ni guiones):"));
-                done = true;
+                
+                if(telefonoString.length() == 8) {
+                    telefono = Integer.parseInt(telefonoString);
+                    done = true;
+                }else{
+                    JOptionPane.showMessageDialog(null, "Error al ingresar el teléfono, ocho digitos son requeridos.");
+                }
+                
             } catch (NumberFormatException ex) {
                 JOptionPane.showMessageDialog(null, "Error al ingresar el teléfono, solo escriba números, no letras.");
             }
@@ -106,120 +115,173 @@ public class Interaccion {
 
     }
 
-    public String direccionUsuarioLimpio() {
+    public String direccion1UsuarioLimpio() {
         
         String var = JOptionPane.showInputDialog("Ingrese la direccion 1 del usuario");
+        return var;
         
+    }
+    
+    public String direccion2UsuarioLimpio() {
+        
+        String var = JOptionPane.showInputDialog("Ingrese la direccion 2 del usuario");
         return var;
         
     }
     
     public int tipoTelefonoLimpio() {
 
-        int tipoTele = 1;
+        int tipoTelefono = 0;
+        boolean done = true;
         
-        while(tipoTele < 0 && tipoTele > 4) {
+        while(done) {
+            
             try{
-                tipoTele = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el tipo de teléfono:"
+                tipoTelefono = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el tipo de teléfono:"
                 + "\n 1. Celular."
                 + "\n 2. Hogar "
                 + "\n 3. Oficina. "
                 + "\n 4. Otro."));
+                
+                if(tipoTelefono > 0 && tipoTelefono < 5){
+                    done = false;
+                }else{
+                    JOptionPane.showMessageDialog(null, "Opcion fuera de rango", "Error", JOptionPane.ERROR_MESSAGE);
+                }
             }catch(Exception e) {
-                JOptionPane.showMessageDialog(null, "Opcion no valida", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "No ingreso un valor numerico", "Error", JOptionPane.ERROR_MESSAGE);
             }
+            
         }
         
-        return tipoTele;
+        return tipoTelefono;
         
     }
 
-    public void generoLimpio() {
-        char genero;
-        int opcion = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el número correspondiente"
-                + " al género de la persona: \n 1. Femenino. \n2. Maculino \n 3. Otro."));
-        switch (opcion) {
-            case 1:
-                genero = 'F';
-                JOptionPane.showMessageDialog(null, "El género elegido fue: femenino.");
-                limpiezaUsuario.setGenero(genero);
-                break;
-            case 2:
-                genero = 'M';
-                JOptionPane.showMessageDialog(null, "El género elegido fue: masculino.");
-                limpiezaUsuario.setGenero(genero);
-                break;
-            case 3:
-                genero = 'O';
-                JOptionPane.showMessageDialog(null, "El género elegido fue: otro.");
-                limpiezaUsuario.setGenero(genero);
-                break;
+    public char generoLimpio() {
+        
+        char genero = 'f';
+        boolean done = true;
+        int opcion;
+        
+        while(done){
+            
+            try{
+                opcion = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el número correspondiente al género de la persona:"
+                                                                    + "\n1. Femenino."
+                                                                    + "\n2. Maculino"
+                                                                    + "\n3. Otro"));
+                if(opcion > 0 && opcion < 4) {
+                    switch (opcion) {
+                        case 1:
+                            genero = 'f';
+                            break;
+                        case 2:
+                            genero = 'm';
+                            break;
+                        case 3:
+                            genero = 'o';
+                            break;
+                    }
+                    done = false;
+                }else{
+                    JOptionPane.showMessageDialog(null, "Opcion fuera de rango", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+                
+            }catch(Exception e) {
+                JOptionPane.showMessageDialog(null, "Error: Valor no numerico", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+            
         }
+        
+        return genero;
+        
     }
 
-    public void provinciaLimpio() {
-        String provincia;
-        int opcion = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el número correspondiente"
-                + " a la ciudad donde vive el cliente:"
-                + "\n 1. San Jose. "
-                + "\n 2. Alajuela "
-                + "\n 3. Heredia. "
-                + "\n 4. Cartago. "
-                + "\n 5. Limón."
-                + "\n 6. Puntarenas. "
-                + "\n 7. Guanacaste."));
-        switch (opcion) {
-            case 1:
-                provincia = "San José";
-                limpiezaUsuario.setProvincia(provincia);
-                JOptionPane.showMessageDialog(null, "La provincia elegida fue: " + limpiezaUsuario.getProvincia());
-
-                break;
-            case 2:
-                provincia = "Alajuela";
-                limpiezaUsuario.setProvincia(provincia);
-                JOptionPane.showMessageDialog(null, "La provincia elegida fue: " + limpiezaUsuario.getProvincia());
-
-                break;
-
-            case 3:
-                provincia = "Heredia";
-                limpiezaUsuario.setProvincia(provincia);
-                JOptionPane.showMessageDialog(null, "La provincia elegida fue: " + limpiezaUsuario.getProvincia());
-
-                break;
-
-            case 4:
-                provincia = "Cartago";
-                limpiezaUsuario.setProvincia(provincia);
-                JOptionPane.showMessageDialog(null, "La provincia elegida fue: " + limpiezaUsuario.getProvincia());
-
-                break;
-
-            case 5:
-                provincia = "Limón";
-                limpiezaUsuario.setProvincia(provincia);
-                JOptionPane.showMessageDialog(null, "La provincia elegida fue: " + limpiezaUsuario.getProvincia());
-
-                break;
-
-            case 6:
-                provincia = "Puntarenas";
-                limpiezaUsuario.setProvincia(provincia);
-                JOptionPane.showMessageDialog(null, "La provincia elegida fue: " + limpiezaUsuario.getProvincia());
-
-                break;
-
-            case 7:
-                provincia = "Guanacaste";
-                limpiezaUsuario.setProvincia(provincia);
-                JOptionPane.showMessageDialog(null, "La provincia elegida fue: " + limpiezaUsuario.getProvincia());
-
-                break;
-
+    public String ciudadLimpio() {
+        
+        String var = JOptionPane.showInputDialog("Ingrese la ciudad del usuario");
+        return var;
+        
+    }
+    
+    public String provinciaLimpio() {
+        
+        String provincia = "";
+        boolean done = true;
+        int opcion;
+        
+        while(done){
+            
+            try{
+                opcion = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el número correspondiente a la ciudad donde vive el cliente:"
+                                                                        + "\n 1. San Jose. "
+                                                                        + "\n 2. Alajuela "
+                                                                        + "\n 3. Heredia. "
+                                                                        + "\n 4. Cartago. "
+                                                                        + "\n 5. Limón."
+                                                                        + "\n 6. Puntarenas. "
+                                                                        + "\n 7. Guanacaste."));
+                if(opcion > 0 && opcion < 8) {
+                    switch (opcion) {
+                        case 1:
+                            provincia = "San Jose";
+                            break;
+                        case 2:
+                            provincia = "Alajuela";
+                            break;
+                        case 3:
+                            provincia = "Heredia";
+                            break;
+                        case 4:
+                            provincia = "Cartago";
+                            break;
+                        case 5:
+                            provincia = "Limon";
+                            break;
+                        case 6:
+                            provincia = "Puntarenas";
+                            break;
+                        case 7:
+                            provincia = "Guanacaste";
+                            break;
+                    }
+                    done = false;
+                }else{
+                    JOptionPane.showMessageDialog(null, "Opcion fuera de rango", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+                
+            }catch(Exception e) {
+                JOptionPane.showMessageDialog(null, "Error: Valor no numerico", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+            
         }
+        
+        return provincia;
+        
     }
 
+    public String correoElectronico() {
+        
+        boolean done = true;
+        String correoElectronico = "";
+        
+        while(done) {
+            
+            correoElectronico = JOptionPane.showInputDialog("Ingrese el correo electronico del cliente: ");
+            
+            if(correoElectronico.contains("@") && correoElectronico.contains(".")){
+                done = false;
+            }else{
+                JOptionPane.showMessageDialog(null, "Error: Formato de correo no valido", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+            
+        }
+
+        return correoElectronico;
+        
+    }
+    
     public void yearPeli() {
         int yearPeli;
         boolean done = false;
@@ -236,9 +298,12 @@ public class Interaccion {
         } while (!done);
     }
 
-    public void directorLimpio() {
+    public String directorLimpio() {
+        
         String director;
-        director = JOptionPane.showInputDialog("Ingrese el nombre del director.");
+        
+        director = JOptionPane.showInputDialog("Ingrese el nombre del director: ");
+        
         while (director.contains("1") || director.contains("2")
                 || director.contains("3") || director.contains("4")
                 || director.contains("5") || director.contains("6")
@@ -248,11 +313,12 @@ public class Interaccion {
                     + "Ingréselo de nuevo.");
             director = JOptionPane.showInputDialog("Ingrese el nombre del director.");
         }
-        limpiezaPelicula.setDirector(director);
-        JOptionPane.showMessageDialog(null, "El nombre ingresado fue: " + limpiezaPelicula.getDirector());
 
+        return director;
+        
     }
 
+    /*
     public void generoPelicula() {
 
         String generoPeli;
@@ -311,5 +377,6 @@ public class Interaccion {
         }
 
     }
+    */
 
 }
