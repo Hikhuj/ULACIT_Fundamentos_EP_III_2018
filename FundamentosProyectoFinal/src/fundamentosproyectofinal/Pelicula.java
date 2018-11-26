@@ -13,108 +13,108 @@ import javax.swing.JOptionPane;
  */
 public class Pelicula {
 
+    /*
+        Atributos
+    */
+    
     // Se crea la clase pelìculas con los atributos necesarios tanto para poder 
     // crear peliculas nuevas mediante el método correspondiente como para poder buscarla 
-    //dentro del método de consulta de películas. 
+    //dentro del método de consulta de películas.
+    
     private int idPelicula;
     private String nombrePelicula;
     private int year;
-    private String director;
     private String sinopsis;
-    private String generoPelicula;
+    private String director;
+    private int generoPelicula;
     private int tipoDisco;
-    private int estadoPelicula;
+    private boolean estadoPelicula;
+    
 
-    //constructores:
-    public Pelicula(int idPelicula, String nombrePelicula, int year, String director, String sinopsis, String generoPelicula, int tipoDisco, int estadoPelicula) {
+    /*
+        Constructores
+    */
+
+    public Pelicula() {
+    }
+    
+    public Pelicula(int idPelicula, String nombrePelicula, int year, String sinopsis, String director, int generoPelicula, int tipoDisco, boolean estadoPelicula) {
         this.idPelicula = idPelicula;
         this.nombrePelicula = nombrePelicula;
         this.year = year;
-        this.director = director;
         this.sinopsis = sinopsis;
+        this.director = director;
         this.generoPelicula = generoPelicula;
         this.tipoDisco = tipoDisco;
         this.estadoPelicula = estadoPelicula;
-    }
-
- 
-
-    
-    public Pelicula() {
-    }
-
-    public String getNombrePelicula() {
-        return nombrePelicula;
-    }
-
-    public void setNombrePelicula(String nombrePelicula) {
-
-        this.nombrePelicula = nombrePelicula;
-    }
-
-    public int getIdPelicula() {
-        return idPelicula;
     }
 
     public void setIdPelicula(int idPelicula) {
         this.idPelicula = idPelicula;
     }
 
-    public int getYear() {
-
-        return year;
+    public void setNombrePelicula(String nombrePelicula) {
+        this.nombrePelicula = nombrePelicula;
     }
 
     public void setYear(int year) {
         this.year = year;
     }
 
-   
-
-
-    public String getDirector() {
-        return director;
+    public void setSinopsis(String sinopsis) {
+        this.sinopsis = sinopsis;
     }
 
     public void setDirector(String director) {
         this.director = director;
     }
-   
 
-    public String getSinopsis() {
-        return sinopsis;
-    }
-
-    public void setSinopsis( ) {
-        this.sinopsis = sinopsis;
-    }
-
-    public String getGeneroPelicula() {
-        return generoPelicula;
-    }
-
-    public void setGeneroPelicula(String generoPelicula) {
+    public void setGeneroPelicula(int generoPelicula) {
         this.generoPelicula = generoPelicula;
-    }
-
-    public int getTipoDisco() {
-        return tipoDisco;
     }
 
     public void setTipoDisco(int tipoDisco) {
         this.tipoDisco = tipoDisco;
     }
 
-    public int getEstadoPelicula() {
+    public void setEstadoPelicula(boolean estadoPelicula) {
+        this.estadoPelicula = estadoPelicula;
+    }
+    
+    public int getIdPelicula() {
+        return idPelicula;
+    }
+
+    public String getNombrePelicula() {
+        return nombrePelicula;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public String getSinopsis() {
+        return sinopsis;
+    }
+
+    public String getDirector() {
+        return director;
+    }
+
+    public int getGeneroPelicula() {
+        return generoPelicula;
+    }
+
+    public int getTipoDisco() {
+        return tipoDisco;
+    }
+
+    public boolean isEstadoPelicula() {
         return estadoPelicula;
     }
 
-    public void setEstadoPelicula(int estadoPelicula) {
-        this.estadoPelicula = estadoPelicula;
-    }
-
-
-//     public void setYear() {
+    
+    //     public void setYear() {
 //        boolean done = false;
 //        do {
 //            try {
@@ -186,5 +186,4 @@ public class Pelicula {
 //                        break;
 //                
 //                }
-
 }

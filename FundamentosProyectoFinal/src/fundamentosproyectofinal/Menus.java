@@ -18,7 +18,7 @@ public class Menus {
     */
     
     Miscelaneos miscelaneos = new Miscelaneos();
-    Usuario usuario = new Usuario();
+    Usuario usuario = null;
     InteraccionConCSV interaccionCSV = new InteraccionConCSV();
     Interaccion interaccion = new Interaccion();
     
@@ -108,6 +108,32 @@ public class Menus {
     // Opciones: Menu 1.1
     public void registrarCliente() {
 
+        // Generar cantidad de valores de usuario
+        interaccionCSV.setCantidadColumnasUsuarioCSV();
+        
+        // Obtener cantidad de valores de usuario
+        int cantidadColumnasUsuario = interaccionCSV.getCantidadColumnasUsuarioCSV();
+        
+        // Mensaje de menu
+        miscelaneos.registroDeUsuarioNuevo();
+        
+        // Crear arreglo donde almacenar informacion de usuario
+        usuario = new Usuario(
+                            interaccionCSV.setIdNuevo(),
+                            interaccion.apellidoUsuarioLimpio(),
+                            interaccion.nombreUsuarioLimpio(),
+                            interaccion.segundoNombreUsuarioLimpio(),
+                            interaccion.telefonoLimpio(),
+                            interaccion.direccion2UsuarioLimpio(),
+                            interaccion.direccion1UsuarioLimpio(),
+                            );
+        
+        String [] usuarioNuevo = new String[cantidadColumnasUsuario];
+        
+        usuarioNuevo[]
+        
+        
+        
         
         
     }

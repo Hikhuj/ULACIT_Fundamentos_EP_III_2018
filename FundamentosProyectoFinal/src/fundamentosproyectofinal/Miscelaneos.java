@@ -89,4 +89,11 @@ public class Miscelaneos {
         
     }
     
+    /*
+        Mensajes de Menu 1.1
+    */
+    public void registroDeUsuarioNuevo(){
+        JOptionPane.showMessageDialog(null, "Registrando nuevo usuario", "Usuario Nuevo", JOptionPane.INFORMATION_MESSAGE);
+    }
+    
 }

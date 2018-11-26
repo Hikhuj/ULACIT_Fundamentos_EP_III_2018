@@ -15,67 +15,18 @@ public class Interaccion {
 
     /*
         INSTANCIAS 
-     */
+    */
     Usuario limpiezaUsuario = new Usuario();
     Pelicula limpiezaPelicula = new Pelicula();
 
     /*
-        METODOS 
-     */
-    // Métodos para limpiar y atrapar errores en el código
-    public void nombreUsuarioLimpio() {
+        METODOS
+    */
+    
+    // Métodos para limpiar y atrapar errores en el código: USUARIO Y PELICULAS
+    public String apellidoUsuarioLimpio() {
 
-        /*
-            se utiliza if String contains para evitar que el bibliotecólogo ingrese un dato tipo
-            string con números. Se usa así pues al ingresar un número como tal Java no va a dar una
-            excepcion pues acepta el número como un string, pero esto puede más adelante causar problemas
-            porque si se quiere buscar a una persona por ejemplo usando el nombre y el dato contiene un número
-            que se ingresó por error, no se va a poder encontrar a esa persona.
-         */
-        String nombre = JOptionPane.showInputDialog("Ingrese el primer nombre del cliente");
-
-        while (nombre.contains("1") || nombre.contains("2")
-                || nombre.contains("3") || nombre.contains("4")
-                || nombre.contains("5") || nombre.contains("6")
-                || nombre.contains("7") || nombre.contains("8")
-                || nombre.contains("9") || nombre.contains("0")) {
-            JOptionPane.showMessageDialog(null, "El nombre no debe contener números. "
-                    + "Ingréselo de nuevo");
-            nombre = JOptionPane.showInputDialog("Ingrese el nombre del cliente");
-        }
-
-        limpiezaUsuario.setNombre(nombre);
-
-        JOptionPane.showMessageDialog(null, "El nombre ingresado fue: " + limpiezaUsuario.getNombre());
-
-    }
-
-    public void segundoNombreUsuarioLimpio() {
-
-        //este es un caso similar al de nombre, no se permite guardar el apellido si éste contine números
-        String segundoNombre;
-        segundoNombre = JOptionPane.showInputDialog("Ingrese el segundo nombre del cliente.");
-
-        while (segundoNombre.contains("1") || segundoNombre.contains("2")
-                || segundoNombre.contains("3") || segundoNombre.contains("4")
-                || segundoNombre.contains("5") || segundoNombre.contains("6")
-                || segundoNombre.contains("7") || segundoNombre.contains("8")
-                || segundoNombre.contains("9") || segundoNombre.contains("0")) {
-            JOptionPane.showMessageDialog(null, "El segundo nombre no debe contener números. "
-                    + "Ingréselo de nuevo");
-            segundoNombre = JOptionPane.showInputDialog("Ingrese el segundo nombre del cliente");
-        }
-
-        limpiezaUsuario.setSegundoNombre(segundoNombre);
-
-        JOptionPane.showMessageDialog(null, "El segundo nombre ingresado fue: " + limpiezaUsuario.getSegundoNombre());
-
-    }
-
-    public void apellidoLimpio() {
-
-        String apellido;
-        apellido = JOptionPane.showInputDialog("Ingrese el apellido del cliente");
+        String apellido = JOptionPane.showInputDialog("Ingrese el apellido del cliente: ");
 
         while (apellido.contains("1") || apellido.contains("2")
                 || apellido.contains("3") || apellido.contains("4")
@@ -84,73 +35,103 @@ public class Interaccion {
                 || apellido.contains("9") || apellido.contains("0")) {
             JOptionPane.showMessageDialog(null, "El apellido no debe contener números. "
                     + "Ingréselo de nuevo.");
-            apellido = JOptionPane.showInputDialog("Ingrese el apellido del cliente.");
+            apellido = JOptionPane.showInputDialog("Ingrese el apellido del cliente: ");
         }
 
-        limpiezaUsuario.setApellido(apellido);
-
-        JOptionPane.showMessageDialog(null, "El apellido ingresado fue: " + limpiezaUsuario.getApellido());
+        return apellido;
+        
     }
+    
+    public String nombreUsuarioLimpio() {
 
-    public void tele() {
+        /*
+            se utiliza if String contains para evitar que el bibliotecólogo ingrese un dato tipo
+            string con números. Se usa así pues al ingresar un número como tal Java no va a dar una
+            excepcion pues acepta el número como un string, pero esto puede más adelante causar problemas
+            porque si se quiere buscar a una persona por ejemplo usando el nombre y el dato contiene un número
+            que se ingresó por error, no se va a poder encontrar a esa persona.
+         */
+        String nombre = JOptionPane.showInputDialog("Ingrese el nombre del cliente: ");
 
+        while (nombre.contains("1") || nombre.contains("2")
+                || nombre.contains("3") || nombre.contains("4")
+                || nombre.contains("5") || nombre.contains("6")
+                || nombre.contains("7") || nombre.contains("8")
+                || nombre.contains("9") || nombre.contains("0")) {
+            JOptionPane.showMessageDialog(null, "El nombre no debe contener números. Ingréselo de nuevo");
+            nombre = JOptionPane.showInputDialog("Ingrese el nombre del cliente: ");
+        }
+
+        return nombre;
+
+    }
+    
+    public String segundoNombreUsuarioLimpio() {
+
+        //este es un caso similar al de nombre, no se permite guardar el apellido si éste contine números
+        String segundoNombre = JOptionPane.showInputDialog("Ingrese el segundo nombre del cliente:");
+
+        while (segundoNombre.contains("1") || segundoNombre.contains("2")
+                || segundoNombre.contains("3") || segundoNombre.contains("4")
+                || segundoNombre.contains("5") || segundoNombre.contains("6")
+                || segundoNombre.contains("7") || segundoNombre.contains("8")
+                || segundoNombre.contains("9") || segundoNombre.contains("0")) {
+            JOptionPane.showMessageDialog(null, "El segundo nombre no debe contener números. "
+                    + "Ingréselo de nuevo");
+            segundoNombre = JOptionPane.showInputDialog("Ingrese el segundo nombre del cliente:");
+        }
+
+        return segundoNombre;
+        
+    }
+    
+    public int telefonoLimpio() {
+
+        // Variables
         boolean done = false;
-        int telefono;
+        int telefono = 0;
 
         do {
 
             try {
-
-                String texto = JOptionPane.showInputDialog("Ingrese el número de teléfono (sin espacios "
-                        + " ni guiones)");
-                telefono = Integer.parseInt(texto);
+                telefono = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el número de teléfono (sin espacios ni guiones):"));
                 done = true;
-                limpiezaUsuario.setTelefono(telefono);
-                JOptionPane.showMessageDialog(null, "El telefono ingresado es: " + limpiezaUsuario.getTelefono());
-
             } catch (NumberFormatException ex) {
-
                 JOptionPane.showMessageDialog(null, "Error al ingresar el teléfono, solo escriba números, no letras.");
-
             }
 
         } while (!done);
+        
+        return telefono;
 
     }
 
-    public void tipoTelefonoLimpio() {
+    public String direccionUsuarioLimpio() {
+        
+        String var = JOptionPane.showInputDialog("Ingrese la direccion 1 del usuario");
+        
+        return var;
+        
+    }
+    
+    public int tipoTelefonoLimpio() {
 
-        String tipoTele;
-        int opcion = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el"
-                + " número que representa el tipo de teléfono:"
+        int tipoTele = 1;
+        
+        while(tipoTele < 0 && tipoTele > 4) {
+            try{
+                tipoTele = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el tipo de teléfono:"
                 + "\n 1. Celular."
                 + "\n 2. Hogar "
                 + "\n 3. Oficina. "
                 + "\n 4. Otro."));
-        switch (opcion) {
-            case 1:
-                tipoTele = "Celular";
-                limpiezaUsuario.setTipoTelefono(tipoTele);
-                JOptionPane.showMessageDialog(null, "El tipo elegido fue: " + limpiezaUsuario.getTipoTelefono());
-                break;
-            case 2:
-                tipoTele = "Hogar";
-                limpiezaUsuario.setTipoTelefono(tipoTele);
-                JOptionPane.showMessageDialog(null, "El tipo elegido fue: " + limpiezaUsuario.getTipoTelefono());
-                break;
-
-            case 3:
-                tipoTele = "Oficina";
-                limpiezaUsuario.setTipoTelefono(tipoTele);
-                JOptionPane.showMessageDialog(null, "El tipo elegido fue: " + limpiezaUsuario.getTipoTelefono());
-                break;
-
-            case 4:
-                tipoTele = "Otro";
-                limpiezaUsuario.setTipoTelefono(tipoTele);
-                JOptionPane.showMessageDialog(null, "El tipo elegido fue: " + limpiezaUsuario.getTipoTelefono());
-                break;
+            }catch(Exception e) {
+                JOptionPane.showMessageDialog(null, "Opcion no valida", "Error", JOptionPane.ERROR_MESSAGE);
+            }
         }
+        
+        return tipoTele;
+        
     }
 
     public void generoLimpio() {
