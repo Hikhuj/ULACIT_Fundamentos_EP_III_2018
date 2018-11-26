@@ -5,8 +5,6 @@
  */
 package fundamentosproyectofinal;
 
-import javax.swing.JOptionPane;
-
 /**
  *
  * @author Karla

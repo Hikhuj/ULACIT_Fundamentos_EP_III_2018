@@ -13,17 +13,15 @@ import javax.swing.JOptionPane;
  */
 public class Menus {
     
+    // INSTANCIAS
+    
     Miscelaneos miscelaneos = new Miscelaneos();
     Usuario usuario = new Usuario();
     InteraccionConCSV interaccionCSV = new InteraccionConCSV();
     Interaccion interaccion = new Interaccion();
     
     
-    /******************************************************/
-    /*                                                    */        
-    /*                        MENUS                       */
-    /*                                                    */
-    /******************************************************/
+    // METODOS
     
     public void inicializador() {
         
@@ -32,7 +30,12 @@ public class Menus {
         
     }
     
-    // Opciones de menu principal
+    
+    /******************************************************/     
+    /*                     MENU PRINCIPAL                 */
+    /******************************************************/
+    
+    // Opciones: Menu principal
     public String opcionesMenuPrincipal() {
         
         String resultado = "Menu Principal:"
@@ -45,7 +48,8 @@ public class Menus {
                 
     }
 
-    // Menu principal
+    
+    // Menu Principal
     public void menuPrincipal() {
         
         /*
@@ -93,13 +97,24 @@ public class Menus {
         
     }
     
-    // Funcion de Menu: 1.1 Registrar clientes nuevos
+    
+    /******************************************************/     
+    /*         MENU: 1.1 REGISTAR CLIENTES NUEVOS         */
+    /******************************************************/
+    
+    // Opciones: Menu 1.1
     public void registrarCliente() {
 
         interaccionCSV.crearUsuarioNuevo(interaccion.registrarUsuario());
         
     }
     
+    
+    /******************************************************/     
+    /*         MENU: 1.1 REGISTAR CLIENTES NUEVOS         */
+    /******************************************************/
+    
+    // Opciones: Menu 1.2
     public String menuDePeliculasOpciones() {
         
         String resultado = "Menu de peliculas:"
@@ -112,6 +127,8 @@ public class Menus {
         
     }
     
+    
+    // Menu 1.2 Menu de peliculas
     public void menuDePeliculas() {
         
         /*
@@ -125,7 +142,7 @@ public class Menus {
         // Variables
         int opcionMenu = 1;
         
-        while(opcionMenu > 0 && opcionMenu < 5) {
+        while(opcionMenu > 0 && opcionMenu < 3) {
             
             try {
                 
@@ -145,9 +162,6 @@ public class Menus {
                     case 3:
                         // PENDIENTE: crear funcion
                         menuConsultar();
-                        menuPrincipal();
-                        break;
-                    case 4:
                         menuPrincipal();
                         break;
                     default:
