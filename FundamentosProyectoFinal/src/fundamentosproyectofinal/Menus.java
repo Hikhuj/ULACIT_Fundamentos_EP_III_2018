@@ -31,9 +31,9 @@ public class Menus {
     }
     
     
-    /******************************************************/     
-    /*                     MENU PRINCIPAL                 */
-    /******************************************************/
+    /*     
+        MENU PRINCIPAL
+    */
     
     // Opciones: Menu principal
     public String opcionesMenuPrincipal() {
@@ -53,11 +53,11 @@ public class Menus {
     public void menuPrincipal() {
         
         /*
-        Opciones de menu
-        1. Registrar clientes nuevos
-	2. Menu de Peliculas
-	3. Consultar informacion
-	4. Salir
+            Opciones de menu
+            1. Registrar clientes nuevos
+            2. Menu de Peliculas
+            3. Consultar informacion
+            4. Salir
         */
         
         // Variables
@@ -73,14 +73,17 @@ public class Menus {
                     case 1:
                         // PENDIENTE: crear funcion
                         registrarCliente();
+                        menuPrincipal();
                         break;
                     case 2:
                         // PENDIENTE: crear funcion
-                        menuDePeliculas();
+                        subMenuPeliculas();
+                        menuPrincipal();
                         break;
                     case 3:
                         // PENDIENTE: crear funcion
-                        menuConsultar();
+                        subMenuConsultar();
+                        menuPrincipal();
                         break;
                     default:
                         System.exit(1); 
@@ -98,24 +101,24 @@ public class Menus {
     }
     
     
-    /******************************************************/     
-    /*         MENU: 1.1 REGISTAR CLIENTES NUEVOS         */
-    /******************************************************/
+    /*     
+        MENU: 1.1 REGISTAR CLIENTES NUEVOS
+    */
     
     // Opciones: Menu 1.1
     public void registrarCliente() {
 
-        interaccionCSV.crearUsuarioNuevo(interaccion.registrarUsuario());
+        
         
     }
     
     
-    /******************************************************/     
-    /*         MENU: 1.1 REGISTAR CLIENTES NUEVOS         */
-    /******************************************************/
+    /*     
+        MENU: 1.1 REGISTAR CLIENTES NUEVOS
+    */
     
     // Opciones: Menu 1.2
-    public String menuDePeliculasOpciones() {
+    public String opcionesSubMenuPeliculas() {
         
         String resultado = "Menu de peliculas:"
                             + "\n1. Buscar pelicula"
@@ -129,14 +132,14 @@ public class Menus {
     
     
     // Menu 1.2 Menu de peliculas
-    public void menuDePeliculas() {
+    public void subMenuPeliculas() {
         
         /*
-        Menu de peliculas:
-        1. Buscar pelicula
-        2. Ingresar nueva pelicula
-        3. Editar informacion de pelicula
-        4. Volver al menu principal
+            Menu de peliculas:
+            1. Buscar pelicula
+            2. Ingresar nueva pelicula
+            3. Editar informacion de pelicula
+            4. Volver al menu principal
         */
         
         // Variables
@@ -146,23 +149,17 @@ public class Menus {
             
             try {
                 
-                opcionMenu = Integer.parseInt(JOptionPane.showInputDialog(menuDePeliculasOpciones()));
+                opcionMenu = Integer.parseInt(JOptionPane.showInputDialog(opcionesSubMenuPeliculas()));
                 
                 switch(opcionMenu) {
                     case 1:
                         // PENDIENTE: crear funcion
-                        // buscarPelicula();
-                        menuPrincipal();
                         break;
                     case 2:
                         // PENDIENTE: crear funcion
-                        // ingresarNuevaPelicula();
-                        menuPrincipal();
                         break;
                     case 3:
                         // PENDIENTE: crear funcion
-                        menuConsultar();
-                        menuPrincipal();
                         break;
                     default:
                         System.exit(1); 
@@ -170,12 +167,66 @@ public class Menus {
                 
             }catch (Exception error) {
                 JOptionPane.showMessageDialog(null, "Ingreso un numero o no erroneo", "Advertencia", JOptionPane.ERROR_MESSAGE);
-                menuDePeliculas();
+                subMenuPeliculas();
             }
         }
         
     }
     
     
+    /*     
+        MENU: 1.3 CONSULTAR INFORMACION
+    */
+    
+    // Opciones: Menu 1.3
+    public String opcionesSubMenuConsultar() {
+        
+        String resultado = "Menu de peliculas:"
+                            + "\n1. Consultar informacion de usuarios"
+                            + "\n2. Consultar informacion de peliculas";
+                
+        return resultado;
+        
+    }
+    
+    
+    public void subMenuConsultar() {
+        
+        /*
+            Menu de Consultas:
+            1. Consultar informacion de usuarios
+            2. Consultar informacion de peliculas
+        */
+        
+        // Variables
+        int opcionMenu = 1;
+        
+        while(opcionMenu > 0 && opcionMenu < 3) {
+            
+            try {
+                
+                opcionMenu = Integer.parseInt(JOptionPane.showInputDialog(opcionesSubMenuPeliculas()));
+                
+                switch(opcionMenu) {
+                    case 1:
+                        // PENDIENTE: crear funcion
+                        break;
+                    case 2:
+                        // PENDIENTE: crear funcion
+                        break;
+                    case 3:
+                        // PENDIENTE: crear funcion
+                        break;
+                    default:
+                        System.exit(1); 
+                }
+                
+            }catch (Exception error) {
+                JOptionPane.showMessageDialog(null, "Ingreso un numero o no erroneo", "Advertencia", JOptionPane.ERROR_MESSAGE);
+                subMenuConsultar();
+            }
+        }
+        
+    }
     
 }
