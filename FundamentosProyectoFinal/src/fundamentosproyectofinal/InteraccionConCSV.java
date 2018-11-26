@@ -21,9 +21,7 @@ public class InteraccionConCSV {
     private final String pathDBUsuarios = "src/projectDatabase/usuarios.csv";
     private final String pathDBPeliculas = "src/projectDatabase/peliculas.csv";
     public static final String SEPARADOR = ",";
-    private int cantidadLineasUsuarioCSV;
     private int cantidadColumnasUsuarioCSV;
-    private int cantidadLineasPeliculaCSV;
     private int cantidadColumnasPeliculaCSV;
     
     
@@ -526,13 +524,10 @@ public class InteraccionConCSV {
         
     }
     
-    /*
-    public void contadorLineasColumnasUsuariosCSV() {
+    public void setCantidadColumnasUsuarioCSV() {
         
         // Variables
-        int cantidadLineas = 0;
         int cantidadColumnas = 0;
-        boolean primeraLinea = true;
         
         // Inicializaciones
         BufferedReader bufferLectura = null;
@@ -548,18 +543,9 @@ public class InteraccionConCSV {
             // Leer las lineas del objeto iterable mientras que no sea Null
             while (linea != null) {
                 
-                if(primeraLinea){
-                    String[] campos = linea.split(SEPARADOR);
-                    
-                    cantidadColumnas = campos.length;
-                    
-                    primeraLinea = false;
-                    cantidadLineas++;
-                }else{
-                    cantidadLineas++;
-                }
-                
-                linea = bufferLectura.readLine();
+                String[] campos = linea.split(SEPARADOR);
+                cantidadColumnas = campos.length;
+                linea = null;
                 
             }
             
@@ -575,20 +561,19 @@ public class InteraccionConCSV {
                 }
             }
         }
-        
-        this.cantidadLineasUsuarioCSV = cantidadLineas;
+
         this.cantidadColumnasUsuarioCSV = cantidadColumnas;
         
     }
-    */
     
-    /*
-    public void contadorLineasColumnasPeliculasCSV() {
+    public int getCantidadColumnasUsuarioCSV() {
+        return cantidadColumnasUsuarioCSV;
+    }
+    
+    public void setCantidadColumnasPeliculaCSV() {
         
         // Variables
-        int cantidadLineas = 0;
         int cantidadColumnas = 0;
-        boolean primeraLinea = true;
         
         // Inicializaciones
         BufferedReader bufferLectura = null;
@@ -604,18 +589,9 @@ public class InteraccionConCSV {
             // Leer las lineas del objeto iterable mientras que no sea Null
             while (linea != null) {
                 
-                if(primeraLinea){
-                    String[] campos = linea.split(SEPARADOR);
-                    
-                    cantidadColumnas = campos.length;
-                    
-                    primeraLinea = false;
-                    cantidadLineas++;
-                }else{
-                    cantidadLineas++;
-                }
-                
-                linea = bufferLectura.readLine();
+                String[] campos = linea.split(SEPARADOR);
+                cantidadColumnas = campos.length;
+                linea = null;
                 
             }
             
@@ -631,11 +607,13 @@ public class InteraccionConCSV {
                 }
             }
         }
-        
-        this.cantidadLineasPeliculaCSV = cantidadLineas;
+
         this.cantidadColumnasPeliculaCSV = cantidadColumnas;
         
     }
-    */
+    
+    public int getCantidadColumnasPeliculaCSV() {
+        return cantidadColumnasPeliculaCSV;
+    }
     
 }

@@ -18,8 +18,8 @@ public class Menus {
     */
     
     Miscelaneos miscelaneos = new Miscelaneos();
-    Usuario usuario = new Usuario();
-    InteraccionConCSV interaccionCSV = new InteraccionConCSV();
+    Usuario usuario = null;
+    InteraccionConCSV interaccionCSV = null;
     Interaccion interaccion = new Interaccion();
     
     
@@ -64,7 +64,7 @@ public class Menus {
         // Variables
         int opcionMenu = 1;
         
-        while(opcionMenu > 0 && opcionMenu < 4) {
+        while(opcionMenu >= 1 && opcionMenu < 4) {
             
             try {
                 
@@ -72,7 +72,6 @@ public class Menus {
                 
                 switch(opcionMenu) {
                     case 1:
-                        // PENDIENTE: crear funcion
                         registrarCliente();
                         menuPrincipal();
                         break;
@@ -108,11 +107,35 @@ public class Menus {
     // Opciones: Menu 1.1
     public void registrarCliente() {
 
+        // Generar cantidad de valores de usuario
+        interaccionCSV.setCantidadColumnasUsuarioCSV();
         
+        // Obtener cantidad de valores de usuario
+        int cantidadColumnasUsuario = interaccionCSV.getCantidadColumnasUsuarioCSV();
         
-    }
+        // Mensaje de menu
+        miscelaneos.registroDeUsuarioNuevo();
+        
+        // Crear arreglo donde almacenar informacion de usuario
+        usuario = new Usuario(interaccionCSV.setIdNuevo(),
+                            interaccion.apellidoUsuarioLimpio(),
+                            interaccion.nombreUsuarioLimpio(),
+                            interaccion.segundoNombreUsuarioLimpio(),
+                            interaccion.telefonoLimpio(),
+                            interaccion.generoLimpio(),
+                            interaccion.direccion1UsuarioLimpio(),
+                            interaccion.direccion2UsuarioLimpio(),
+                            interaccion.ciudadLimpio(),
+                            interaccion.provinciaLimpio(),
+                            interaccion.tipoTelefonoLimpio(),
+                            interaccion.correoElectronico(),
+                            true,
+                            false);
+        
+        // Escribir usuario nuevo
+        interaccionCSV.crearUsuarioNuevo(usuario.getUsuarioNuevo());
     
-
+    }
     
     // MENU: 1.1 REGISTAR CLIENTES NUEVOS
     
