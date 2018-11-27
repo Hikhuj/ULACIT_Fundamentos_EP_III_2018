@@ -16,14 +16,16 @@ public class Interaccion {
     /*
         INSTANCIAS 
     */
-    Usuario limpiezaUsuario = new Usuario();
-    Pelicula limpiezaPelicula = new Pelicula();
+
+    
+    
 
     /*
         METODOS
     */
     
     // Métodos para limpiar y atrapar errores en el código: USUARIO Y PELICULAS
+    
     public String apellidoUsuarioLimpio() {
 
         String apellido = JOptionPane.showInputDialog("Ingrese el apellido del cliente: ");
@@ -118,14 +120,16 @@ public class Interaccion {
     public String direccion1UsuarioLimpio() {
         
         String var = JOptionPane.showInputDialog("Ingrese la direccion 1 del usuario");
-        return var;
+        String resultado = var.replace(',', '.');
+        return resultado;
         
     }
     
     public String direccion2UsuarioLimpio() {
         
         String var = JOptionPane.showInputDialog("Ingrese la direccion 2 del usuario");
-        return var;
+        String resultado = var.replace(',', '.');
+        return resultado;
         
     }
     
@@ -282,6 +286,7 @@ public class Interaccion {
         
     }
     
+    /*
     public void yearPeli() {
         int yearPeli;
         boolean done = false;
@@ -297,6 +302,7 @@ public class Interaccion {
             }
         } while (!done);
     }
+    */
 
     public String directorLimpio() {
         

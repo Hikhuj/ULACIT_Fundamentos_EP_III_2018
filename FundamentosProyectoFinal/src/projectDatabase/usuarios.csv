@@ -4,4 +4,5 @@ id,apellido,nombre,segundo_nombre,telefono_primario,genero,direccion_1,direccion
 3,Demo 5,Demo 5,Demo Segundo Nombre 5,22225050,m,Demo 5 Address,Demo 5 Address 2,,,1,ema@il,true,false
 4,Monster,Ducati,,12345678,m,,,,,1,roger@ducati.com,true,false
 5,Demo 5,Demo 5,Demo Segundo Nombre 5,22225050,m,Demo 5 Address,Demo 5 Address 2,,,1,ema@il,true,false
-6,tenia,un,,12345678,m,,,,,blanco,y,color,negro
+6,Ulate,Roger,Jose,85482428,m,Calle Fallas. Desamparados,Desamparados,Desamparados,San Jose,1,roger@roger.net,true,false
+7,Rivera,Priscilla,,12345678,f,Calle Fallas. Desamparados,,Desamparados,San Jose,2,pris@pris.net,true,false
