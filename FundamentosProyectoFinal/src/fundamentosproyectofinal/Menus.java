@@ -18,8 +18,8 @@ public class Menus {
     */
     
     Miscelaneos miscelaneos = new Miscelaneos();
-    Usuario usuario = null;
-    InteraccionConCSV interaccionCSV = null;
+    Usuario usuario;
+    InteraccionConCSV interaccionCSV = new InteraccionConCSV();
     Interaccion interaccion = new Interaccion();
     
     
@@ -61,42 +61,39 @@ public class Menus {
             4. Salir
         */
         
-        // Variables
-        int opcionMenu = 1;
+        int opc = 0;
         
-        while(opcionMenu >= 1 && opcionMenu < 4) {
+        do{
             
-            try {
+            try{
                 
-                opcionMenu = Integer.parseInt(JOptionPane.showInputDialog(opcionesMenuPrincipal()));
+                opc = Integer.parseInt(JOptionPane.showInputDialog(opcionesMenuPrincipal()));
                 
-                switch(opcionMenu) {
+                switch(opc) {
                     case 1:
                         registrarCliente();
-                        menuPrincipal();
                         break;
                     case 2:
-                        // PENDIENTE: crear funcion
-                        subMenuPeliculas();
-                        menuPrincipal();
+                        System.out.println("Opcion 2, salida");
                         break;
                     case 3:
-                        // PENDIENTE: crear funcion
-                        subMenuConsultar();
-                        menuPrincipal();
+                        System.out.println("Opcion 3, salida");
                         break;
+                    case 4:
+                        
                     default:
-                        System.exit(1); 
+                        System.out.println("Selecciono salir del sistema");
+                        System.exit(0);
+                        
                 }
                 
-            }catch (Exception error) {
-                
-                JOptionPane.showMessageDialog(null, "Ingreso un numero o no erroneo", "Advertencia", JOptionPane.ERROR_MESSAGE);
-                menuPrincipal();
-                
+            }catch(Exception error1) {
+            
+                JOptionPane.showMessageDialog(null, "Ingreso o no un valor no numerico", "Error: Menu Principal", JOptionPane.ERROR_MESSAGE);                
+            
             }
             
-        }
+        }while(opc != 4);
         
     }
     
@@ -105,32 +102,26 @@ public class Menus {
     
     // Opciones: Menu 1.1
     public void registrarCliente() {
-
-        // Generar cantidad de valores de usuario
-        interaccionCSV.setCantidadColumnasUsuarioCSV();
-        
-        // Obtener cantidad de valores de usuario
-        int cantidadColumnasUsuario = interaccionCSV.getCantidadColumnasUsuarioCSV();
         
         // Mensaje de menu
         miscelaneos.registroDeUsuarioNuevo();
         
         // Crear arreglo donde almacenar informacion de usuario
         usuario = new Usuario(interaccionCSV.setIdNuevo(),
-                            interaccion.apellidoUsuarioLimpio(),
-                            interaccion.nombreUsuarioLimpio(),
-                            interaccion.segundoNombreUsuarioLimpio(),
-                            interaccion.telefonoLimpio(),
-                            interaccion.generoLimpio(),
-                            interaccion.direccion1UsuarioLimpio(),
-                            interaccion.direccion2UsuarioLimpio(),
-                            interaccion.ciudadLimpio(),
-                            interaccion.provinciaLimpio(),
-                            interaccion.tipoTelefonoLimpio(),
-                            interaccion.correoElectronico(),
-                            true,
-                            false);
-        
+                                interaccion.apellidoUsuarioLimpio(),
+                                interaccion.nombreUsuarioLimpio(),
+                                interaccion.segundoNombreUsuarioLimpio(),
+                                interaccion.telefonoLimpio(),
+                                interaccion.generoLimpio(),
+                                interaccion.direccion1UsuarioLimpio(),
+                                interaccion.direccion2UsuarioLimpio(),
+                                interaccion.ciudadLimpio(),
+                                interaccion.provinciaLimpio(),
+                                interaccion.tipoTelefonoLimpio(),
+                                interaccion.correoElectronico(),
+                                true,
+                                false);
+                
         // Escribir usuario nuevo
         interaccionCSV.crearUsuarioNuevo(usuario.getUsuarioNuevo());
     
