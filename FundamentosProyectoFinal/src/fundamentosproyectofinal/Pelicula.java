@@ -113,6 +113,26 @@ public class Pelicula {
         return estadoPelicula;
     }
 
+    @Override
+    public String toString() {
+        return "Pelicula{" + "idPelicula=" + idPelicula + ", nombrePelicula=" + nombrePelicula + ", year=" + year + ", sinopsis=" + sinopsis + ", director=" + director + ", generoPelicula=" + generoPelicula + ", tipoDisco=" + tipoDisco + ", estadoPelicula=" + estadoPelicula + '}';
+    }
+    
+    public String toString(String [] informacionPelicula) {
+        
+        String valores = "Informacion de pelicula: "
+                + "\nID: " + informacionPelicula[0]
+                + "\nNombre: " + informacionPelicula[1]
+                + "\nAnio: " + informacionPelicula[2]
+                + "\nDescipcion: " + informacionPelicula[3]
+                + "\nDirector: " + informacionPelicula[4]
+                + "\nGenero: " + informacionPelicula[5]
+                + "\nTipo Disco: " + informacionPelicula[6]
+                + "\nEstado: " + informacionPelicula[7];
+        
+        return valores;
+        
+    }
     
     //     public void setYear() {
 //        boolean done = false;
@@ -186,4 +206,5 @@ public class Pelicula {
 //                        break;
 //                
 //                }
+    
 }

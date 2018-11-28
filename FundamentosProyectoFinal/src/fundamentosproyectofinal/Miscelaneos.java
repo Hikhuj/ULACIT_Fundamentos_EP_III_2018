@@ -27,6 +27,12 @@ public class Miscelaneos {
         
     }
     
+    public void saludoBuscarPelicula() {
+        
+        JOptionPane.showMessageDialog(null, "Vamos a buscar pelicula por ID unicamente.", "Buscar pelicula", JOptionPane.INFORMATION_MESSAGE);
+        
+    }
+    
     public void despedida() {
         
         System.out.println("\n");
