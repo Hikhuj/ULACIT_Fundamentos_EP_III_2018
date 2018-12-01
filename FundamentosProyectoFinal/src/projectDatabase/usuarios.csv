@@ -1,8 +1,11 @@
 id,apellido,nombre,segundo_nombre,telefono_primario,genero,direccion_1,direccion_2,ciudad,provincia,telefono_tipo,email,estado_cliente,peliculas_rentadas
-1,Astin,Shavez,,22503745,m,,,,,2,petersko@outlook.com,false,false
-2,Walker,Aubrey,,22508589,f,,,,,3,openldap@outlook.com,false,false
-3,Demo 5,Demo 5,Demo Segundo Nombre 5,22225050,m,Demo 5 Address,Demo 5 Address 2,,,1,ema@il,true,false
-4,Monster,Ducati,,12345678,m,,,,,1,roger@ducati.com,true,false
-5,Demo 5,Demo 5,Demo Segundo Nombre 5,22225050,m,Demo 5 Address,Demo 5 Address 2,,,1,ema@il,true,false
-6,Ulate,Roger,Jose,85482428,m,Calle Fallas. Desamparados,Desamparados,Desamparados,San Jose,1,roger@roger.net,true,false
-7,Rivera,Priscilla,,12345678,f,Calle Fallas. Desamparados,,Desamparados,San Jose,2,pris@pris.net,true,false
+1,Astin,Shavez,,22503745,m,,,,,Hogar,petersko@outlook.com,false,false
+2,Walker,Aubrey,,22508589,f,,,,,Oficina,openldap@outlook.com,false,false
+3,Demo 5,Demo 5,Demo Segundo Nombre 5,22225050,m,Demo 5 Address,Demo 5 Address 2,,,Celular,ema@il,true,false
+4,Monster,Ducati,,12345678,m,,,,,Celular,roger@ducati.com,true,false
+5,Demo 5,Demo 5,Demo Segundo Nombre 5,22225050,m,Demo 5 Address,Demo 5 Address 2,,,Celular,ema@il,true,false
+6,Ulate,Roger,Jose,85482428,m,Calle Fallas. Desamparados,Desamparados,Desamparados,San Jose,Celular,roger@roger.net,true,false
+7,Rivera,Priscilla,,12345678,f,Calle Fallas. Desamparados,,Desamparados,San Jose,Hogar,pris@pris.net,true,false
+8,Carioca,Calleb,J.,85482428,m,Caellasd as,Aser SUite #302,Nandayure,Guanacaste,Oficina,test@test.com,true,false
+9,Lopez,Karla,,85338103,f,Los Colegios,,San Jose,San Jose,Otro,karla@lopez.ac.cr,true,false
+10,TestT,NombTest,J,88994422,m,Direccion1,,Sna Jose,San Jose,Otro,test@test.ed.cr,true,false

@@ -25,9 +25,7 @@ public class Menus {
     Interaccion interaccion = new Interaccion();
     
     
-    /*
-        METODOS
-    */
+    /*      METODOS     */
     
     public void inicializador() {
         
@@ -38,17 +36,13 @@ public class Menus {
     
     
     
-    /*
-    
-        MENU PRINCIPAL
-    
-    */
+    /*      MENU PRINCIPAL      */
     
     // Opciones: Menu principal
     public String opcionesMenuPrincipal() {
         
         String resultado = "Menu Principal:"
-                            + "\n1. Registrar clientes nuevos"
+                            + "\n1. Menu de Usuarios"
                             + "\n2. Menu de Peliculas"
                             + "\n3. Consultar informacion"
                             + "\n4. Salir";
@@ -62,7 +56,7 @@ public class Menus {
         
         /*
             Opciones de menu
-            1. Registrar clientes nuevos
+            1. Menu de Usuarios
             2. Menu de Peliculas
             3. Consultar informacion
             4. Salir
@@ -78,19 +72,81 @@ public class Menus {
                 
                 switch(opc) {
                     case 1:
-                        // Para registrar un cliente nuevo
-                        registrarCliente();
+                        subMenuUsuarios();
                         break;
                     case 2:
-                        // Menus sobre la seccion de peliculas
                         subMenuPeliculas();
                         break;
                     case 3:
-                        // Funcion Pendiente
-                        System.out.println("Opcion 3, salida");
+                        subMenuConsultar();
+                        break;
+                    case 4:
+                        System.exit(0);
                         break;
                     default:
-                        System.exit(0);
+                        JOptionPane.showMessageDialog(null, "Opcion fuera de rango", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+                
+            }catch(HeadlessException | NumberFormatException error1) {
+            
+                JOptionPane.showMessageDialog(null, "Ingreso o no un valor no numerico", "Error", JOptionPane.ERROR_MESSAGE);                
+            
+            }
+            
+        }while(opc != 4);
+        
+        System.exit(0);
+        
+    }
+    
+    
+    
+    /*      MENU: 1.1 MENUS DE USUARIOS     */
+    
+    // Opociones: Menu 1.1
+    public String opcionesSubMenuUsuarios() {
+        
+        String resultado = "Menu de peliculas:"
+                            + "\n1. Ingresar nuevo Usuario"
+                            + "\n2. Editar informacion de Usuario (Pendiente)"
+                            + "\n3. Volver al menu principal";
+                
+        return resultado;
+        
+    }
+    
+    // Menu 1.1 Menu de usuarios
+    public void subMenuUsuarios() {
+        
+        /*
+            Menu de peliculas:
+            1. Ingresar nuevo Usuario
+            2. Editar informacion de Usuario
+            3. Volver al menu principal
+        */
+        
+
+        int opc = 0;
+        
+        do{
+            
+            try{
+                
+                opc = Integer.parseInt(JOptionPane.showInputDialog(opcionesSubMenuUsuarios()));
+                
+                switch(opc) {
+                    case 1:
+                        menuPrincipal();
+                        break;
+                    case 2:
+                        registrarCliente();
+                        menuPrincipal();
+                        break;
+                    case 3:
+                        menuPrincipal();
+                        break;
+                    default:
+                        JOptionPane.showMessageDialog(null, "Opcion fuera de rango", "Error", JOptionPane.ERROR_MESSAGE);
                         
                 }
                 
@@ -103,15 +159,8 @@ public class Menus {
         }while(opc != 4);
         
     }
-    
-    
-    
-    /*
-    
-        MENU: 1.1 REGISTRAR CLIENTES NUEVOS
-    
-    */
 
+    // Registrar un cliente nuevo
     public void registrarCliente() {
         
         // Mensaje de menu
@@ -140,20 +189,15 @@ public class Menus {
     
     
     
-    /*
-    
-        MENU: 1.2 MENU DE PELICULAS
-    
-    */
+    /*      MENU: 1.2 MENU DE PELICULAS     */
     
     // Opciones: Menu 1.2
     public String opcionesSubMenuPeliculas() {
         
         String resultado = "Menu de peliculas:"
-                            + "\n1. Buscar pelicula"
-                            + "\n2. Ingresar nueva pelicula"
-                            + "\n3. Editar informacion de pelicula"
-                            + "\n4. Volver al menu principal";
+                            + "\n1. Ingresar nueva pelicula"
+                            + "\n2. Editar informacion de pelicula (pendiente)"
+                            + "\n3. Volver al menu principal";
                 
         return resultado;
         
@@ -164,10 +208,9 @@ public class Menus {
         
         /*
             Menu de peliculas:
-            1. Buscar pelicula
-            2. Ingresar nueva pelicula
-            3. Editar informacion de pelicula
-            4. Volver al menu principal
+            1. Ingresar nueva pelicula
+            2. Editar informacion de pelicula
+            3. Volver al menu principal
         */
         
 
@@ -181,75 +224,66 @@ public class Menus {
                 
                 switch(opc) {
                     case 1:
-                        buscarPelicula();
+                        menuPrincipal();
                         break;
                     case 2:
-                        
+                        menuPrincipal();
                         break;
                     case 3:
-                        
+                        menuPrincipal();
                         break;
                     default:
-                        menuPrincipal();
+                        JOptionPane.showMessageDialog(null, "Opcion fuera de rango", "Error", JOptionPane.ERROR_MESSAGE);
                         
                 }
                 
             }catch(HeadlessException | NumberFormatException error1) {
             
-                JOptionPane.showMessageDialog(null, "Ingreso o no un valor no numerico", "Error: Menu Principal", JOptionPane.ERROR_MESSAGE);                
+                JOptionPane.showMessageDialog(null, "Ingreso o no un valor no numerico", "Error", JOptionPane.ERROR_MESSAGE);                
             
             }
             
         }while(opc != 4);
         
     }
+  
+    // Registrar un cliente nuevo
+    public void registrarPelicula() {
+        
+        // Mensaje de menu
+        miscelaneos.registroDeUsuarioNuevo();
+        
+        // Crear arreglo donde almacenar informacion de usuario
+        usuario = new Usuario(interaccionCSV.setIdNuevo(),
+                                interaccion.apellidoUsuarioLimpio(),
+                                interaccion.nombreUsuarioLimpio(),
+                                interaccion.segundoNombreUsuarioLimpio(),
+                                interaccion.telefonoLimpio(),
+                                interaccion.generoLimpio(),
+                                interaccion.direccion1UsuarioLimpio(),
+                                interaccion.direccion2UsuarioLimpio(),
+                                interaccion.ciudadLimpio(),
+                                interaccion.provinciaLimpio(),
+                                interaccion.tipoTelefonoLimpio(),
+                                interaccion.correoElectronico(),
+                                true,
+                                false);
+                
+        // Escribir usuario nuevo
+        interaccionCSV.crearUsuarioNuevo(usuario.getUsuarioNuevo());
     
-    // Metodo para buscar una pelicula especifica por medio de id
-    public void buscarPelicula() {
-        
-        miscelaneos.saludoBuscarPelicula();
-        
-        int idBuscar;
-        String [] informacionUsuario;
-        
-        try {
-            
-            idBuscar = Integer.parseInt(JOptionPane.showInputDialog("Por favor ingrese el ID de la pelicula"));
-
-            informacionUsuario = interaccionCSV.buscarPelicula(String.valueOf(idBuscar));
-            
-            if(informacionUsuario == null) {
-                
-                JOptionPane.showMessageDialog(null, "No existe informacion de la pelicula", "Error: Menu Buscar Peliculas", JOptionPane.ERROR_MESSAGE);
-                
-            }else{
-            
-                pelicula.toString(informacionUsuario);
-            
-            }
-            
-        }catch(HeadlessException | NumberFormatException error2){
-        
-            JOptionPane.showMessageDialog(null, "Ingreso o no un valor no numerico", "Error: Menu Principal", JOptionPane.ERROR_MESSAGE);
-            
-        }
-        
     }
-
-
     
-    /*
     
-        MENU: 1.3 CONSULTAR INFORMACION
-    
-    */
+    /*      MENU: 1.3 CONSULTAR INFORMACION     */
     
     // Opciones: Menu 1.3
     public String opcionesSubMenuConsultar() {
         
         String resultado = "Menu de peliculas:"
                             + "\n1. Consultar informacion de usuarios"
-                            + "\n2. Consultar informacion de peliculas";
+                            + "\n2. Consultar informacion de peliculas"
+                            + "\n3. Volver al menu principal";
                 
         return resultado;
         
@@ -259,38 +293,86 @@ public class Menus {
     public void subMenuConsultar() {
         
         /*
-            Menu de Consultas:
-            1. Consultar informacion de usuarios
-            2. Consultar informacion de peliculas
+            Menu de peliculas:
+            1. Buscar Usuario
+            2. Buscar Pelicula
+            3. Volver al menu principal
         */
         
-        // Variables
-        int opcionMenu = 1;
+
+        int opc = 0;
         
-        while(opcionMenu > 0 && opcionMenu < 3) {
+        do{
             
-            try {
+            try{
                 
-                opcionMenu = Integer.parseInt(JOptionPane.showInputDialog(opcionesSubMenuPeliculas()));
+                opc = Integer.parseInt(JOptionPane.showInputDialog(opcionesSubMenuConsultar()));
                 
-                switch(opcionMenu) {
+                switch(opc) {
                     case 1:
-                        // PENDIENTE: crear funcion
+                        buscarUsuario();
+                        menuPrincipal();
                         break;
                     case 2:
-                        // PENDIENTE: crear funcion
+                        buscarPelicula();
+                        menuPrincipal();
                         break;
                     case 3:
-                        // PENDIENTE: crear funcion
+                        menuPrincipal();
                         break;
                     default:
-                        System.exit(1); 
+                        JOptionPane.showMessageDialog(null, "Opcion fuera de rango", "Error", JOptionPane.ERROR_MESSAGE);
                 }
                 
-            }catch (Exception error) {
-                JOptionPane.showMessageDialog(null, "Ingreso un numero o no erroneo", "Advertencia", JOptionPane.ERROR_MESSAGE);
-                subMenuConsultar();
+            }catch(HeadlessException | NumberFormatException error1) {
+            
+                JOptionPane.showMessageDialog(null, "Ingreso o no un valor no numerico", "Error", JOptionPane.ERROR_MESSAGE);                
+            
             }
+            
+        }while(opc != 3);
+        
+    }
+    
+    // Metodo para buscar una pelicula especifica por medio de id
+    public void buscarUsuario() {
+
+        miscelaneos.saludoBuscarUsuario();
+
+        int idBuscar;
+
+        try {
+
+            idBuscar = Integer.parseInt(JOptionPane.showInputDialog("Por favor ingrese el ID del usuario"));
+
+            interaccion.imprimirDatosUsuario(interaccionCSV.buscarUsuario(String.valueOf(idBuscar)));
+
+        }catch(HeadlessException | NumberFormatException error2){
+
+            JOptionPane.showMessageDialog(null, "Ingreso o no un valor no numerico", "Error: Menu Principal", JOptionPane.ERROR_MESSAGE);
+
+        }
+
+    }
+    
+    // Metodo para buscar una pelicula especifica por medio de id
+    public void buscarPelicula() {
+        
+        miscelaneos.saludoBuscarPelicula();
+        
+        int idBuscar;
+        // String [] informacionUsuario;
+        
+        try {
+            
+            idBuscar = Integer.parseInt(JOptionPane.showInputDialog("Por favor ingrese el ID de la pelicula"));
+   
+            interaccion.imprimirDatosPelicula(interaccionCSV.buscarPelicula(String.valueOf(idBuscar)));
+            
+        }catch(HeadlessException | NumberFormatException error2){
+        
+            JOptionPane.showMessageDialog(null, "Ingreso o no un valor no numerico", "Error: Menu Principal", JOptionPane.ERROR_MESSAGE);
+            
         }
         
     }

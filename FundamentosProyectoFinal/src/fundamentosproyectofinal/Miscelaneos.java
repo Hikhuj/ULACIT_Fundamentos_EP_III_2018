@@ -33,6 +33,12 @@ public class Miscelaneos {
         
     }
     
+    public void saludoBuscarUsuario() {
+        
+        JOptionPane.showMessageDialog(null, "Vamos a buscar usuario por ID unicamente.", "Buscar usuario", JOptionPane.INFORMATION_MESSAGE);
+        
+    }
+    
     public void despedida() {
         
         System.out.println("\n");
