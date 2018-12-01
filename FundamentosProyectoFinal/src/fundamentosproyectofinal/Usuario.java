@@ -25,7 +25,7 @@ public class Usuario {
     private String direccion2;
     private String ciudad;
     private String provincia;
-    private int tipoTelefono;
+    private String tipoTelefono;
     private String correoElectronico;
     private boolean estadoCliente;
     private boolean peliculasRentadas;
@@ -39,7 +39,7 @@ public class Usuario {
         
     }
 
-    public Usuario(int id, String apellido, String nombre, String segundoNombre, int telefono, char genero, String direccion1, String direccion2, String ciudad, String provincia, int tipoTelefono, String correoElectronico, boolean estadoCliente, boolean peliculasRentadas) {
+    public Usuario(int id, String apellido, String nombre, String segundoNombre, int telefono, char genero, String direccion1, String direccion2, String ciudad, String provincia, String tipoTelefono, String correoElectronico, boolean estadoCliente, boolean peliculasRentadas) {
         this.id = id;
         this.apellido = apellido;
         this.nombre = nombre;
@@ -101,7 +101,7 @@ public class Usuario {
         this.provincia = provincia;
     }
 
-    public void setTipoTelefono(int tipoTelefono) {
+    public void setTipoTelefono(String tipoTelefono) {
         this.tipoTelefono = tipoTelefono;
     }
 
@@ -157,7 +157,7 @@ public class Usuario {
         return provincia;
     }
 
-    public int getTipoTelefono() {
+    public String getTipoTelefono() {
         return tipoTelefono;
     }
 

@@ -26,8 +26,8 @@ public class Pelicula {
     private int year;
     private String sinopsis;
     private String director;
-    private int generoPelicula;
-    private int tipoDisco;
+    private String generoPelicula;
+    private String tipoDisco;
     private boolean estadoPelicula;
     
 
@@ -38,7 +38,7 @@ public class Pelicula {
     public Pelicula() {
     }
     
-    public Pelicula(int idPelicula, String nombrePelicula, int year, String sinopsis, String director, int generoPelicula, int tipoDisco, boolean estadoPelicula) {
+    public Pelicula(int idPelicula, String nombrePelicula, int year, String sinopsis, String director, String generoPelicula, String tipoDisco, boolean estadoPelicula) {
         this.idPelicula = idPelicula;
         this.nombrePelicula = nombrePelicula;
         this.year = year;
@@ -69,11 +69,22 @@ public class Pelicula {
         this.director = director;
     }
 
-    public void setGeneroPelicula(int generoPelicula) {
+    public void setGeneroPelicula(String generoPelicula) {
+        /*
+            Genero manejado en Peliculas:
+            1. Comedia
+            2. Romance
+            3. Drama
+            4. Scifi
+            5. Terror
+            6. Fantasía
+            7. Independiente
+        */
+        
         this.generoPelicula = generoPelicula;
     }
 
-    public void setTipoDisco(int tipoDisco) {
+    public void setTipoDisco(String tipoDisco) {
         this.tipoDisco = tipoDisco;
     }
 
@@ -101,11 +112,11 @@ public class Pelicula {
         return director;
     }
 
-    public int getGeneroPelicula() {
+    public String getGeneroPelicula() {
         return generoPelicula;
     }
 
-    public int getTipoDisco() {
+    public String getTipoDisco() {
         return tipoDisco;
     }
 
@@ -113,77 +124,10 @@ public class Pelicula {
         return estadoPelicula;
     }
 
+    @Override
+    public String toString() {
+        return "Pelicula{" + "idPelicula=" + idPelicula + ", nombrePelicula=" + nombrePelicula + ", year=" + year + ", sinopsis=" + sinopsis + ", director=" + director + ", generoPelicula=" + generoPelicula + ", tipoDisco=" + tipoDisco + ", estadoPelicula=" + estadoPelicula + '}';
+    }
     
-    //     public void setYear() {
-//        boolean done = false;
-//        do {
-//            try {
-//                String texto = JOptionPane.showInputDialog("Ingrese el año de la película");
-//                this.year = Integer.parseInt(texto);
-//                JOptionPane.showMessageDialog(null,"El año ingresado es: "+ this.year);
-//                done = true;
-//            } catch (NumberFormatException ex) {
-//                JOptionPane.showMessageDialog(null,"Error al ingresar el año, solo escriba números, no letras.");
-//            }
-//        } while (!done);
-//       
-//    }
-
-//     public void setDirector() {
-//        
-//         this.director = JOptionPane.showInputDialog("Ingrese el nombre del director.");
-//        while (this.director.contains("1") || this.director.contains("2") 
-//                || this.director.contains("3")|| this.director.contains("4")
-//                || this.director.contains("5")|| this.director.contains("6")
-//                || this.director.contains("7")|| this.director.contains("8")
-//                || this.director.contains("9")|| this.director.contains("0")) {
-//             JOptionPane.showMessageDialog(null, "El nombre no debe contener números. "
-//                       + "Ingréselo de nuevo.");
-//             this.director = JOptionPane.showInputDialog("Ingrese el nombre del director.");
-//        }
-//        JOptionPane.showMessageDialog(null,"El nombre ingresado fue: " +this.director);
-//    }
-//
-//  public void setGeneroPelicula() {
-//        
-//         int opcion=Integer.parseInt (JOptionPane.showInputDialog("Ingrese el número correspondiente al género"
-//                 + " de la película: "
-//                + " \n 1. Comedia. \n 2. Romance \n 3. Drama. \n 4. Scifi. \n 5. Terror."
-//                + "\n 6. Fantasía. \n 7. Independiente."));
-//                switch (opcion){
-//                    case 1:
-//                        this.generoPelicula= "Comedia";
-//                        JOptionPane.showMessageDialog(null, "El género elegido fue: " + this.generoPelicula);
-//                        break;
-//                    case 2:
-//                        this.generoPelicula= "Romance";
-//                        JOptionPane.showMessageDialog(null, "El género elegido  fue: " + this.generoPelicula);
-//                        break;
-//                        
-//                        case 3:
-//                        this.generoPelicula= "Drama";
-//                        JOptionPane.showMessageDialog(null, "El género elegido fue: " + this.generoPelicula);
-//                        break;
-//
-//                        case 4:
-//                        this.generoPelicula= "Scifi";
-//                        JOptionPane.showMessageDialog(null, "El género elegido fue: " + this.generoPelicula);
-//                        break;
-//                        
-//                        case 5:
-//                        this.generoPelicula= "Terror";
-//                        JOptionPane.showMessageDialog(null, "El género elegido fue: " + this.generoPelicula);
-//                        break;
-//
-//                        case 6:
-//                        this.generoPelicula= "Fantasía";
-//                       JOptionPane.showMessageDialog(null, "El género elegido fue: " + this.generoPelicula);
-//                        break;
-//
-//                        case 7:
-//                        this.generoPelicula= "Independiente";
-//                        JOptionPane.showMessageDialog(null, "El género elegido fue: " + this.generoPelicula);
-//                        break;
-//                
-//                }
+    
 }

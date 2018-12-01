@@ -1,7 +1,7 @@
 id,nombre,anio,descripcion,director,genero_pelicula,tipo_disco,estado_pelicula
-1,The Wizard of Oz,1939,"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",director1,1,1,true
-2,Citizen Kane,1941,"Duis dapibus nulla ut urna finibus, ac venenatis nisl tristique.",director2,2,1,true
-3,Demo nombre,1998,Demo descripcion,demoDirector,3,1,false
-4,The Third Man,1949,Morbi et odio vitae sem vestibulum rhoncus.,director4,4,2,false
-5,Mad Max: Fury Road,2015,"Proin sed elit eleifend, vestibulum mauris ac, interdum ipsum.",director5,5,2,false
-6,tenia,2018,un,director6,6,2,false
+1,The Wizard of Oz,1939,Lorem ipsum dolor sit amet. consectetur adipiscing elit.,director1,Comedia,DVD,true
+2,Citizen Kane,1941,Duis dapibus nulla ut urna finibus. ac venenatis nisl tristique.,director2,Romance,DVD,true
+3,Demo nombre,1998,Demo descripcion,demoDirector,Drama,DVD,false
+4,The Third Man,1949,Morbi et odio vitae sem vestibulum rhoncus.,director4,Sci-Fi,BD-DISC,false
+5,Mad Max: Fury Road,2015,Proin sed elit eleifend. vestibulum mauris ac. interdum ipsum.,director5,Terror,BD-DISC,false
+6,tenia,2018,un,director6,Fantasia,BD-DISC,false

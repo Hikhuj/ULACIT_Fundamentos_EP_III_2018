@@ -14,10 +14,39 @@ import javax.swing.JOptionPane;
 public class Interaccion {
 
     /*
+        VARIABLES
+    */
+    private final String [] datosDB = {"Id: ", 
+                                        "Nombre: ", 
+                                        "Anio: ", 
+                                        "Sinopsis: ",
+                                        "Director: ",
+                                        "Genero: ",
+                                        "Tipo de Disco: ",
+                                        "Estado de pelicula: "};
+    
+    private final String [] datosDBUsuario = {
+                                                "Id: ",
+                                                "Apellido: ",
+                                                "Nombre: ",
+                                                "Segundo Nombre: ",
+                                                "Telefono Primario: ",
+                                                "Genero: ",
+                                                "Direccion 1: ",
+                                                "Direccion 2: ",
+                                                "Ciudad: ",
+                                                "Provincia: ",
+                                                "Tipo de Telefono: ",
+                                                "Correo Electronico: ",
+                                                "Estado del Cliente: ",
+                                                "Peliculas Rentadas: ",
+                                            };
+    
+    /*
         INSTANCIAS 
     */
 
-    
+    Pelicula pelicula = null;
     
 
     /*
@@ -133,21 +162,36 @@ public class Interaccion {
         
     }
     
-    public int tipoTelefonoLimpio() {
+    public String tipoTelefonoLimpio() {
 
-        int tipoTelefono = 0;
+        int opc = 0;
         boolean done = true;
+        String result = "";
         
         while(done) {
             
             try{
-                tipoTelefono = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el tipo de teléfono:"
+                opc = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el tipo de teléfono:"
                 + "\n 1. Celular."
                 + "\n 2. Hogar "
                 + "\n 3. Oficina. "
                 + "\n 4. Otro."));
                 
-                if(tipoTelefono > 0 && tipoTelefono < 5){
+                if(opc > 0 && opc < 5){
+                    switch(opc) {
+                        case 1:
+                            result = "Celular";
+                            break;
+                        case 2:
+                            result = "Hogar";
+                            break;
+                        case 3:
+                            result = "Oficina";
+                            break;
+                        case 4:
+                            result = "Otro";
+                            break;
+                    }
                     done = false;
                 }else{
                     JOptionPane.showMessageDialog(null, "Opcion fuera de rango", "Error", JOptionPane.ERROR_MESSAGE);
@@ -158,7 +202,7 @@ public class Interaccion {
             
         }
         
-        return tipoTelefono;
+        return result;
         
     }
 
@@ -323,66 +367,151 @@ public class Interaccion {
         return director;
         
     }
-
-    /*
-    public void generoPelicula() {
-
-        String generoPeli;
-
-        int opcion = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el número correspondiente al género"
-                + " de la película: "
-                + "\n 1. Comedia. "
-                + "\n 2. Romance "
-                + "\n 3. Drama. "
-                + "\n 4. Scifi. "
-                + "\n 5. Terror."
-                + "\n 6. Fantasía."
-                + "\n 7. Independiente."));
-
-        switch (opcion) {
-            case 1:
-                generoPeli = "Comedia";
-                limpiezaPelicula.setGeneroPelicula(generoPeli);
-                JOptionPane.showMessageDialog(null, "El género elegido fue: " + limpiezaPelicula.getGeneroPelicula());
-                break;
-            case 2:
-                generoPeli = "Romance";
-                limpiezaPelicula.setGeneroPelicula(generoPeli);
-                JOptionPane.showMessageDialog(null, "El género elegido fue: " + limpiezaPelicula.getGeneroPelicula());
-                break;
-
-            case 3:
-                generoPeli = "Drama";
-                limpiezaPelicula.setGeneroPelicula(generoPeli);
-                JOptionPane.showMessageDialog(null, "El género elegido fue: " + limpiezaPelicula.getGeneroPelicula());
-                break;
-
-            case 4:
-                generoPeli = "Scifi";
-                limpiezaPelicula.setGeneroPelicula(generoPeli);
-                JOptionPane.showMessageDialog(null, "El género elegido fue: " + limpiezaPelicula.getGeneroPelicula());
-                break;
-
-            case 5:
-                generoPeli = "Terror";
-                limpiezaPelicula.setGeneroPelicula(generoPeli);
-                JOptionPane.showMessageDialog(null, "El género elegido fue: " + limpiezaPelicula.getGeneroPelicula());
-                break;
-
-            case 6:
-                generoPeli = "Fantasía";
-                limpiezaPelicula.setGeneroPelicula(generoPeli);
-                JOptionPane.showMessageDialog(null, "El género elegido fue: " + limpiezaPelicula.getGeneroPelicula());
-                break;
-
-            case 7:
-                generoPeli = "Independiente";
-                limpiezaPelicula.setGeneroPelicula(generoPeli);
-                JOptionPane.showMessageDialog(null, "El género elegido fue: " + limpiezaPelicula.getGeneroPelicula());
-                break;
+    
+    public void imprimirDatosPelicula(String [] informacionPelicula) {
+        
+        if(informacionPelicula != null){
+                
+            for (int i = 0; i < informacionPelicula.length; i++) {
+            
+                if(i == (informacionPelicula.length - 1)) {
+                    
+                    if(informacionPelicula[i].equals("true")) {
+                        System.out.println(datosDB[i] + "Activo");
+                    }else{
+                        System.out.println(datosDB[i] + "No Activo");
+                    }
+                    
+                }else{
+                    
+                    System.out.println(datosDB[i] + informacionPelicula[i]);
+                    
+                }
+                
+            }
+                
+        }else{
+            
+            JOptionPane.showMessageDialog(null, "No existe pelicula con ese ID", "Error: Busqueda Pelicula", JOptionPane.ERROR_MESSAGE);
+            
         }
-
+        
     }
-    */
+    
+    // VOY POR ACA
+    public void imprimirDatosUsuario(String [] informacionUsuario) {
+        
+        /*
+            "Id: ",
+            "Apellido: ",
+            "Nombre: ",
+            "Segundo Nombre: ",
+            "Telefono Primario: ",
+            "Genero: ",
+            "Direccion 1: ",
+            "Direccion 2: ",
+            "Ciudad",
+            "Provincia",
+            "Tipo de Telefono: ",
+            "Correo Electronico: ",
+            "Estado del Cliente: ",
+            "Peliculas Rentadas: ",
+        */
+        
+        if(informacionUsuario != null){
+                
+            for (int i = 0; i < informacionUsuario.length; i++) {
+            
+                switch(i) {
+                    case 12:
+                        if(informacionUsuario[i].equals("true")) {
+                            System.out.println(datosDBUsuario[i] + "Activo");
+                        }else{
+                            System.out.println(datosDBUsuario[i] + "No Activo");
+                        }
+                        break;
+                    case 13:
+                        if(informacionUsuario[i].equals("true")) {
+                            System.out.println(datosDBUsuario[i] + "Si");
+                        }else{
+                            System.out.println(datosDBUsuario[i] + "No");
+                        }
+                        break;
+                    default:
+                    System.out.println(datosDBUsuario[i] + informacionUsuario[i]);
+                    
+                }
+                
+            }
+                
+        }else{
+            
+            JOptionPane.showMessageDialog(null, "No existe pelicula con ese ID", "Error: Busqueda Pelicula", JOptionPane.ERROR_MESSAGE);
+            
+        }
+        
+    }
+
+    public String generoPelicula() {
+
+        String result = "";
+        boolean done = true;
+        
+        do{
+        
+            try{
+
+                int opcion = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el número correspondiente al género"
+                    + " de la película: "
+                    + "\n 1. Comedia. "
+                    + "\n 2. Romance "
+                    + "\n 3. Drama. "
+                    + "\n 4. Scifi. "
+                    + "\n 5. Terror."
+                    + "\n 6. Fantasía."
+                    + "\n 7. Independiente."));
+
+                switch (opcion) {
+                    case 1:
+                        result = "Comedia";
+                        done = false;
+                        break;
+                    case 2:
+                        result = "Romance";
+                        done = false;
+                        break;
+                    case 3:
+                        result = "Drama";
+                        done = false;
+                        break;
+                    case 4:
+                        result = "Sci-Fi";
+                        done = false;
+                        break;
+                    case 5:
+                        result = "Terror";
+                        done = false;
+                        break;
+                    case 6:
+                        result = "Fantasia";
+                        done = false;
+                        break;
+                    case 7:
+                        result = "Independiente";
+                        done = false;
+                        break;
+                }
+
+            }catch(Exception e) {
+
+                JOptionPane.showMessageDialog(null, "Ingreso o no un valor no numerico", "Error: Menu Principal", JOptionPane.ERROR_MESSAGE);
+
+            }
+        
+        }while(done);
+
+        return result;
+        
+    }
 
 }
