@@ -109,6 +109,12 @@ public class Miscelaneos {
     }
     
     
+    // Registro de pelicula nueva
+    public void registroDePeliculaNueva(){
+        JOptionPane.showMessageDialog(null, "Registrando nueva pelicula", "Pelicula Nueva", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    
     public void mensajeErrorValorFueraRango() {
         
         JOptionPane.showMessageDialog(null, "Opcion fuera de rango", "Error", JOptionPane.ERROR_MESSAGE);
@@ -120,6 +126,5 @@ public class Miscelaneos {
         JOptionPane.showMessageDialog(null, "Ingreso o no un valor no numerico", "Error", JOptionPane.ERROR_MESSAGE);
 
     }
-
 
 }
