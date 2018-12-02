@@ -5,9 +5,6 @@
  */
 package fundamentosproyectofinal;
 
-import java.util.InputMismatchException;
-import javax.swing.JOptionPane;
-
 /**
  *
  */
@@ -124,6 +121,21 @@ public class Pelicula {
         return estadoPelicula;
     }
 
+    public String [] getPeliculaNueva() {
+        
+        String [] peliculaNueva = {String.valueOf(getIdPelicula()),
+                                    String.valueOf(getNombrePelicula()),
+                                    String.valueOf(getYear()),
+                                    String.valueOf(getSinopsis()),
+                                    String.valueOf(getDirector()),
+                                    String.valueOf(getGeneroPelicula()),
+                                    String.valueOf(getTipoDisco()),
+                                    String.valueOf(isEstadoPelicula())};
+        
+        return peliculaNueva;
+        
+    }
+    
     @Override
     public String toString() {
         return "Pelicula{" + "idPelicula=" + idPelicula + ", nombrePelicula=" + nombrePelicula + ", year=" + year + ", sinopsis=" + sinopsis + ", director=" + director + ", generoPelicula=" + generoPelicula + ", tipoDisco=" + tipoDisco + ", estadoPelicula=" + estadoPelicula + '}';

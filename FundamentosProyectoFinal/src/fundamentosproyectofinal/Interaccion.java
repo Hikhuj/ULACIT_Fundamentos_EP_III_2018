@@ -112,8 +112,7 @@ public class Interaccion {
                 || segundoNombre.contains("5") || segundoNombre.contains("6")
                 || segundoNombre.contains("7") || segundoNombre.contains("8")
                 || segundoNombre.contains("9") || segundoNombre.contains("0")) {
-            JOptionPane.showMessageDialog(null, "El segundo nombre no debe contener números. "
-                    + "Ingréselo de nuevo");
+            JOptionPane.showMessageDialog(null, "El segundo nombre no debe contener números. Ingréselo de nuevo");
             segundoNombre = JOptionPane.showInputDialog("Ingrese el segundo nombre del cliente:");
         }
 
@@ -340,24 +339,6 @@ public class Interaccion {
         return resultado;
         
     }
-    
-    /*
-    public void yearPeli() {
-        int yearPeli;
-        boolean done = false;
-        do {
-            try {
-                String texto = JOptionPane.showInputDialog("Ingrese el año de la película");
-                yearPeli = Integer.parseInt(texto);
-                limpiezaPelicula.setYear(yearPeli);
-                JOptionPane.showMessageDialog(null, "El año ingresado es: " + limpiezaPelicula.getYear());
-                done = true;
-            } catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(null, "Error al ingresar el año, solo escriba números, no letras.");
-            }
-        } while (!done);
-    }
-    */
 
     public String directorLimpio() {
         
@@ -409,7 +390,6 @@ public class Interaccion {
         
     }
     
-    // VOY POR ACA
     public void imprimirDatosUsuario(String [] informacionUsuario) {
         
         /*
@@ -536,4 +516,120 @@ public class Interaccion {
         
     }
 
+    public String nombrePeliculaLimpio() {
+        
+        String var = JOptionPane.showInputDialog("Ingrese nombre de pelicula");
+        String resultado = var.replace(',', '.');
+        return resultado;
+        
+    }
+    
+    public String descripcionPeliculaLimpio() {
+        
+        String var = JOptionPane.showInputDialog("Ingrese descripcion de pelicula");
+        String resultado = var.replace(',', '.');
+        return resultado;
+        
+    }
+    
+    public int anioLimpio() {
+
+        // Variables
+        boolean done = false;
+        int result = 0;
+        String anioPelicula;
+
+        do {
+            
+            anioPelicula = JOptionPane.showInputDialog("Ingrese el anio de pelicula (sin espacios ni guiones):");
+            
+            try {
+                
+                if(anioPelicula.length() == 4) {
+                    result = Integer.parseInt(anioPelicula);
+                    done = true;
+                }else{
+                    JOptionPane.showMessageDialog(null, "Anio debe ser 4 digitos unicamente.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+                
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "Debe ingresar numeros unicamente.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+
+        } while (!done);
+        
+        return result;
+
+    }
+
+    public String nombreDirectorPeliculaLimpio() {
+
+        String nombre = JOptionPane.showInputDialog("Ingrese el nombre director de pelicula: ");
+
+        while (nombre.contains("1") || nombre.contains("2")
+                || nombre.contains("3") || nombre.contains("4")
+                || nombre.contains("5") || nombre.contains("6")
+                || nombre.contains("7") || nombre.contains("8")
+                || nombre.contains("9") || nombre.contains("0")) {
+            JOptionPane.showMessageDialog(null, "El nombre no debe contener números. Ingréselo de nuevo");
+            nombre = JOptionPane.showInputDialog("Ingrese el nombre director de pelicula: ");
+        }
+
+        String resultado = nombre.replace(',', '.');
+        
+        return resultado;
+
+    }
+
+    public String tipoDiscoPeliculaLimpio() {
+
+        int opc = 0;
+        boolean done = true;
+        String result = "";
+        
+        while(done) {
+            
+            try{
+                opc = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el tipo de disco de pelicula:"
+                + "\n 1. DVD"
+                + "\n 2. Blu-ray DISK"
+                + "\n 4. Otro"));
+                
+                if(opc > 0 && opc < 4){
+                    
+                    switch(opc) {
+                        case 1:
+                            result = "DVD";
+                            break;
+                        case 2:
+                            result = "Blu-ray DISK";
+                            break;
+                        case 3:
+                            result = "Otro";
+                            break;
+                    }
+                    
+                    done = false;
+                    
+                }else{
+                    
+                    miscelaneos.mensajeErrorValorFueraRango();
+                    
+                }
+            }catch(Exception e) {
+                
+                miscelaneos.mensajeErrorValorNuloONoNumerico();
+                
+            }
+            
+        }
+        
+        return result;
+        
+    }
+    
+    
+    
+    
+    
 }
