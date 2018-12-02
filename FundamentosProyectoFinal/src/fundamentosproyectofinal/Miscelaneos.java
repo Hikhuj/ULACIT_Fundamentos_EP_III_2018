@@ -108,4 +108,18 @@ public class Miscelaneos {
         JOptionPane.showMessageDialog(null, "Registrando nuevo usuario", "Usuario Nuevo", JOptionPane.INFORMATION_MESSAGE);
     }
     
+    
+    public void mensajeErrorValorFueraRango() {
+        
+        JOptionPane.showMessageDialog(null, "Opcion fuera de rango", "Error", JOptionPane.ERROR_MESSAGE);
+        
+    }
+    
+    public void mensajeErrorValorNuloONoNumerico() {
+    
+        JOptionPane.showMessageDialog(null, "Ingreso o no un valor no numerico", "Error", JOptionPane.ERROR_MESSAGE);
+
+    }
+
+
 }
