@@ -84,12 +84,12 @@ public class Menus {
                         System.exit(0);
                         break;
                     default:
-                        JOptionPane.showMessageDialog(null, "Opcion fuera de rango", "Error", JOptionPane.ERROR_MESSAGE);
+                        miscelaneos.mensajeErrorValorFueraRango();
                 }
                 
             }catch(HeadlessException | NumberFormatException error1) {
             
-                JOptionPane.showMessageDialog(null, "Ingreso o no un valor no numerico", "Error", JOptionPane.ERROR_MESSAGE);                
+                miscelaneos.mensajeErrorValorNuloONoNumerico();                
             
             }
             
@@ -146,13 +146,13 @@ public class Menus {
                         menuPrincipal();
                         break;
                     default:
-                        JOptionPane.showMessageDialog(null, "Opcion fuera de rango", "Error", JOptionPane.ERROR_MESSAGE);
+                        miscelaneos.mensajeErrorValorFueraRango();
                         
                 }
                 
             }catch(HeadlessException | NumberFormatException error1) {
             
-                JOptionPane.showMessageDialog(null, "Ingreso o no un valor no numerico", "Error: Menu Principal", JOptionPane.ERROR_MESSAGE);                
+                miscelaneos.mensajeErrorValorNuloONoNumerico();               
             
             }
             
@@ -224,7 +224,7 @@ public class Menus {
                 
                 switch(opc) {
                     case 1:
-                        menuPrincipal();
+                        registrarPelicula();
                         break;
                     case 2:
                         menuPrincipal();
@@ -233,13 +233,13 @@ public class Menus {
                         menuPrincipal();
                         break;
                     default:
-                        JOptionPane.showMessageDialog(null, "Opcion fuera de rango", "Error", JOptionPane.ERROR_MESSAGE);
+                        miscelaneos.mensajeErrorValorFueraRango();
                         
                 }
                 
             }catch(HeadlessException | NumberFormatException error1) {
             
-                JOptionPane.showMessageDialog(null, "Ingreso o no un valor no numerico", "Error", JOptionPane.ERROR_MESSAGE);                
+                miscelaneos.mensajeErrorValorNuloONoNumerico();               
             
             }
             
@@ -321,12 +321,12 @@ public class Menus {
                         menuPrincipal();
                         break;
                     default:
-                        JOptionPane.showMessageDialog(null, "Opcion fuera de rango", "Error", JOptionPane.ERROR_MESSAGE);
+                        miscelaneos.mensajeErrorValorFueraRango();
                 }
                 
             }catch(HeadlessException | NumberFormatException error1) {
             
-                JOptionPane.showMessageDialog(null, "Ingreso o no un valor no numerico", "Error", JOptionPane.ERROR_MESSAGE);                
+                miscelaneos.mensajeErrorValorNuloONoNumerico();               
             
             }
             
@@ -349,7 +349,7 @@ public class Menus {
 
         }catch(HeadlessException | NumberFormatException error2){
 
-            JOptionPane.showMessageDialog(null, "Ingreso o no un valor no numerico", "Error: Menu Principal", JOptionPane.ERROR_MESSAGE);
+            miscelaneos.mensajeErrorValorNuloONoNumerico();
 
         }
 
@@ -361,8 +361,7 @@ public class Menus {
         miscelaneos.saludoBuscarPelicula();
         
         int idBuscar;
-        // String [] informacionUsuario;
-        
+
         try {
             
             idBuscar = Integer.parseInt(JOptionPane.showInputDialog("Por favor ingrese el ID de la pelicula"));
@@ -371,7 +370,7 @@ public class Menus {
             
         }catch(HeadlessException | NumberFormatException error2){
         
-            JOptionPane.showMessageDialog(null, "Ingreso o no un valor no numerico", "Error: Menu Principal", JOptionPane.ERROR_MESSAGE);
+            miscelaneos.mensajeErrorValorNuloONoNumerico();
             
         }
         

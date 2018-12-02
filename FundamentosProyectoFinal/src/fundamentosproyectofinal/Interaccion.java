@@ -23,7 +23,7 @@ public class Interaccion {
                                         "Director: ",
                                         "Genero: ",
                                         "Tipo de Disco: ",
-                                        "Estado de pelicula: "};
+                                        "Pelicula rentada?: "};
     
     private final String [] datosDBUsuario = {
                                                 "Id: ",
@@ -47,6 +47,7 @@ public class Interaccion {
     */
 
     Pelicula pelicula = null;
+    Miscelaneos miscelaneos = new Miscelaneos();
     
 
     /*
@@ -69,7 +70,9 @@ public class Interaccion {
             apellido = JOptionPane.showInputDialog("Ingrese el apellido del cliente: ");
         }
 
-        return apellido;
+        String resultado = apellido.replace(',', '.');
+        
+        return resultado;
         
     }
     
@@ -93,7 +96,9 @@ public class Interaccion {
             nombre = JOptionPane.showInputDialog("Ingrese el nombre del cliente: ");
         }
 
-        return nombre;
+        String resultado = nombre.replace(',', '.');
+        
+        return resultado;
 
     }
     
@@ -112,7 +117,9 @@ public class Interaccion {
             segundoNombre = JOptionPane.showInputDialog("Ingrese el segundo nombre del cliente:");
         }
 
-        return segundoNombre;
+        String resultado = segundoNombre.replace(',', '.');
+        
+        return resultado;
         
     }
     
@@ -194,10 +201,10 @@ public class Interaccion {
                     }
                     done = false;
                 }else{
-                    JOptionPane.showMessageDialog(null, "Opcion fuera de rango", "Error", JOptionPane.ERROR_MESSAGE);
+                    miscelaneos.mensajeErrorValorFueraRango();
                 }
             }catch(Exception e) {
-                JOptionPane.showMessageDialog(null, "No ingreso un valor numerico", "Error", JOptionPane.ERROR_MESSAGE);
+                miscelaneos.mensajeErrorValorNuloONoNumerico();
             }
             
         }
@@ -208,7 +215,7 @@ public class Interaccion {
 
     public char generoLimpio() {
         
-        char genero = 'f';
+        char genero = 'F';
         boolean done = true;
         int opcion;
         
@@ -216,28 +223,28 @@ public class Interaccion {
             
             try{
                 opcion = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el número correspondiente al género de la persona:"
-                                                                    + "\n1. Femenino."
-                                                                    + "\n2. Maculino"
+                                                                    + "\n1. Femenino"
+                                                                    + "\n2. Masculino"
                                                                     + "\n3. Otro"));
                 if(opcion > 0 && opcion < 4) {
                     switch (opcion) {
                         case 1:
-                            genero = 'f';
+                            genero = 'F';
                             break;
                         case 2:
-                            genero = 'm';
+                            genero = 'M';
                             break;
                         case 3:
-                            genero = 'o';
+                            genero = 'O';
                             break;
                     }
                     done = false;
                 }else{
-                    JOptionPane.showMessageDialog(null, "Opcion fuera de rango", "Error", JOptionPane.ERROR_MESSAGE);
+                    miscelaneos.mensajeErrorValorFueraRango();
                 }
                 
             }catch(Exception e) {
-                JOptionPane.showMessageDialog(null, "Error: Valor no numerico", "Error", JOptionPane.ERROR_MESSAGE);
+                miscelaneos.mensajeErrorValorNuloONoNumerico();
             }
             
         }
@@ -249,7 +256,9 @@ public class Interaccion {
     public String ciudadLimpio() {
         
         String var = JOptionPane.showInputDialog("Ingrese la ciudad del usuario");
-        return var;
+        String resultado = var.replace(',', '.');
+        
+        return resultado;
         
     }
     
@@ -296,11 +305,11 @@ public class Interaccion {
                     }
                     done = false;
                 }else{
-                    JOptionPane.showMessageDialog(null, "Opcion fuera de rango", "Error", JOptionPane.ERROR_MESSAGE);
+                    miscelaneos.mensajeErrorValorFueraRango();
                 }
                 
             }catch(Exception e) {
-                JOptionPane.showMessageDialog(null, "Error: Valor no numerico", "Error", JOptionPane.ERROR_MESSAGE);
+                miscelaneos.mensajeErrorValorNuloONoNumerico();
             }
             
         }
@@ -325,8 +334,10 @@ public class Interaccion {
             }
             
         }
-
-        return correoElectronico;
+        
+        String resultado = correoElectronico.replace(',', '.');
+        
+        return resultado;
         
     }
     
@@ -364,7 +375,9 @@ public class Interaccion {
             director = JOptionPane.showInputDialog("Ingrese el nombre del director.");
         }
 
-        return director;
+        String resultado = director.replace(',', '.');
+        
+        return resultado;
         
     }
     
@@ -373,19 +386,17 @@ public class Interaccion {
         if(informacionPelicula != null){
                 
             for (int i = 0; i < informacionPelicula.length; i++) {
-            
-                if(i == (informacionPelicula.length - 1)) {
-                    
-                    if(informacionPelicula[i].equals("true")) {
-                        System.out.println(datosDB[i] + "Activo");
-                    }else{
-                        System.out.println(datosDB[i] + "No Activo");
-                    }
-                    
-                }else{
-                    
-                    System.out.println(datosDB[i] + informacionPelicula[i]);
-                    
+
+                switch(i) {
+                    case 7:
+                        if(informacionPelicula[i].equals("true")) {
+                            System.out.println(datosDB[i] + "Disponible");
+                        }else{
+                            System.out.println(datosDB[i] + "No disponible");
+                        }
+                        break;
+                    default:
+                        System.out.println(datosDB[i] + informacionPelicula[i]);
                 }
                 
             }
@@ -423,6 +434,17 @@ public class Interaccion {
             for (int i = 0; i < informacionUsuario.length; i++) {
             
                 switch(i) {
+                    case 5:
+                        if(informacionUsuario[i].equals("F")) {
+                            System.out.println(datosDBUsuario[i] + "Femenino");
+                        }else{
+                            if(informacionUsuario[i].equals("M")) {
+                                System.out.println(datosDBUsuario[i] + "Masculino");
+                            }else{
+                                System.out.println(datosDBUsuario[i] + "Otro");
+                            }
+                        }
+                        break;
                     case 12:
                         if(informacionUsuario[i].equals("true")) {
                             System.out.println(datosDBUsuario[i] + "Activo");
@@ -504,10 +526,10 @@ public class Interaccion {
 
             }catch(Exception e) {
 
-                JOptionPane.showMessageDialog(null, "Ingreso o no un valor no numerico", "Error: Menu Principal", JOptionPane.ERROR_MESSAGE);
+                miscelaneos.mensajeErrorValorNuloONoNumerico();
 
             }
-        
+
         }while(done);
 
         return result;
