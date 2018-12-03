@@ -628,8 +628,271 @@ public class Interaccion {
         
     }
     
+    public boolean estadoClienteLimpio() {
+            
+        boolean result = true;
+        int opc;
+        boolean done = true;
+        
+        do{
+
+            try{
+
+                opc = Integer.parseInt(JOptionPane.showInputDialog("Elija el estado de cliente"
+                                                                    + "\n1. Activo"
+                                                                    + "\n2. Desactivado"));
+
+                switch(opc) {
+                    case 1:
+                        result = true;
+                        done = false;
+                        break;
+                    case 2:
+                        result = false;
+                        done = false;
+                        break;
+                }
+
+            }catch(Exception e) {
+
+                miscelaneos.mensajeErrorValorNuloONoNumerico();
+
+            }
+
+        }while(done);
+        
+        return result;
+        
+    }
     
+    public boolean tienePeliculasRentada() {
+            
+        boolean result = true;
+        int opc;
+        boolean done = true;
+        
+        do{
+
+            try{
+
+                opc = Integer.parseInt(JOptionPane.showInputDialog("Cliente tiene peliculas rentadas"
+                                                                    + "\n1. Si"
+                                                                    + "\n2. No"));
+
+                switch(opc) {
+                    case 1:
+                        result = true;
+                        done = false;
+                        break;
+                    case 2:
+                        result = false;
+                        done = false;
+                        break;
+                }
+
+            }catch(Exception e) {
+
+                miscelaneos.mensajeErrorValorNuloONoNumerico();
+
+            }
+
+        }while(done);
+        
+        return result;
+        
+    }
     
+    public boolean estadoPelicula() {
+            
+        boolean result = true;
+        int opc;
+        boolean done = true;
+        
+        do{
+
+            try{
+
+                opc = Integer.parseInt(JOptionPane.showInputDialog("Pelicula esta rentada?"
+                                                                    + "\n1. Si"
+                                                                    + "\n2. No"));
+
+                switch(opc) {
+                    case 1:
+                        result = true;
+                        done = false;
+                        break;
+                    case 2:
+                        result = false;
+                        done = false;
+                        break;
+                }
+
+            }catch(Exception e) {
+
+                miscelaneos.mensajeErrorValorNuloONoNumerico();
+
+            }
+
+        }while(done);
+        
+        return result;
+        
+    }
     
+    public String [] editorCliente(String [] informacionCliente) {
+        
+        String [] result = informacionCliente;
+        boolean done = true;
+        
+        do{
+            
+            int opc = Integer.parseInt(JOptionPane.showInputDialog("Que informacion desea modificar"
+                                                + "\n1. Apellido"
+                                                + "\n2. Nombre"
+                                                + "\n3. Segundo Nombre"
+                                                + "\n4. Telefono Primario"
+                                                + "\n5. Genero"
+                                                + "\n6. Direccion 1"
+                                                + "\n7. Direccion 2"
+                                                + "\n8. Ciudad"
+                                                + "\n9. Provincia"
+                                                + "\n10. Tipo Telefono"
+                                                + "\n11. Correo Electronico"
+                                                + "\n12. Estado Cliente"
+                                                + "\n13. Peliculas Rentadas"
+                                                + "\n14. Terminar Edicion"));
+            
+            switch(opc) {
+                case 1:
+                    miscelaneos.valorAnterior(result[1]);
+                    result[1] = apellidoUsuarioLimpio();
+                    break;
+                case 2:
+                    miscelaneos.valorAnterior(result[2]);
+                    result[2] = nombreUsuarioLimpio();
+                    break;
+                case 3:
+                    miscelaneos.valorAnterior(result[3]);
+                    result[2] = segundoNombreUsuarioLimpio();
+                    break;
+                case 4:
+                    miscelaneos.valorAnterior(result[4]);
+                    result[4] = String.valueOf(telefonoLimpio());
+                    break;
+                case 5:
+                    miscelaneos.valorAnterior(result[5]);
+                    result[5] = String.valueOf(generoLimpio());
+                    break;
+                case 6:
+                    miscelaneos.valorAnterior(result[6]);
+                    result[6] = direccion1UsuarioLimpio();
+                    break;
+                case 7:
+                    miscelaneos.valorAnterior(result[7]);
+                    result[7] = direccion2UsuarioLimpio();
+                    break;
+                case 8:
+                    miscelaneos.valorAnterior(result[8]);
+                    result[8] = ciudadLimpio();
+                    break;
+                case 9:
+                    miscelaneos.valorAnterior(result[9]);
+                    result[9] = provinciaLimpio();
+                    break;
+                case 10:
+                    miscelaneos.valorAnterior(result[10]);
+                    result[10] = tipoTelefonoLimpio();
+                    break;
+                case 11:
+                    miscelaneos.valorAnterior(result[11]);
+                    result[10] = correoElectronico();
+                    break;
+                case 12:
+                    if(result[12].equals("true")){
+                        miscelaneos.valorAnterior("Activo");
+                    }else{
+                        miscelaneos.valorAnterior("Desactivado");
+                    }
+                    result[12] = String.valueOf(estadoClienteLimpio());
+                    break;
+                case 13:
+                    if(result[13].equals("true")){
+                        miscelaneos.valorAnterior("Si");
+                    }else{
+                        miscelaneos.valorAnterior("No");
+                    }
+                    result[13] = String.valueOf(tienePeliculasRentada());
+                    break;
+                case 14:
+                    done = false;
+                    break;    
+            }
+
+        }while(done);
+
+        return result;
+        
+    }
+    
+    public String [] editorPelicula(String [] informacionPelicula) {
+        
+        String [] result = informacionPelicula;
+        boolean done = true;
+        
+        do{
+            
+            int opc = Integer.parseInt(JOptionPane.showInputDialog("Que informacion desea modificar"
+                                                + "\n1. Nombre"
+                                                + "\n2. Anio"
+                                                + "\n3. Descripcion"
+                                                + "\n4. Director"
+                                                + "\n5. Genero de pelicula"
+                                                + "\n6. Tipo de disco"
+                                                + "\n7. Estado de Pelicula"
+                                                + "\n8. Terminar Edicion"));
+            
+            switch(opc) {
+                case 1:
+                    miscelaneos.valorAnterior(result[1]);
+                    result[1] = nombrePeliculaLimpio();
+                    break;
+                case 2:
+                    miscelaneos.valorAnterior(result[2]);
+                    result[2] = String.valueOf(anioLimpio());
+                    break;
+                case 3:
+                    miscelaneos.valorAnterior(result[3]);
+                    result[2] = descripcionPeliculaLimpio();
+                    break;
+                case 4:
+                    miscelaneos.valorAnterior(result[4]);
+                    result[4] = nombreDirectorPeliculaLimpio();
+                    break;
+                case 5:
+                    miscelaneos.valorAnterior(result[5]);
+                    result[5] = generoPelicula();
+                    break;
+                case 6:
+                    miscelaneos.valorAnterior(result[6]);
+                    result[6] = tipoDiscoPeliculaLimpio();
+                    break;
+                case 7:
+                    if(result[7].equals("true")){
+                        miscelaneos.valorAnterior("Rentada");
+                    }else{
+                        miscelaneos.valorAnterior("No rentada");
+                    }
+                    result[7] = String.valueOf(estadoPelicula());
+                    break;
+                case 8:
+                    done = false;
+                    break;    
+            }
+
+        }while(done);
+
+        return result;
+        
+    }
     
 }
