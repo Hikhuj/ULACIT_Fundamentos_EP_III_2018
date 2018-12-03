@@ -108,13 +108,12 @@ public class Miscelaneos {
         JOptionPane.showMessageDialog(null, "Registrando nuevo usuario", "Usuario Nuevo", JOptionPane.INFORMATION_MESSAGE);
     }
     
-    
+
     // Registro de pelicula nueva
     public void registroDePeliculaNueva(){
         JOptionPane.showMessageDialog(null, "Registrando nueva pelicula", "Pelicula Nueva", JOptionPane.INFORMATION_MESSAGE);
     }
 
-    
     public void mensajeErrorValorFueraRango() {
         
         JOptionPane.showMessageDialog(null, "Opcion fuera de rango", "Error", JOptionPane.ERROR_MESSAGE);
@@ -127,4 +126,38 @@ public class Miscelaneos {
 
     }
 
+    public void saludoEditarCliente() {
+        
+        JOptionPane.showMessageDialog(null, "Editar informacion de un usuario", "Editar Informacion Usuario", JOptionPane.INFORMATION_MESSAGE);
+    }
+    
+    public void saludoEditarPelicula() {
+        
+        JOptionPane.showMessageDialog(null, "Editar informacion de pelicula", "Editar Informacion Pelicula", JOptionPane.INFORMATION_MESSAGE);
+    }
+    
+    public void infoUsuarioInexistente() {
+        
+        JOptionPane.showMessageDialog(null, "ID no registrado en sistema", "Error", JOptionPane.ERROR_MESSAGE);
+        
+    }
+    
+    public void valorAnterior(String var) {
+        
+        JOptionPane.showMessageDialog(null, "Valor anterior: " + var, "Valor Anterior", JOptionPane.ERROR_MESSAGE);
+
+    }
+    
+    public void actualizacionExitosa(){
+        
+        JOptionPane.showMessageDialog(null, "Actualizacion de datos exitosa", "Actualizacion Datos", JOptionPane.INFORMATION_MESSAGE);
+        
+    }
+    
+    public void actualizacionSinExito(){
+        
+        JOptionPane.showMessageDialog(null, "Actualizacion de datos de sin exito", "Actualizacion Datos", JOptionPane.INFORMATION_MESSAGE);
+        
+    }
+    
 }

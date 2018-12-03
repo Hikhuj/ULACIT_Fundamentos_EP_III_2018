@@ -4,6 +4,6 @@ id,nombre,anio,descripcion,director,genero_pelicula,tipo_disco,estado_pelicula
 3,Demo nombre,1998,Demo descripcion,demoDirector,Drama,DVD,false
 4,The Third Man,1949,Morbi et odio vitae sem vestibulum rhoncus.,director4,Sci-Fi,Blue-ray DISK,false
 5,Mad Max: Fury Road,2015,Proin sed elit eleifend. vestibulum mauris ac. interdum ipsum.,director5,Terror,Otro,false
-6,tenia,2018,un,director6,Fantasia,Blue-ray DISK,false
+6,Enter the Matrix,2018,un,director6,Fantasia,Blue-ray DISK,false
 
 7,DemoPelicula,1992,DescripcionPelicula,Roman Polanski,Drama,DVD,true

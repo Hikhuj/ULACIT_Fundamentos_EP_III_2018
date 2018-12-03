@@ -214,6 +214,7 @@ public class InteraccionConCSV {
                     if(idEncontrado(campos, idRecibido) == true) {
                         
                         escribirEnTemp(array,tempPath);
+                        result = true;
                         
                     }else{
                         
@@ -290,6 +291,7 @@ public class InteraccionConCSV {
                     if(idEncontrado(campos, idRecibido) == true) {
                         
                         escribirEnTemp(array,tempPath);
+                        result = true;
                         
                     }else{
                         

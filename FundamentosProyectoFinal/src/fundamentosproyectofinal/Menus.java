@@ -108,7 +108,7 @@ public class Menus {
         
         String resultado = "Menu de peliculas:"
                             + "\n1. Ingresar nuevo Usuario"
-                            + "\n2. Editar informacion de Usuario (Pendiente)"
+                            + "\n2. Editar informacion de Usuario"
                             + "\n3. Volver al menu principal";
                 
         return resultado;
@@ -136,11 +136,12 @@ public class Menus {
                 
                 switch(opc) {
                     case 1:
-                        menuPrincipal();
+                        registrarCliente();
+                        subMenuUsuarios();
                         break;
                     case 2:
-                        registrarCliente();
-                        menuPrincipal();
+                        editarCliente();
+                        subMenuUsuarios();
                         break;
                     case 3:
                         menuPrincipal();
@@ -186,7 +187,51 @@ public class Menus {
         interaccionCSV.crearUsuarioNuevo(usuario.getUsuarioNuevo());
     
     }
-    
+
+    // Editar informacion usuario
+    public void editarCliente() {
+        
+        miscelaneos.saludoEditarCliente();
+
+        int idBuscar;
+        
+        String [] info;
+        String [] infoTemp;
+        boolean done;
+
+        try {
+
+            idBuscar = Integer.parseInt(JOptionPane.showInputDialog("Ingrese ID de usuario a modificar"));
+
+            info = interaccionCSV.buscarUsuario(String.valueOf(idBuscar));
+            
+            if(info != null){
+            
+                infoTemp = interaccion.editorCliente(info);
+                
+                if(interaccionCSV.actualizarDatosUsuario(infoTemp, String.valueOf(idBuscar))){
+                    
+                    miscelaneos.actualizacionExitosa();
+                    
+                }else{
+                    
+                    miscelaneos.actualizacionSinExito();
+                    
+                }
+                
+            }else{
+                
+                miscelaneos.infoUsuarioInexistente();
+                
+            }
+
+        }catch(HeadlessException | NumberFormatException error2){
+
+            miscelaneos.mensajeErrorValorNuloONoNumerico();
+
+        }
+        
+    }
     
     
     /*      MENU: 1.2 MENU DE PELICULAS     */
@@ -196,7 +241,7 @@ public class Menus {
         
         String resultado = "Menu de peliculas:"
                             + "\n1. Ingresar nueva pelicula"
-                            + "\n2. Editar informacion de pelicula (pendiente)"
+                            + "\n2. Editar informacion de pelicula"
                             + "\n3. Volver al menu principal";
                 
         return resultado;
@@ -225,9 +270,11 @@ public class Menus {
                 switch(opc) {
                     case 1:
                         registrarPelicula();
+                        subMenuPeliculas();
                         break;
                     case 2:
-                        menuPrincipal();
+                        editarPelicula();
+                        subMenuPeliculas();
                         break;
                     case 3:
                         menuPrincipal();
@@ -268,6 +315,50 @@ public class Menus {
     
     }
     
+    public void editarPelicula() {
+        
+        miscelaneos.saludoEditarPelicula();
+
+        int idBuscar;
+        
+        String [] info;
+        String [] infoTemp;
+        boolean done;
+
+        try {
+
+            idBuscar = Integer.parseInt(JOptionPane.showInputDialog("Ingrese ID de pelicula a modificar"));
+
+            info = interaccionCSV.buscarPelicula(String.valueOf(idBuscar));
+            
+            if(info != null){
+            
+                infoTemp = interaccion.editorPelicula (info);
+                
+                if(interaccionCSV.actualizarDatosPelicula(infoTemp, String.valueOf(idBuscar))){
+                    
+                    miscelaneos.actualizacionExitosa();
+                    
+                }else{
+                    
+                    miscelaneos.actualizacionSinExito();
+                    
+                }
+                
+            }else{
+                
+                miscelaneos.infoUsuarioInexistente();
+                
+            }
+
+        }catch(HeadlessException | NumberFormatException error2){
+
+            miscelaneos.mensajeErrorValorNuloONoNumerico();
+
+        }
+        
+    }
+    
     
     /*      MENU: 1.3 CONSULTAR INFORMACION     */
     
@@ -305,11 +396,11 @@ public class Menus {
                 switch(opc) {
                     case 1:
                         buscarUsuario();
-                        menuPrincipal();
+                        subMenuConsultar();
                         break;
                     case 2:
                         buscarPelicula();
-                        menuPrincipal();
+                        subMenuConsultar();
                         break;
                     case 3:
                         menuPrincipal();
