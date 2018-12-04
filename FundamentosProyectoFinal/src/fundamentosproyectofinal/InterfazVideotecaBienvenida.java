@@ -30,7 +30,7 @@ public class InterfazVideotecaBienvenida extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        BienvenidaMenuPrincipal = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -39,10 +39,15 @@ public class InterfazVideotecaBienvenida extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo arreglado.jpg"))); // NOI18N
 
-        jButton1.setText("MENU PRINCIPAL");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        BienvenidaMenuPrincipal.setText("MENU PRINCIPAL");
+        BienvenidaMenuPrincipal.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                BienvenidaMenuPrincipalMouseClicked(evt);
+            }
+        });
+        BienvenidaMenuPrincipal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BienvenidaMenuPrincipalActionPerformed(evt);
             }
         });
 
@@ -61,7 +66,7 @@ public class InterfazVideotecaBienvenida extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(128, 128, 128)
-                        .addComponent(jButton1)))
+                        .addComponent(BienvenidaMenuPrincipal)))
                 .addContainerGap(72, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -71,8 +76,8 @@ public class InterfazVideotecaBienvenida extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addComponent(BienvenidaMenuPrincipal)
                 .addContainerGap())
         );
 
@@ -96,11 +101,15 @@ public class InterfazVideotecaBienvenida extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void BienvenidaMenuPrincipalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BienvenidaMenuPrincipalMouseClicked
             InterfazMenuPrincipal menu= new InterfazMenuPrincipal();
             menu.setVisible(true);
             this.dispose();
-    }//GEN-LAST:event_jButton1MouseClicked
+    }//GEN-LAST:event_BienvenidaMenuPrincipalMouseClicked
+
+    private void BienvenidaMenuPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BienvenidaMenuPrincipalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BienvenidaMenuPrincipalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -139,7 +148,7 @@ public class InterfazVideotecaBienvenida extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton BienvenidaMenuPrincipal;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
