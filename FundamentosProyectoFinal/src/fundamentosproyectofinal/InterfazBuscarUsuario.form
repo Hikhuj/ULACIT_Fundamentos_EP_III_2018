@@ -23,27 +23,35 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="ConsultarUsuarioLimpiar" linkSize="1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-              <Component id="ConsultarUsuarioVolverAlMenuPrincipal" linkSize="1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="ConsultarUsuarioBuscarBtn" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="ConsultarUsuarioLimpiarBtn" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="ConsultarUsuarioVolverAlMenuPrincipalBtn" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="21" max="32767" attributes="0"/>
+                  </Group>
+                  <Component id="jPanel1" alignment="1" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              <Component id="jPanel1" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="ConsultarUsuarioVolverAlMenuPrincipal" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="ConsultarUsuarioLimpiar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ConsultarUsuarioBuscarBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ConsultarUsuarioLimpiarBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ConsultarUsuarioVolverAlMenuPrincipalBtn" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -65,9 +73,71 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="ConsultarUsuarioIDUsuario" min="-2" pref="178" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="69" pref="69" max="-2" attributes="0"/>
+                          <Component id="ConsultarUsuarioIDUsuario" min="-2" pref="178" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="ConsultarUsuarioDireccion2Txt" linkSize="2" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="ConsultarUsuarioDireccion1Txt" linkSize="2" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="ConsultarUsuarioGeneroTxt" linkSize="2" max="32767" attributes="0"/>
+                                  <Component id="ConsultarUsuarioTelefonoTxt" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="ConsultarUsuarioSegundoNombreTxt" max="32767" attributes="0"/>
+                                  <Component id="ConsultarUsuarioNombreTxt" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel13" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="ConsultarUsuarioTipoTelefonoTxt" max="32767" attributes="0"/>
+                                  <Component id="ConsultarUsuarioEstadoClienteTxt" max="32767" attributes="0"/>
+                                  <Component id="ConsultarUsuarioEmailTxt" max="32767" attributes="0"/>
+                                  <Component id="ConsultarUsuarioProvinciaTxt" max="32767" attributes="0"/>
+                                  <Component id="ConsultarUsuarioCiudadTxt" linkSize="2" max="32767" attributes="0"/>
+                                  <Component id="ConsultarUsuarioPeliculasRentadasTxt" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
+                          <Component id="ConsultarUsuarioTipoApellidoTxt" min="-2" pref="135" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -80,7 +150,72 @@
                       <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="ConsultarUsuarioIDUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="84" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="ConsultarUsuarioTipoApellidoTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="ConsultarUsuarioNombreTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="ConsultarUsuarioSegundoNombreTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="ConsultarUsuarioTelefonoTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="ConsultarUsuarioGeneroTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="ConsultarUsuarioDireccion1Txt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="ConsultarUsuarioDireccion2Txt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="ConsultarUsuarioCiudadTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="ConsultarUsuarioProvinciaTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel14" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                      <Component id="ConsultarUsuarioTipoTelefonoTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="ConsultarUsuarioEmailTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="14" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="ConsultarUsuarioEstadoClienteTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="ConsultarUsuarioPeliculasRentadasTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -93,19 +228,165 @@
         </Component>
         <Component class="javax.swing.JTextField" name="ConsultarUsuarioIDUsuario">
         </Component>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Nombre:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Segundo Nombre:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Apellido:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel6">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Tel&#xe9;fono primario:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel7">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="G&#xe9;nero:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel8">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Direcci&#xf3;n 1:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel9">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Direcci&#xf3;n 2:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel10">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ciudad:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel11">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Provincia:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel12">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="E-mail:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel13">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Estado del cliente"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel14">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Tipo de tel&#xe9;fono:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ConsultarUsuarioTipoApellidoTxt">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="                               "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ConsultarUsuarioNombreTxt">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="                                        "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ConsultarUsuarioSegundoNombreTxt">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="                                    "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ConsultarUsuarioTelefonoTxt">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="                                          "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ConsultarUsuarioGeneroTxt">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="                                     "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ConsultarUsuarioDireccion1Txt">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="                                            "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ConsultarUsuarioDireccion2Txt">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="                                        "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ConsultarUsuarioCiudadTxt">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="                           "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ConsultarUsuarioProvinciaTxt">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="                              "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ConsultarUsuarioEmailTxt">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="                                "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ConsultarUsuarioEstadoClienteTxt">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="                               "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ConsultarUsuarioTipoTelefonoTxt">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="                                    "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Pel&#xed;culas rentadas:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="ConsultarUsuarioPeliculasRentadasTxt">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="                                    "/>
+          </Properties>
+          <AccessibilityProperties>
+            <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="                                        "/>
+          </AccessibilityProperties>
+        </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="ConsultarUsuarioLimpiar">
+    <Component class="javax.swing.JButton" name="ConsultarUsuarioLimpiarBtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="Limpiar"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ConsultarUsuarioLimpiarBtnMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ConsultarUsuarioLimpiarBtnActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="ConsultarUsuarioVolverAlMenuPrincipal">
+    <Component class="javax.swing.JButton" name="ConsultarUsuarioVolverAlMenuPrincipalBtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="Volver al men&#xfa; principal"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ConsultarUsuarioVolverAlMenuPrincipalMouseClicked"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ConsultarUsuarioVolverAlMenuPrincipalBtnMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ConsultarUsuarioVolverAlMenuPrincipalBtnActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="ConsultarUsuarioBuscarBtn">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Buscar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ConsultarUsuarioBuscarBtnMouseClicked"/>
       </Events>
     </Component>
   </SubComponents>

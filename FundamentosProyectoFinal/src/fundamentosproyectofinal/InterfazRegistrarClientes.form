@@ -34,18 +34,18 @@
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="13" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="UsuarioNuevoGuardar" linkSize="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="UsuarioNuevoGuardarBtn" linkSize="3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="UsuarioNuevoBorrarDatos" linkSize="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="UsuarioNuevoLimpiarCasillasBtn" linkSize="3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="UsuarioNuevoVolverAlMenuPrincipal" min="-2" max="-2" attributes="0"/>
+                              <Component id="UsuarioNuevoVolverAlMenuPrincipalBtn" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -65,9 +65,9 @@
               <Component id="jPanel2" max="32767" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="UsuarioNuevoGuardar" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="UsuarioNuevoBorrarDatos" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="UsuarioNuevoVolverAlMenuPrincipal" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="UsuarioNuevoGuardarBtn" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="UsuarioNuevoLimpiarCasillasBtn" linkSize="4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="UsuarioNuevoVolverAlMenuPrincipalBtn" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -99,16 +99,16 @@
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jLabel1" linkSize="2" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel3" linkSize="2" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="UsuarioNuevoSegundoNombre" alignment="0" max="32767" attributes="0"/>
-                              <Component id="UsuarioNuevoGenero" alignment="0" pref="140" max="32767" attributes="0"/>
-                              <Component id="UsuarioNuevoIDUsuario" alignment="0" max="32767" attributes="0"/>
+                              <Component id="UsuarioNuevoSegundoNombreTxt" alignment="0" max="32767" attributes="0"/>
+                              <Component id="UsuarioNuevoGeneroCbx" alignment="0" pref="140" max="32767" attributes="0"/>
+                              <Component id="UsuarioNuevoIDUsuarioTxt" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jLabel2" linkSize="2" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel4" linkSize="2" min="-2" max="-2" attributes="0"/>
-                              <Component id="UsuarioNuevoApellido" pref="145" max="32767" attributes="0"/>
-                              <Component id="UsuarioNuevoNombre" alignment="0" max="32767" attributes="0"/>
+                              <Component id="UsuarioNuevoApellidoTxt" pref="145" max="32767" attributes="0"/>
+                              <Component id="UsuarioNuevoNombreTxt" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -126,8 +126,8 @@
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="UsuarioNuevoIDUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="UsuarioNuevoNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="UsuarioNuevoIDUsuarioTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="UsuarioNuevoNombreTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -136,13 +136,13 @@
                   </Group>
                   <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="UsuarioNuevoSegundoNombre" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="UsuarioNuevoApellido" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="UsuarioNuevoSegundoNombreTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="UsuarioNuevoApellidoTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="UsuarioNuevoGenero" min="-2" max="-2" attributes="0"/>
+                  <Component id="UsuarioNuevoGeneroCbx" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="228" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -169,33 +169,32 @@
             <Property name="text" type="java.lang.String" value="Apellido:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="UsuarioNuevoIDUsuario">
+        <Component class="javax.swing.JTextField" name="UsuarioNuevoIDUsuarioTxt">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UsuarioNuevoIDUsuarioActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UsuarioNuevoIDUsuarioTxtActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="UsuarioNuevoNombre">
+        <Component class="javax.swing.JTextField" name="UsuarioNuevoNombreTxt">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UsuarioNuevoNombreActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UsuarioNuevoNombreTxtActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="UsuarioNuevoSegundoNombre">
+        <Component class="javax.swing.JTextField" name="UsuarioNuevoSegundoNombreTxt">
         </Component>
-        <Component class="javax.swing.JTextField" name="UsuarioNuevoApellido">
+        <Component class="javax.swing.JTextField" name="UsuarioNuevoApellidoTxt">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel7">
           <Properties>
             <Property name="text" type="java.lang.String" value="G&#xe9;nero:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="UsuarioNuevoGenero">
+        <Component class="javax.swing.JComboBox" name="UsuarioNuevoGeneroCbx">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
+              <StringArray count="3">
+                <StringItem index="0" value="Femenino"/>
+                <StringItem index="1" value="Masculino"/>
+                <StringItem index="2" value="Otro"/>
               </StringArray>
             </Property>
           </Properties>
@@ -205,18 +204,23 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="UsuarioNuevoGuardar">
+    <Component class="javax.swing.JButton" name="UsuarioNuevoGuardarBtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="Guardar"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="UsuarioNuevoGuardarBtnMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UsuarioNuevoGuardarBtnActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="UsuarioNuevoBorrarDatos">
+    <Component class="javax.swing.JButton" name="UsuarioNuevoLimpiarCasillasBtn">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Borrar datos"/>
+        <Property name="text" type="java.lang.String" value="Limpiar casillas"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UsuarioNuevoBorrarDatosActionPerformed"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="UsuarioNuevoLimpiarCasillasBtnMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UsuarioNuevoLimpiarCasillasBtnActionPerformed"/>
       </Events>
     </Component>
     <Container class="javax.swing.JPanel" name="jPanel2">
@@ -241,17 +245,17 @@
                           <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="UsuarioNuevoTelefono" alignment="0" max="32767" attributes="0"/>
-                          <Component id="UsuarioNuevoProvincia" alignment="0" pref="149" max="32767" attributes="0"/>
-                          <Component id="UsuarioNuevoDireccion1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="UsuarioNuevoEmail" alignment="0" max="32767" attributes="0"/>
+                          <Component id="UsuarioNuevoTelefonoTxt" alignment="0" max="32767" attributes="0"/>
+                          <Component id="UsuarioNuevoProvinciaCbx" alignment="0" pref="149" max="32767" attributes="0"/>
+                          <Component id="UsuarioNuevoDireccion1Txt" alignment="0" max="32767" attributes="0"/>
+                          <Component id="UsuarioNuevoEmailTxt" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="UsuarioNuevoCiudad" alignment="0" max="32767" attributes="0"/>
-                      <Component id="UsuarioNuevoDireccion2" alignment="0" max="32767" attributes="0"/>
-                      <Component id="UsuarioNuevoTipoTelefono" alignment="0" max="32767" attributes="0"/>
+                      <Component id="UsuarioNuevoCiudadTxt" alignment="0" max="32767" attributes="0"/>
+                      <Component id="UsuarioNuevoDireccion2Txt" alignment="0" max="32767" attributes="0"/>
+                      <Component id="UsuarioNuevoTipoTelefonoCbx" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
@@ -275,8 +279,8 @@
                   </Group>
                   <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="UsuarioNuevoTelefono" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="UsuarioNuevoTipoTelefono" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="UsuarioNuevoTelefonoTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="UsuarioNuevoTipoTelefonoCbx" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -285,8 +289,8 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="UsuarioNuevoProvincia" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="UsuarioNuevoCiudad" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="UsuarioNuevoProvinciaCbx" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="UsuarioNuevoCiudadTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -295,13 +299,13 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="UsuarioNuevoDireccion1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="UsuarioNuevoDireccion2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="UsuarioNuevoDireccion1Txt" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="UsuarioNuevoDireccion2Txt" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="UsuarioNuevoEmail" min="-2" max="-2" attributes="0"/>
+                  <Component id="UsuarioNuevoEmailTxt" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -338,19 +342,19 @@
             <Property name="text" type="java.lang.String" value="Direcci&#xf3;n 2:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="UsuarioNuevoTelefono">
+        <Component class="javax.swing.JTextField" name="UsuarioNuevoTelefonoTxt">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UsuarioNuevoTelefonoActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UsuarioNuevoTelefonoTxtActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JComboBox" name="UsuarioNuevoTipoTelefono">
+        <Component class="javax.swing.JComboBox" name="UsuarioNuevoTipoTelefonoCbx">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
+                <StringItem index="0" value="Celular"/>
+                <StringItem index="1" value="Hogar"/>
+                <StringItem index="2" value="Oficina"/>
+                <StringItem index="3" value="Otro"/>
               </StringArray>
             </Property>
           </Properties>
@@ -358,14 +362,17 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="UsuarioNuevoProvincia">
+        <Component class="javax.swing.JComboBox" name="UsuarioNuevoProvinciaCbx">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
+              <StringArray count="7">
+                <StringItem index="0" value="San Jos&#xe9;"/>
+                <StringItem index="1" value="Alajuela"/>
+                <StringItem index="2" value="Heredia"/>
+                <StringItem index="3" value="Cartago"/>
+                <StringItem index="4" value="Lim&#xf3;n"/>
+                <StringItem index="5" value="Puntarenas"/>
+                <StringItem index="6" value="Guanacaste"/>
               </StringArray>
             </Property>
           </Properties>
@@ -373,21 +380,21 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="UsuarioNuevoCiudad">
+        <Component class="javax.swing.JTextField" name="UsuarioNuevoCiudadTxt">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UsuarioNuevoCiudadActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UsuarioNuevoCiudadTxtActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="UsuarioNuevoDireccion1">
+        <Component class="javax.swing.JTextField" name="UsuarioNuevoDireccion1Txt">
         </Component>
-        <Component class="javax.swing.JTextField" name="UsuarioNuevoDireccion2">
+        <Component class="javax.swing.JTextField" name="UsuarioNuevoDireccion2Txt">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel12">
           <Properties>
             <Property name="text" type="java.lang.String" value="E-mail:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="UsuarioNuevoEmail">
+        <Component class="javax.swing.JTextField" name="UsuarioNuevoEmailTxt">
         </Component>
       </SubComponents>
     </Container>
@@ -399,12 +406,12 @@
         <Property name="text" type="java.lang.String" value="USUARIO NUEVO"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="UsuarioNuevoVolverAlMenuPrincipal">
+    <Component class="javax.swing.JButton" name="UsuarioNuevoVolverAlMenuPrincipalBtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="Volver al men&#xfa; principal"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="UsuarioNuevoVolverAlMenuPrincipalMouseClicked"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="UsuarioNuevoVolverAlMenuPrincipalBtnMouseClicked"/>
       </Events>
     </Component>
   </SubComponents>

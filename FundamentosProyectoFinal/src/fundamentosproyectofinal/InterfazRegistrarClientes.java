@@ -1,9 +1,11 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package fundamentosproyectofinal;
+
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -32,14 +34,14 @@ public class InterfazRegistrarClientes extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        UsuarioNuevoIDUsuario = new javax.swing.JTextField();
-        UsuarioNuevoNombre = new javax.swing.JTextField();
-        UsuarioNuevoSegundoNombre = new javax.swing.JTextField();
-        UsuarioNuevoApellido = new javax.swing.JTextField();
+        UsuarioNuevoIDUsuarioTxt = new javax.swing.JTextField();
+        UsuarioNuevoNombreTxt = new javax.swing.JTextField();
+        UsuarioNuevoSegundoNombreTxt = new javax.swing.JTextField();
+        UsuarioNuevoApellidoTxt = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        UsuarioNuevoGenero = new javax.swing.JComboBox<>();
-        UsuarioNuevoGuardar = new javax.swing.JButton();
-        UsuarioNuevoBorrarDatos = new javax.swing.JButton();
+        UsuarioNuevoGeneroCbx = new javax.swing.JComboBox<>();
+        UsuarioNuevoGuardarBtn = new javax.swing.JButton();
+        UsuarioNuevoLimpiarCasillasBtn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -47,16 +49,16 @@ public class InterfazRegistrarClientes extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        UsuarioNuevoTelefono = new javax.swing.JTextField();
-        UsuarioNuevoTipoTelefono = new javax.swing.JComboBox<>();
-        UsuarioNuevoProvincia = new javax.swing.JComboBox<>();
-        UsuarioNuevoCiudad = new javax.swing.JTextField();
-        UsuarioNuevoDireccion1 = new javax.swing.JTextField();
-        UsuarioNuevoDireccion2 = new javax.swing.JTextField();
+        UsuarioNuevoTelefonoTxt = new javax.swing.JTextField();
+        UsuarioNuevoTipoTelefonoCbx = new javax.swing.JComboBox<>();
+        UsuarioNuevoProvinciaCbx = new javax.swing.JComboBox<>();
+        UsuarioNuevoCiudadTxt = new javax.swing.JTextField();
+        UsuarioNuevoDireccion1Txt = new javax.swing.JTextField();
+        UsuarioNuevoDireccion2Txt = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        UsuarioNuevoEmail = new javax.swing.JTextField();
+        UsuarioNuevoEmailTxt = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        UsuarioNuevoVolverAlMenuPrincipal = new javax.swing.JButton();
+        UsuarioNuevoVolverAlMenuPrincipalBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,21 +72,21 @@ public class InterfazRegistrarClientes extends javax.swing.JFrame {
 
         jLabel4.setText("Apellido:");
 
-        UsuarioNuevoIDUsuario.addActionListener(new java.awt.event.ActionListener() {
+        UsuarioNuevoIDUsuarioTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuarioNuevoIDUsuarioActionPerformed(evt);
+                UsuarioNuevoIDUsuarioTxtActionPerformed(evt);
             }
         });
 
-        UsuarioNuevoNombre.addActionListener(new java.awt.event.ActionListener() {
+        UsuarioNuevoNombreTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuarioNuevoNombreActionPerformed(evt);
+                UsuarioNuevoNombreTxtActionPerformed(evt);
             }
         });
 
         jLabel7.setText("Género:");
 
-        UsuarioNuevoGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        UsuarioNuevoGeneroCbx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Femenino", "Masculino", "Otro" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -100,15 +102,15 @@ public class InterfazRegistrarClientes extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel1)
                             .addComponent(jLabel3)
-                            .addComponent(UsuarioNuevoSegundoNombre)
-                            .addComponent(UsuarioNuevoGenero, 0, 140, Short.MAX_VALUE)
-                            .addComponent(UsuarioNuevoIDUsuario))
+                            .addComponent(UsuarioNuevoSegundoNombreTxt)
+                            .addComponent(UsuarioNuevoGeneroCbx, 0, 140, Short.MAX_VALUE)
+                            .addComponent(UsuarioNuevoIDUsuarioTxt))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel2)
                             .addComponent(jLabel4)
-                            .addComponent(UsuarioNuevoApellido, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
-                            .addComponent(UsuarioNuevoNombre))))
+                            .addComponent(UsuarioNuevoApellidoTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+                            .addComponent(UsuarioNuevoNombreTxt))))
                 .addContainerGap())
         );
 
@@ -123,32 +125,47 @@ public class InterfazRegistrarClientes extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(UsuarioNuevoIDUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(UsuarioNuevoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(UsuarioNuevoIDUsuarioTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(UsuarioNuevoNombreTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4))
                 .addGap(4, 4, 4)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(UsuarioNuevoSegundoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(UsuarioNuevoApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(UsuarioNuevoSegundoNombreTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(UsuarioNuevoApellidoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(UsuarioNuevoGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(UsuarioNuevoGeneroCbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(228, 228, 228))
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLabel1, jLabel2, jLabel3, jLabel4});
 
-        UsuarioNuevoGuardar.setText("Guardar");
-        UsuarioNuevoGuardar.setToolTipText("");
-
-        UsuarioNuevoBorrarDatos.setText("Borrar datos");
-        UsuarioNuevoBorrarDatos.addActionListener(new java.awt.event.ActionListener() {
+        UsuarioNuevoGuardarBtn.setText("Guardar");
+        UsuarioNuevoGuardarBtn.setToolTipText("");
+        UsuarioNuevoGuardarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                UsuarioNuevoGuardarBtnMouseClicked(evt);
+            }
+        });
+        UsuarioNuevoGuardarBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuarioNuevoBorrarDatosActionPerformed(evt);
+                UsuarioNuevoGuardarBtnActionPerformed(evt);
+            }
+        });
+
+        UsuarioNuevoLimpiarCasillasBtn.setText("Limpiar casillas");
+        UsuarioNuevoLimpiarCasillasBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                UsuarioNuevoLimpiarCasillasBtnMouseClicked(evt);
+            }
+        });
+        UsuarioNuevoLimpiarCasillasBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UsuarioNuevoLimpiarCasillasBtnActionPerformed(evt);
             }
         });
 
@@ -166,19 +183,19 @@ public class InterfazRegistrarClientes extends javax.swing.JFrame {
 
         jLabel11.setText("Dirección 2:");
 
-        UsuarioNuevoTelefono.addActionListener(new java.awt.event.ActionListener() {
+        UsuarioNuevoTelefonoTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuarioNuevoTelefonoActionPerformed(evt);
+                UsuarioNuevoTelefonoTxtActionPerformed(evt);
             }
         });
 
-        UsuarioNuevoTipoTelefono.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        UsuarioNuevoTipoTelefonoCbx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Celular", "Hogar", "Oficina", "Otro" }));
 
-        UsuarioNuevoProvincia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        UsuarioNuevoProvinciaCbx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "San José", "Alajuela", "Heredia", "Cartago", "Limón", "Puntarenas", "Guanacaste" }));
 
-        UsuarioNuevoCiudad.addActionListener(new java.awt.event.ActionListener() {
+        UsuarioNuevoCiudadTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UsuarioNuevoCiudadActionPerformed(evt);
+                UsuarioNuevoCiudadTxtActionPerformed(evt);
             }
         });
 
@@ -196,15 +213,15 @@ public class InterfazRegistrarClientes extends javax.swing.JFrame {
                         .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(UsuarioNuevoTelefono, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(UsuarioNuevoProvincia, javax.swing.GroupLayout.Alignment.LEADING, 0, 149, Short.MAX_VALUE)
-                        .addComponent(UsuarioNuevoDireccion1, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(UsuarioNuevoEmail, javax.swing.GroupLayout.Alignment.LEADING)))
+                        .addComponent(UsuarioNuevoTelefonoTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(UsuarioNuevoProvinciaCbx, javax.swing.GroupLayout.Alignment.LEADING, 0, 149, Short.MAX_VALUE)
+                        .addComponent(UsuarioNuevoDireccion1Txt, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(UsuarioNuevoEmailTxt, javax.swing.GroupLayout.Alignment.LEADING)))
                 .addGap(45, 45, 45)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(UsuarioNuevoCiudad)
-                    .addComponent(UsuarioNuevoDireccion2)
-                    .addComponent(UsuarioNuevoTipoTelefono, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(UsuarioNuevoCiudadTxt)
+                    .addComponent(UsuarioNuevoDireccion2Txt)
+                    .addComponent(UsuarioNuevoTipoTelefonoCbx, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
@@ -222,38 +239,38 @@ public class InterfazRegistrarClientes extends javax.swing.JFrame {
                     .addComponent(jLabel6))
                 .addGap(1, 1, 1)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(UsuarioNuevoTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(UsuarioNuevoTipoTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(UsuarioNuevoTelefonoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(UsuarioNuevoTipoTelefonoCbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(11, 11, 11)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(UsuarioNuevoProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(UsuarioNuevoCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(UsuarioNuevoProvinciaCbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(UsuarioNuevoCiudadTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(jLabel11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(UsuarioNuevoDireccion1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(UsuarioNuevoDireccion2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(UsuarioNuevoDireccion1Txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(UsuarioNuevoDireccion2Txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(UsuarioNuevoEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(UsuarioNuevoEmailTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49))
         );
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel13.setText("USUARIO NUEVO");
 
-        UsuarioNuevoVolverAlMenuPrincipal.setText("Volver al menú principal");
-        UsuarioNuevoVolverAlMenuPrincipal.addMouseListener(new java.awt.event.MouseAdapter() {
+        UsuarioNuevoVolverAlMenuPrincipalBtn.setText("Volver al menú principal");
+        UsuarioNuevoVolverAlMenuPrincipalBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                UsuarioNuevoVolverAlMenuPrincipalMouseClicked(evt);
+                UsuarioNuevoVolverAlMenuPrincipalBtnMouseClicked(evt);
             }
         });
 
@@ -270,21 +287,21 @@ public class InterfazRegistrarClientes extends javax.swing.JFrame {
                             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 13, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jLabel13)
                                 .addGap(120, 120, 120))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(UsuarioNuevoGuardar)
+                                .addComponent(UsuarioNuevoGuardarBtn)
                                 .addGap(18, 18, 18)
-                                .addComponent(UsuarioNuevoBorrarDatos)
+                                .addComponent(UsuarioNuevoLimpiarCasillasBtn)
                                 .addGap(18, 18, 18)
-                                .addComponent(UsuarioNuevoVolverAlMenuPrincipal)
+                                .addComponent(UsuarioNuevoVolverAlMenuPrincipalBtn)
                                 .addContainerGap())))))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {UsuarioNuevoBorrarDatos, UsuarioNuevoGuardar});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {UsuarioNuevoGuardarBtn, UsuarioNuevoLimpiarCasillasBtn});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -297,42 +314,161 @@ public class InterfazRegistrarClientes extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(UsuarioNuevoGuardar)
-                    .addComponent(UsuarioNuevoBorrarDatos)
-                    .addComponent(UsuarioNuevoVolverAlMenuPrincipal)))
+                    .addComponent(UsuarioNuevoGuardarBtn)
+                    .addComponent(UsuarioNuevoLimpiarCasillasBtn)
+                    .addComponent(UsuarioNuevoVolverAlMenuPrincipalBtn)))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {UsuarioNuevoBorrarDatos, UsuarioNuevoGuardar});
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {UsuarioNuevoGuardarBtn, UsuarioNuevoLimpiarCasillasBtn});
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void UsuarioNuevoBorrarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioNuevoBorrarDatosActionPerformed
+    private void UsuarioNuevoLimpiarCasillasBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioNuevoLimpiarCasillasBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_UsuarioNuevoBorrarDatosActionPerformed
+    }//GEN-LAST:event_UsuarioNuevoLimpiarCasillasBtnActionPerformed
 
-    private void UsuarioNuevoTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioNuevoTelefonoActionPerformed
+    private void UsuarioNuevoTelefonoTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioNuevoTelefonoTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_UsuarioNuevoTelefonoActionPerformed
+    }//GEN-LAST:event_UsuarioNuevoTelefonoTxtActionPerformed
 
-    private void UsuarioNuevoIDUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioNuevoIDUsuarioActionPerformed
+    private void UsuarioNuevoIDUsuarioTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioNuevoIDUsuarioTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_UsuarioNuevoIDUsuarioActionPerformed
+    }//GEN-LAST:event_UsuarioNuevoIDUsuarioTxtActionPerformed
 
-    private void UsuarioNuevoNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioNuevoNombreActionPerformed
+    private void UsuarioNuevoNombreTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioNuevoNombreTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_UsuarioNuevoNombreActionPerformed
+    }//GEN-LAST:event_UsuarioNuevoNombreTxtActionPerformed
 
-    private void UsuarioNuevoCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioNuevoCiudadActionPerformed
+    private void UsuarioNuevoCiudadTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioNuevoCiudadTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_UsuarioNuevoCiudadActionPerformed
+    }//GEN-LAST:event_UsuarioNuevoCiudadTxtActionPerformed
 
-    private void UsuarioNuevoVolverAlMenuPrincipalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UsuarioNuevoVolverAlMenuPrincipalMouseClicked
+    private void UsuarioNuevoVolverAlMenuPrincipalBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UsuarioNuevoVolverAlMenuPrincipalBtnMouseClicked
           // con este codigo volvemos al menu principal y cerramos la ventana actual
         InterfazMenuPrincipal menuPrincipal= new  InterfazMenuPrincipal();
         menuPrincipal.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_UsuarioNuevoVolverAlMenuPrincipalMouseClicked
+    }//GEN-LAST:event_UsuarioNuevoVolverAlMenuPrincipalBtnMouseClicked
+
+    private void UsuarioNuevoGuardarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UsuarioNuevoGuardarBtnMouseClicked
+        //Dentro de guardar es que validamos todos los datos que el cliente ingresó y los guardamos.
+        String nombre = UsuarioNuevoNombreTxt.getText();
+        String segundoNombre= UsuarioNuevoSegundoNombreTxt.getText();
+        String apellido= UsuarioNuevoApellidoTxt.getText();
+        String genero= UsuarioNuevoGeneroCbx.getItemAt(UsuarioNuevoGeneroCbx.getSelectedIndex());
+        String tipoTelefono=  UsuarioNuevoTipoTelefonoCbx.getItemAt(UsuarioNuevoTipoTelefonoCbx.getSelectedIndex());
+        String provincia= UsuarioNuevoProvinciaCbx.getItemAt(UsuarioNuevoProvinciaCbx.getSelectedIndex());
+        String var= UsuarioNuevoCiudadTxt.getText();
+        String resultadoV = var.replace(',', '.');
+        String direccion1= UsuarioNuevoDireccion1Txt.getText();
+        String resultadoD1= direccion1.replace(',', '.');
+        String direccion2= UsuarioNuevoDireccion2Txt.getText();
+        String resultadoD2= direccion2.replace(',', '.');
+        String ciudad= UsuarioNuevoCiudadTxt.getText();
+        String resultadoCdad= ciudad.replace(',', '.');
+        
+         while (apellido.contains("1") || apellido.contains("2")
+                || apellido.contains("3") || apellido.contains("4")
+                || apellido.contains("5") || apellido.contains("6")
+                || apellido.contains("7") || apellido.contains("8")
+                || apellido.contains("9") || apellido.contains("0")) {
+            JOptionPane.showMessageDialog(null, "El apellido no debe contener números. "
+                    + "Ingréselo de nuevo.");
+                UsuarioNuevoApellidoTxt.setText("");
+                apellido= UsuarioNuevoApellidoTxt.getText();
+        }
+        while (nombre.contains("1") || nombre.contains("2")
+                || nombre.contains("3") || nombre.contains("4")
+                || nombre.contains("5") || nombre.contains("6")
+                || nombre.contains("7") || nombre.contains("8")
+                || nombre.contains("9") || nombre.contains("0")) {
+            JOptionPane.showMessageDialog(null, "El nombre no debe contener números. Ingréselo de nuevo");
+            UsuarioNuevoNombreTxt.setText("");
+            nombre =  UsuarioNuevoNombreTxt.getText();
+        }
+        
+       
+         while (segundoNombre.contains("1") || segundoNombre.contains("2")
+                || segundoNombre.contains("3") || segundoNombre.contains("4")
+                || segundoNombre.contains("5") || segundoNombre.contains("6")
+                || segundoNombre.contains("7") || segundoNombre.contains("8")
+                || segundoNombre.contains("9") || segundoNombre.contains("0")) {
+            JOptionPane.showMessageDialog(null, "El segundo nombre no debe contener números. Ingréselo de nuevo");
+            UsuarioNuevoSegundoNombreTxt.setText("");
+            segundoNombre= UsuarioNuevoSegundoNombreTxt.getText();
+        }
+        boolean done = false;
+        int telefono = 0;
+        String telefonoString;
+         do {
+            telefonoString= (UsuarioNuevoTelefonoTxt.getText());
+            
+            try {
+                
+               if(telefonoString.length() == 8) {
+                    telefono = Integer.parseInt(telefonoString);
+                    done = true;
+                }else{
+                    JOptionPane.showMessageDialog(null, "Error al ingresar el teléfono, ocho digitos son requeridos.");
+                    UsuarioNuevoTelefonoTxt.setText("00000000");
+                    telefonoString= (UsuarioNuevoTelefonoTxt.getText());
+                }
+            
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "Error al ingresar el teléfono, solo escriba números, no letras.");
+                UsuarioNuevoTelefonoTxt.setText("00000000");
+                telefonoString= (UsuarioNuevoTelefonoTxt.getText());
+            }
+        } 
+          while (!done);
+        
+        boolean corregir = true;
+        String correoElectronico = "";
+        
+        while(corregir) {
+            
+            correoElectronico = UsuarioNuevoEmailTxt.getText();
+            
+            if(correoElectronico.contains("@") && correoElectronico.contains(".")){
+                corregir = false;
+            }else{
+                JOptionPane.showMessageDialog(null, "Error: Formato de correo no valido", "Error", JOptionPane.ERROR_MESSAGE);
+                UsuarioNuevoEmailTxt.setText("@ .com");
+                UsuarioNuevoEmailTxt.getText();
+            }
+            
+        }
+        
+        String resultadoC = correoElectronico.replace(',', '.'); 
+        String resultadoN = apellido.replace(',', '.');
+        String resultadoA = nombre.replace(',', '.');
+        String resultadoSN = segundoNombre.replace(',', '.');
+       //  return resultadoN; ESTO ME DA ERROR AL PONERLO, SE NECESITA??
+       // return genero;
+      // return resultadoA
+       //  return telefono;
+    }//GEN-LAST:event_UsuarioNuevoGuardarBtnMouseClicked
+
+    private void UsuarioNuevoLimpiarCasillasBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UsuarioNuevoLimpiarCasillasBtnMouseClicked
+        // Al darle click a borrar se limpian los datos que se escribieron.
+        UsuarioNuevoIDUsuarioTxt.setText("");
+        UsuarioNuevoNombreTxt.setText("");
+        UsuarioNuevoSegundoNombreTxt.setText("");
+        UsuarioNuevoApellidoTxt.setText("");
+        UsuarioNuevoTelefonoTxt.setText("");
+        UsuarioNuevoCiudadTxt.setText("");
+        UsuarioNuevoDireccion1Txt.setText("");
+        UsuarioNuevoDireccion2Txt.setText("");
+        UsuarioNuevoEmailTxt.setText("");
+        UsuarioNuevoGeneroCbx.setSelectedIndex(0);
+        UsuarioNuevoTipoTelefonoCbx.setSelectedIndex(0);
+        UsuarioNuevoProvinciaCbx.setSelectedIndex(0);
+    }//GEN-LAST:event_UsuarioNuevoLimpiarCasillasBtnMouseClicked
+
+    private void UsuarioNuevoGuardarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UsuarioNuevoGuardarBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UsuarioNuevoGuardarBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -371,21 +507,21 @@ public class InterfazRegistrarClientes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField UsuarioNuevoApellido;
-    private javax.swing.JButton UsuarioNuevoBorrarDatos;
-    private javax.swing.JTextField UsuarioNuevoCiudad;
-    private javax.swing.JTextField UsuarioNuevoDireccion1;
-    private javax.swing.JTextField UsuarioNuevoDireccion2;
-    private javax.swing.JTextField UsuarioNuevoEmail;
-    private javax.swing.JComboBox<String> UsuarioNuevoGenero;
-    private javax.swing.JButton UsuarioNuevoGuardar;
-    private javax.swing.JTextField UsuarioNuevoIDUsuario;
-    private javax.swing.JTextField UsuarioNuevoNombre;
-    private javax.swing.JComboBox<String> UsuarioNuevoProvincia;
-    private javax.swing.JTextField UsuarioNuevoSegundoNombre;
-    private javax.swing.JTextField UsuarioNuevoTelefono;
-    private javax.swing.JComboBox<String> UsuarioNuevoTipoTelefono;
-    private javax.swing.JButton UsuarioNuevoVolverAlMenuPrincipal;
+    private javax.swing.JTextField UsuarioNuevoApellidoTxt;
+    private javax.swing.JTextField UsuarioNuevoCiudadTxt;
+    private javax.swing.JTextField UsuarioNuevoDireccion1Txt;
+    private javax.swing.JTextField UsuarioNuevoDireccion2Txt;
+    private javax.swing.JTextField UsuarioNuevoEmailTxt;
+    private javax.swing.JComboBox<String> UsuarioNuevoGeneroCbx;
+    private javax.swing.JButton UsuarioNuevoGuardarBtn;
+    private javax.swing.JTextField UsuarioNuevoIDUsuarioTxt;
+    private javax.swing.JButton UsuarioNuevoLimpiarCasillasBtn;
+    private javax.swing.JTextField UsuarioNuevoNombreTxt;
+    private javax.swing.JComboBox<String> UsuarioNuevoProvinciaCbx;
+    private javax.swing.JTextField UsuarioNuevoSegundoNombreTxt;
+    private javax.swing.JTextField UsuarioNuevoTelefonoTxt;
+    private javax.swing.JComboBox<String> UsuarioNuevoTipoTelefonoCbx;
+    private javax.swing.JButton UsuarioNuevoVolverAlMenuPrincipalBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

@@ -5,15 +5,19 @@
  */
 package fundamentosproyectofinal;
 
+import java.awt.HeadlessException;
+
 /**
  *
  * @author Karla
  */
 public class InterfazBuscarUsuario extends javax.swing.JFrame {
-
-    /**
-     * Creates new form InterfazConsultarUsuario
-     */
+    Menus menuEnInterfaz = new Menus();
+    InteraccionConCSV interaccionCSV=  new InteraccionConCSV ();
+    public static final String SEPARADOR = ",";
+    Interaccion interaccion= new Interaccion();
+    Miscelaneos miscelaneos= new Miscelaneos();
+    
     public InterfazBuscarUsuario() {
         initComponents();
     }
@@ -30,8 +34,35 @@ public class InterfazBuscarUsuario extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         ConsultarUsuarioIDUsuario = new javax.swing.JTextField();
-        ConsultarUsuarioLimpiar = new javax.swing.JButton();
-        ConsultarUsuarioVolverAlMenuPrincipal = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        ConsultarUsuarioTipoApellidoTxt = new javax.swing.JLabel();
+        ConsultarUsuarioNombreTxt = new javax.swing.JLabel();
+        ConsultarUsuarioSegundoNombreTxt = new javax.swing.JLabel();
+        ConsultarUsuarioTelefonoTxt = new javax.swing.JLabel();
+        ConsultarUsuarioGeneroTxt = new javax.swing.JLabel();
+        ConsultarUsuarioDireccion1Txt = new javax.swing.JLabel();
+        ConsultarUsuarioDireccion2Txt = new javax.swing.JLabel();
+        ConsultarUsuarioCiudadTxt = new javax.swing.JLabel();
+        ConsultarUsuarioProvinciaTxt = new javax.swing.JLabel();
+        ConsultarUsuarioEmailTxt = new javax.swing.JLabel();
+        ConsultarUsuarioEstadoClienteTxt = new javax.swing.JLabel();
+        ConsultarUsuarioTipoTelefonoTxt = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        ConsultarUsuarioPeliculasRentadasTxt = new javax.swing.JLabel();
+        ConsultarUsuarioLimpiarBtn = new javax.swing.JButton();
+        ConsultarUsuarioVolverAlMenuPrincipalBtn = new javax.swing.JButton();
+        ConsultarUsuarioBuscarBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -39,17 +70,119 @@ public class InterfazBuscarUsuario extends javax.swing.JFrame {
 
         jLabel1.setText("ID Usuario:");
 
+        jLabel2.setText("Nombre:");
+
+        jLabel3.setText("Segundo Nombre:");
+
+        jLabel4.setText("Apellido:");
+
+        jLabel6.setText("Teléfono primario:");
+
+        jLabel7.setText("Género:");
+
+        jLabel8.setText("Dirección 1:");
+
+        jLabel9.setText("Dirección 2:");
+
+        jLabel10.setText("Ciudad:");
+
+        jLabel11.setText("Provincia:");
+
+        jLabel12.setText("E-mail:");
+
+        jLabel13.setText("Estado del cliente");
+
+        jLabel14.setText("Tipo de teléfono:");
+
+        ConsultarUsuarioTipoApellidoTxt.setText("                               ");
+
+        ConsultarUsuarioNombreTxt.setText("                                        ");
+
+        ConsultarUsuarioSegundoNombreTxt.setText("                                    ");
+
+        ConsultarUsuarioTelefonoTxt.setText("                                          ");
+
+        ConsultarUsuarioGeneroTxt.setText("                                     ");
+
+        ConsultarUsuarioDireccion1Txt.setText("                                            ");
+
+        ConsultarUsuarioDireccion2Txt.setText("                                        ");
+
+        ConsultarUsuarioCiudadTxt.setText("                           ");
+
+        ConsultarUsuarioProvinciaTxt.setText("                              ");
+
+        ConsultarUsuarioEmailTxt.setText("                                ");
+
+        ConsultarUsuarioEstadoClienteTxt.setText("                               ");
+
+        ConsultarUsuarioTipoTelefonoTxt.setText("                                    ");
+
+        jLabel5.setText("Películas rentadas:");
+
+        ConsultarUsuarioPeliculasRentadasTxt.setText("                                    ");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ConsultarUsuarioIDUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel4)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addComponent(ConsultarUsuarioIDUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel9)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ConsultarUsuarioDireccion2Txt))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel8)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ConsultarUsuarioDireccion1Txt))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel6)
+                                .addComponent(jLabel7))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(ConsultarUsuarioGeneroTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(ConsultarUsuarioTelefonoTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel3)
+                                .addComponent(jLabel2))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(ConsultarUsuarioSegundoNombreTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(ConsultarUsuarioNombreTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel10)
+                                .addComponent(jLabel11)
+                                .addComponent(jLabel12)
+                                .addComponent(jLabel13)
+                                .addComponent(jLabel14)
+                                .addComponent(jLabel5))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(ConsultarUsuarioTipoTelefonoTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(ConsultarUsuarioEstadoClienteTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(ConsultarUsuarioEmailTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(ConsultarUsuarioProvinciaTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(ConsultarUsuarioCiudadTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(ConsultarUsuarioPeliculasRentadasTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(96, 96, 96)
+                        .addComponent(ConsultarUsuarioTipoApellidoTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {ConsultarUsuarioCiudadTxt, ConsultarUsuarioDireccion1Txt, ConsultarUsuarioDireccion2Txt, ConsultarUsuarioGeneroTxt});
+
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -57,15 +190,91 @@ public class InterfazBuscarUsuario extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(ConsultarUsuarioIDUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(ConsultarUsuarioTipoApellidoTxt))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(ConsultarUsuarioNombreTxt))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(ConsultarUsuarioSegundoNombreTxt))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(ConsultarUsuarioTelefonoTxt))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(ConsultarUsuarioGeneroTxt))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(ConsultarUsuarioDireccion1Txt))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(ConsultarUsuarioDireccion2Txt))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(ConsultarUsuarioCiudadTxt))
+                .addGap(16, 16, 16)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(ConsultarUsuarioProvinciaTxt))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ConsultarUsuarioTipoTelefonoTxt))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(ConsultarUsuarioEmailTxt))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(ConsultarUsuarioEstadoClienteTxt))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(ConsultarUsuarioPeliculasRentadasTxt))
+                .addGap(50, 50, 50))
         );
 
-        ConsultarUsuarioLimpiar.setText("Limpiar");
+        ConsultarUsuarioPeliculasRentadasTxt.getAccessibleContext().setAccessibleName("                                        ");
 
-        ConsultarUsuarioVolverAlMenuPrincipal.setText("Volver al menú principal");
-        ConsultarUsuarioVolverAlMenuPrincipal.addMouseListener(new java.awt.event.MouseAdapter() {
+        ConsultarUsuarioLimpiarBtn.setText("Limpiar");
+        ConsultarUsuarioLimpiarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ConsultarUsuarioVolverAlMenuPrincipalMouseClicked(evt);
+                ConsultarUsuarioLimpiarBtnMouseClicked(evt);
+            }
+        });
+        ConsultarUsuarioLimpiarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConsultarUsuarioLimpiarBtnActionPerformed(evt);
+            }
+        });
+
+        ConsultarUsuarioVolverAlMenuPrincipalBtn.setText("Volver al menú principal");
+        ConsultarUsuarioVolverAlMenuPrincipalBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ConsultarUsuarioVolverAlMenuPrincipalBtnMouseClicked(evt);
+            }
+        });
+        ConsultarUsuarioVolverAlMenuPrincipalBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConsultarUsuarioVolverAlMenuPrincipalBtnActionPerformed(evt);
+            }
+        });
+
+        ConsultarUsuarioBuscarBtn.setText("Buscar");
+        ConsultarUsuarioBuscarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ConsultarUsuarioBuscarBtnMouseClicked(evt);
             }
         });
 
@@ -73,38 +282,100 @@ public class InterfazBuscarUsuario extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(ConsultarUsuarioLimpiar)
-                .addGap(42, 42, 42)
-                .addComponent(ConsultarUsuarioVolverAlMenuPrincipal)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(ConsultarUsuarioBuscarBtn)
+                        .addGap(18, 18, 18)
+                        .addComponent(ConsultarUsuarioLimpiarBtn)
+                        .addGap(18, 18, 18)
+                        .addComponent(ConsultarUsuarioVolverAlMenuPrincipalBtn)
+                        .addGap(0, 21, Short.MAX_VALUE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {ConsultarUsuarioLimpiar, ConsultarUsuarioVolverAlMenuPrincipal});
-
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addGap(23, 23, 23)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ConsultarUsuarioVolverAlMenuPrincipal)
-                    .addComponent(ConsultarUsuarioLimpiar))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(ConsultarUsuarioBuscarBtn)
+                    .addComponent(ConsultarUsuarioLimpiarBtn)
+                    .addComponent(ConsultarUsuarioVolverAlMenuPrincipalBtn))
+                .addGap(28, 28, 28))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ConsultarUsuarioVolverAlMenuPrincipalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConsultarUsuarioVolverAlMenuPrincipalMouseClicked
+    private void ConsultarUsuarioVolverAlMenuPrincipalBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConsultarUsuarioVolverAlMenuPrincipalBtnMouseClicked
           // con este codigo volvemos al menu principal y cerramos la ventana actual
         InterfazMenuPrincipal menuPrincipal= new  InterfazMenuPrincipal();
         menuPrincipal.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_ConsultarUsuarioVolverAlMenuPrincipalMouseClicked
+    }//GEN-LAST:event_ConsultarUsuarioVolverAlMenuPrincipalBtnMouseClicked
+
+    private void ConsultarUsuarioBuscarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConsultarUsuarioBuscarBtnMouseClicked
+       //con estes codigo vamos a buscar la base de datos del usuario. 
+       int idBuscar;
+
+        try {
+
+            idBuscar = Integer.parseInt(ConsultarUsuarioIDUsuario.getText());
+            
+            //interaccion.imprimirDatosUsuario(interaccionCSV.buscarUsuario(String.valueOf(idBuscar)));
+            String [] datos= interaccionCSV.buscarUsuario(String.valueOf(idBuscar));
+            ConsultarUsuarioTipoApellidoTxt.setText(datos[1]);
+            ConsultarUsuarioNombreTxt.setText(datos[2]);
+            ConsultarUsuarioSegundoNombreTxt.setText(datos[3]);
+            ConsultarUsuarioTelefonoTxt.setText(datos[4]);
+            ConsultarUsuarioGeneroTxt.setText(datos[5]);
+            ConsultarUsuarioDireccion1Txt.setText(datos[6]);
+            ConsultarUsuarioDireccion2Txt.setText(datos[7]);
+            ConsultarUsuarioCiudadTxt.setText(datos[8]);
+            ConsultarUsuarioProvinciaTxt.setText(datos[9]);
+            ConsultarUsuarioTipoTelefonoTxt.setText(datos[10]);
+            ConsultarUsuarioEmailTxt.setText(datos[11]);
+            ConsultarUsuarioEstadoClienteTxt.setText(datos[12]);
+            ConsultarUsuarioPeliculasRentadasTxt.setText(datos[14]);
+              
+              
+
+        }catch(HeadlessException | NumberFormatException error2){
+
+            miscelaneos.mensajeErrorValorNuloONoNumerico();
+
+        }
+    }//GEN-LAST:event_ConsultarUsuarioBuscarBtnMouseClicked
+
+    private void ConsultarUsuarioLimpiarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarUsuarioLimpiarBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ConsultarUsuarioLimpiarBtnActionPerformed
+
+    private void ConsultarUsuarioLimpiarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConsultarUsuarioLimpiarBtnMouseClicked
+        // con esto limpiamos las casillas
+        ConsultarUsuarioIDUsuario.setText("");
+        ConsultarUsuarioTipoApellidoTxt.setText("");
+        ConsultarUsuarioNombreTxt.setText("");
+        ConsultarUsuarioSegundoNombreTxt.setText("");
+        ConsultarUsuarioTelefonoTxt.setText("");
+        ConsultarUsuarioGeneroTxt.setText("");
+        ConsultarUsuarioDireccion1Txt.setText("");
+        ConsultarUsuarioDireccion2Txt.setText("");
+        ConsultarUsuarioCiudadTxt.setText("");
+        ConsultarUsuarioProvinciaTxt.setText("");
+        ConsultarUsuarioTipoTelefonoTxt.setText("");
+        ConsultarUsuarioEmailTxt.setText("");
+        ConsultarUsuarioEstadoClienteTxt.setText("");
+        ConsultarUsuarioPeliculasRentadasTxt.setText("");
+    }//GEN-LAST:event_ConsultarUsuarioLimpiarBtnMouseClicked
+
+    private void ConsultarUsuarioVolverAlMenuPrincipalBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarUsuarioVolverAlMenuPrincipalBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ConsultarUsuarioVolverAlMenuPrincipalBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -143,10 +414,37 @@ public class InterfazBuscarUsuario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ConsultarUsuarioBuscarBtn;
+    private javax.swing.JLabel ConsultarUsuarioCiudadTxt;
+    private javax.swing.JLabel ConsultarUsuarioDireccion1Txt;
+    private javax.swing.JLabel ConsultarUsuarioDireccion2Txt;
+    private javax.swing.JLabel ConsultarUsuarioEmailTxt;
+    private javax.swing.JLabel ConsultarUsuarioEstadoClienteTxt;
+    private javax.swing.JLabel ConsultarUsuarioGeneroTxt;
     private javax.swing.JTextField ConsultarUsuarioIDUsuario;
-    private javax.swing.JButton ConsultarUsuarioLimpiar;
-    private javax.swing.JButton ConsultarUsuarioVolverAlMenuPrincipal;
+    private javax.swing.JButton ConsultarUsuarioLimpiarBtn;
+    private javax.swing.JLabel ConsultarUsuarioNombreTxt;
+    private javax.swing.JLabel ConsultarUsuarioPeliculasRentadasTxt;
+    private javax.swing.JLabel ConsultarUsuarioProvinciaTxt;
+    private javax.swing.JLabel ConsultarUsuarioSegundoNombreTxt;
+    private javax.swing.JLabel ConsultarUsuarioTelefonoTxt;
+    private javax.swing.JLabel ConsultarUsuarioTipoApellidoTxt;
+    private javax.swing.JLabel ConsultarUsuarioTipoTelefonoTxt;
+    private javax.swing.JButton ConsultarUsuarioVolverAlMenuPrincipalBtn;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

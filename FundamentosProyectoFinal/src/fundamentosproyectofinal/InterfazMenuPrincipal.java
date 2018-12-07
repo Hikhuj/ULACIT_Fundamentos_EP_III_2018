@@ -28,43 +28,43 @@ public class InterfazMenuPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        MenuPrincipalMenuUsuario = new javax.swing.JButton();
-        MenuPrincipalMenuPeliculas = new javax.swing.JButton();
-        MenuPrincipalConsultarInformacion = new javax.swing.JButton();
-        MenuPrincipalSalir = new javax.swing.JButton();
+        MenuPrincipalMenuUsuarioBtn = new javax.swing.JButton();
+        MenuPrincipalMenuPeliculasBtn = new javax.swing.JButton();
+        MenuPrincipalConsultarInformacionBtn = new javax.swing.JButton();
+        MenuPrincipalSalirBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        MenuPrincipalMenuUsuario.setBackground(new java.awt.Color(255, 255, 255));
-        MenuPrincipalMenuUsuario.setText("Menu usuarios");
-        MenuPrincipalMenuUsuario.addActionListener(new java.awt.event.ActionListener() {
+        MenuPrincipalMenuUsuarioBtn.setBackground(new java.awt.Color(255, 255, 255));
+        MenuPrincipalMenuUsuarioBtn.setText("Menu usuarios");
+        MenuPrincipalMenuUsuarioBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuPrincipalMenuUsuarioActionPerformed(evt);
+                MenuPrincipalMenuUsuarioBtnActionPerformed(evt);
             }
         });
 
-        MenuPrincipalMenuPeliculas.setBackground(new java.awt.Color(255, 255, 255));
-        MenuPrincipalMenuPeliculas.setText("Menú películas");
-        MenuPrincipalMenuPeliculas.addMouseListener(new java.awt.event.MouseAdapter() {
+        MenuPrincipalMenuPeliculasBtn.setBackground(new java.awt.Color(255, 255, 255));
+        MenuPrincipalMenuPeliculasBtn.setText("Menú películas");
+        MenuPrincipalMenuPeliculasBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                MenuPrincipalMenuPeliculasMouseClicked(evt);
+                MenuPrincipalMenuPeliculasBtnMouseClicked(evt);
             }
         });
 
-        MenuPrincipalConsultarInformacion.setBackground(new java.awt.Color(255, 255, 255));
-        MenuPrincipalConsultarInformacion.setText("Consultar Información");
-        MenuPrincipalConsultarInformacion.addMouseListener(new java.awt.event.MouseAdapter() {
+        MenuPrincipalConsultarInformacionBtn.setBackground(new java.awt.Color(255, 255, 255));
+        MenuPrincipalConsultarInformacionBtn.setText("Consultar Información");
+        MenuPrincipalConsultarInformacionBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                MenuPrincipalConsultarInformacionMouseClicked(evt);
+                MenuPrincipalConsultarInformacionBtnMouseClicked(evt);
             }
         });
 
-        MenuPrincipalSalir.setBackground(new java.awt.Color(255, 255, 255));
-        MenuPrincipalSalir.setText("Salir");
-        MenuPrincipalSalir.addActionListener(new java.awt.event.ActionListener() {
+        MenuPrincipalSalirBtn.setBackground(new java.awt.Color(255, 255, 255));
+        MenuPrincipalSalirBtn.setText("Salir");
+        MenuPrincipalSalirBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuPrincipalSalirActionPerformed(evt);
+                MenuPrincipalSalirBtnActionPerformed(evt);
             }
         });
 
@@ -80,17 +80,17 @@ public class InterfazMenuPrincipal extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(122, 122, 122)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(MenuPrincipalSalir)
-                            .addComponent(MenuPrincipalConsultarInformacion)
-                            .addComponent(MenuPrincipalMenuPeliculas)
-                            .addComponent(MenuPrincipalMenuUsuario)))
+                            .addComponent(MenuPrincipalSalirBtn)
+                            .addComponent(MenuPrincipalConsultarInformacionBtn)
+                            .addComponent(MenuPrincipalMenuPeliculasBtn)
+                            .addComponent(MenuPrincipalMenuUsuarioBtn)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addComponent(jLabel1)))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {MenuPrincipalConsultarInformacion, MenuPrincipalMenuPeliculas, MenuPrincipalMenuUsuario, MenuPrincipalSalir});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {MenuPrincipalConsultarInformacionBtn, MenuPrincipalMenuPeliculasBtn, MenuPrincipalMenuUsuarioBtn, MenuPrincipalSalirBtn});
 
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,17 +98,17 @@ public class InterfazMenuPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(MenuPrincipalMenuUsuario)
+                .addComponent(MenuPrincipalMenuUsuarioBtn)
                 .addGap(34, 34, 34)
-                .addComponent(MenuPrincipalMenuPeliculas)
+                .addComponent(MenuPrincipalMenuPeliculasBtn)
                 .addGap(32, 32, 32)
-                .addComponent(MenuPrincipalConsultarInformacion)
+                .addComponent(MenuPrincipalConsultarInformacionBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addComponent(MenuPrincipalSalir)
+                .addComponent(MenuPrincipalSalirBtn)
                 .addGap(30, 30, 30))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {MenuPrincipalConsultarInformacion, MenuPrincipalMenuPeliculas, MenuPrincipalMenuUsuario, MenuPrincipalSalir});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {MenuPrincipalConsultarInformacionBtn, MenuPrincipalMenuPeliculasBtn, MenuPrincipalMenuUsuarioBtn, MenuPrincipalSalirBtn});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -124,31 +124,31 @@ public class InterfazMenuPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void MenuPrincipalSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuPrincipalSalirActionPerformed
+    private void MenuPrincipalSalirBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuPrincipalSalirBtnActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_MenuPrincipalSalirActionPerformed
+    }//GEN-LAST:event_MenuPrincipalSalirBtnActionPerformed
 
-    private void MenuPrincipalMenuUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuPrincipalMenuUsuarioActionPerformed
+    private void MenuPrincipalMenuUsuarioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuPrincipalMenuUsuarioBtnActionPerformed
         // con este codigo vamos al menu de Usuario y cerramos esta ventana
         InterfazMenuUsuarios menuUsuario= new InterfazMenuUsuarios();
         menuUsuario.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_MenuPrincipalMenuUsuarioActionPerformed
+    }//GEN-LAST:event_MenuPrincipalMenuUsuarioBtnActionPerformed
 
-    private void MenuPrincipalMenuPeliculasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuPrincipalMenuPeliculasMouseClicked
+    private void MenuPrincipalMenuPeliculasBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuPrincipalMenuPeliculasBtnMouseClicked
         // con este codigo vamos al menu de peliculas y cerramos esta ventan
         InterfazMenuPeliculas menuPeliculas= new InterfazMenuPeliculas();
         menuPeliculas.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_MenuPrincipalMenuPeliculasMouseClicked
+    }//GEN-LAST:event_MenuPrincipalMenuPeliculasBtnMouseClicked
 
-    private void MenuPrincipalConsultarInformacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuPrincipalConsultarInformacionMouseClicked
+    private void MenuPrincipalConsultarInformacionBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuPrincipalConsultarInformacionBtnMouseClicked
         // con este codigo vamos al menu de Consultar informacion
         InterfazConsultarInformacion consultarInformacion= new InterfazConsultarInformacion  ();
         consultarInformacion.setVisible(true);
         this.dispose();
         
-    }//GEN-LAST:event_MenuPrincipalConsultarInformacionMouseClicked
+    }//GEN-LAST:event_MenuPrincipalConsultarInformacionBtnMouseClicked
 
     /**
      * @param args the command line arguments
@@ -186,10 +186,10 @@ public class InterfazMenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton MenuPrincipalConsultarInformacion;
-    private javax.swing.JButton MenuPrincipalMenuPeliculas;
-    private javax.swing.JButton MenuPrincipalMenuUsuario;
-    private javax.swing.JButton MenuPrincipalSalir;
+    private javax.swing.JButton MenuPrincipalConsultarInformacionBtn;
+    private javax.swing.JButton MenuPrincipalMenuPeliculasBtn;
+    private javax.swing.JButton MenuPrincipalMenuUsuarioBtn;
+    private javax.swing.JButton MenuPrincipalSalirBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

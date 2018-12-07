@@ -59,7 +59,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
-                          <Component id="BienvenidaMenuPrincipal" min="-2" max="-2" attributes="0"/>
+                          <Component id="BienvenidaMenuPrincipalBtn" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="72" max="32767" attributes="0"/>
@@ -74,7 +74,7 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jLabel2" min="-2" pref="170" max="-2" attributes="0"/>
                   <EmptySpace pref="32" max="32767" attributes="0"/>
-                  <Component id="BienvenidaMenuPrincipal" min="-2" max="-2" attributes="0"/>
+                  <Component id="BienvenidaMenuPrincipalBtn" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -96,13 +96,13 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="BienvenidaMenuPrincipal">
+        <Component class="javax.swing.JButton" name="BienvenidaMenuPrincipalBtn">
           <Properties>
             <Property name="text" type="java.lang.String" value="MENU PRINCIPAL"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BienvenidaMenuPrincipalMouseClicked"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BienvenidaMenuPrincipalActionPerformed"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BienvenidaMenuPrincipalBtnMouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BienvenidaMenuPrincipalBtnActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

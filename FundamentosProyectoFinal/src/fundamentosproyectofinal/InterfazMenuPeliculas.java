@@ -28,43 +28,43 @@ public class InterfazMenuPeliculas extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        MenuPeliculasIngresarNuevaPelicula = new javax.swing.JButton();
-        MenuPeliculasEditarInformacionPelicula = new javax.swing.JButton();
-        MenuPeliculasVolverAlMenuPrincipal = new javax.swing.JButton();
+        MenuPeliculasIngresarNuevaPeliculaBtn = new javax.swing.JButton();
+        MenuPeliculasEditarInformacionPeliculaBtn = new javax.swing.JButton();
+        MenuPeliculasVolverAlMenuPrincipalBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "MENÚ DE PELÍCULAS", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
 
-        MenuPeliculasIngresarNuevaPelicula.setText("Ingresar nueva película");
-        MenuPeliculasIngresarNuevaPelicula.addMouseListener(new java.awt.event.MouseAdapter() {
+        MenuPeliculasIngresarNuevaPeliculaBtn.setText("Ingresar nueva película");
+        MenuPeliculasIngresarNuevaPeliculaBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                MenuPeliculasIngresarNuevaPeliculaMouseClicked(evt);
+                MenuPeliculasIngresarNuevaPeliculaBtnMouseClicked(evt);
             }
         });
-        MenuPeliculasIngresarNuevaPelicula.addActionListener(new java.awt.event.ActionListener() {
+        MenuPeliculasIngresarNuevaPeliculaBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuPeliculasIngresarNuevaPeliculaActionPerformed(evt);
+                MenuPeliculasIngresarNuevaPeliculaBtnActionPerformed(evt);
             }
         });
 
-        MenuPeliculasEditarInformacionPelicula.setText("Editar información de película");
-        MenuPeliculasEditarInformacionPelicula.addActionListener(new java.awt.event.ActionListener() {
+        MenuPeliculasEditarInformacionPeliculaBtn.setText("Editar información de película");
+        MenuPeliculasEditarInformacionPeliculaBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuPeliculasEditarInformacionPeliculaActionPerformed(evt);
+                MenuPeliculasEditarInformacionPeliculaBtnActionPerformed(evt);
             }
         });
 
-        MenuPeliculasVolverAlMenuPrincipal.setText("Volver al menú principal");
-        MenuPeliculasVolverAlMenuPrincipal.addMouseListener(new java.awt.event.MouseAdapter() {
+        MenuPeliculasVolverAlMenuPrincipalBtn.setText("Volver al menú principal");
+        MenuPeliculasVolverAlMenuPrincipalBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                MenuPeliculasVolverAlMenuPrincipalMouseClicked(evt);
+                MenuPeliculasVolverAlMenuPrincipalBtnMouseClicked(evt);
             }
         });
-        MenuPeliculasVolverAlMenuPrincipal.addActionListener(new java.awt.event.ActionListener() {
+        MenuPeliculasVolverAlMenuPrincipalBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuPeliculasVolverAlMenuPrincipalActionPerformed(evt);
+                MenuPeliculasVolverAlMenuPrincipalBtnActionPerformed(evt);
             }
         });
 
@@ -76,22 +76,22 @@ public class InterfazMenuPeliculas extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(MenuPeliculasVolverAlMenuPrincipal)
+                .addComponent(MenuPeliculasVolverAlMenuPrincipalBtn)
                 .addGap(52, 52, 52))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(MenuPeliculasIngresarNuevaPelicula)
-                            .addComponent(MenuPeliculasEditarInformacionPelicula)))
+                            .addComponent(MenuPeliculasIngresarNuevaPeliculaBtn)
+                            .addComponent(MenuPeliculasEditarInformacionPeliculaBtn)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(119, 119, 119)
                         .addComponent(jLabel1)))
                 .addContainerGap(201, Short.MAX_VALUE))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {MenuPeliculasEditarInformacionPelicula, MenuPeliculasIngresarNuevaPelicula});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {MenuPeliculasEditarInformacionPeliculaBtn, MenuPeliculasIngresarNuevaPeliculaBtn});
 
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,11 +99,11 @@ public class InterfazMenuPeliculas extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addComponent(jLabel1)
                 .addGap(35, 35, 35)
-                .addComponent(MenuPeliculasIngresarNuevaPelicula)
+                .addComponent(MenuPeliculasIngresarNuevaPeliculaBtn)
                 .addGap(18, 18, 18)
-                .addComponent(MenuPeliculasEditarInformacionPelicula)
+                .addComponent(MenuPeliculasEditarInformacionPeliculaBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
-                .addComponent(MenuPeliculasVolverAlMenuPrincipal)
+                .addComponent(MenuPeliculasVolverAlMenuPrincipalBtn)
                 .addGap(22, 22, 22))
         );
 
@@ -123,34 +123,34 @@ public class InterfazMenuPeliculas extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void MenuPeliculasIngresarNuevaPeliculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuPeliculasIngresarNuevaPeliculaActionPerformed
+    private void MenuPeliculasIngresarNuevaPeliculaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuPeliculasIngresarNuevaPeliculaBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_MenuPeliculasIngresarNuevaPeliculaActionPerformed
+    }//GEN-LAST:event_MenuPeliculasIngresarNuevaPeliculaBtnActionPerformed
 
-    private void MenuPeliculasVolverAlMenuPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuPeliculasVolverAlMenuPrincipalActionPerformed
+    private void MenuPeliculasVolverAlMenuPrincipalBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuPeliculasVolverAlMenuPrincipalBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_MenuPeliculasVolverAlMenuPrincipalActionPerformed
+    }//GEN-LAST:event_MenuPeliculasVolverAlMenuPrincipalBtnActionPerformed
 
-    private void MenuPeliculasIngresarNuevaPeliculaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuPeliculasIngresarNuevaPeliculaMouseClicked
+    private void MenuPeliculasIngresarNuevaPeliculaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuPeliculasIngresarNuevaPeliculaBtnMouseClicked
         // con este codigo vamos a la ventana de  Ingresar nueva pelicula y se cierra esta
         InterfazRegistrarPeliculaNueva registrarPelicula= new InterfazRegistrarPeliculaNueva();
         registrarPelicula.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_MenuPeliculasIngresarNuevaPeliculaMouseClicked
+    }//GEN-LAST:event_MenuPeliculasIngresarNuevaPeliculaBtnMouseClicked
 
-    private void MenuPeliculasEditarInformacionPeliculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuPeliculasEditarInformacionPeliculaActionPerformed
+    private void MenuPeliculasEditarInformacionPeliculaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuPeliculasEditarInformacionPeliculaBtnActionPerformed
         // con este codigo vamos a la ventana de editar pelicula y cerramos esta
         InterfazEditarPelicula editarPelicula= new InterfazEditarPelicula();
         editarPelicula.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_MenuPeliculasEditarInformacionPeliculaActionPerformed
+    }//GEN-LAST:event_MenuPeliculasEditarInformacionPeliculaBtnActionPerformed
 
-    private void MenuPeliculasVolverAlMenuPrincipalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuPeliculasVolverAlMenuPrincipalMouseClicked
+    private void MenuPeliculasVolverAlMenuPrincipalBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuPeliculasVolverAlMenuPrincipalBtnMouseClicked
         // con este codigo volvemos al menu principal y cerramos la ventana actual
         InterfazMenuPrincipal menuPrincipal= new  InterfazMenuPrincipal();
         menuPrincipal.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_MenuPeliculasVolverAlMenuPrincipalMouseClicked
+    }//GEN-LAST:event_MenuPeliculasVolverAlMenuPrincipalBtnMouseClicked
 
     /**
      * @param args the command line arguments
@@ -188,9 +188,9 @@ public class InterfazMenuPeliculas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton MenuPeliculasEditarInformacionPelicula;
-    private javax.swing.JButton MenuPeliculasIngresarNuevaPelicula;
-    private javax.swing.JButton MenuPeliculasVolverAlMenuPrincipal;
+    private javax.swing.JButton MenuPeliculasEditarInformacionPeliculaBtn;
+    private javax.swing.JButton MenuPeliculasIngresarNuevaPeliculaBtn;
+    private javax.swing.JButton MenuPeliculasVolverAlMenuPrincipalBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
