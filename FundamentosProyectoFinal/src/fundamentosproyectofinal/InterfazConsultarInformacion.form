@@ -26,7 +26,7 @@
           <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="ConsultarInformacionVolverAPaginaPrincipal" min="-2" max="-2" attributes="0"/>
+              <Component id="ConsultarInformacionVolverAPaginaPrincipalBtn" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -37,7 +37,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-              <Component id="ConsultarInformacionVolverAPaginaPrincipal" min="-2" max="-2" attributes="0"/>
+              <Component id="ConsultarInformacionVolverAPaginaPrincipalBtn" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -66,11 +66,11 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="ConsultarInformacionUsuario" linkSize="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="ConsultarInformacionUsuarioBtn" linkSize="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="ConsultarInformacionPeliculas" linkSize="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="ConsultarInformacionPeliculasBtn" linkSize="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="54" max="32767" attributes="0"/>
@@ -83,9 +83,9 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                  <Component id="ConsultarInformacionUsuario" min="-2" max="-2" attributes="0"/>
+                  <Component id="ConsultarInformacionUsuarioBtn" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="ConsultarInformacionPeliculas" min="-2" max="-2" attributes="0"/>
+                  <Component id="ConsultarInformacionPeliculasBtn" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="38" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -99,33 +99,33 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="ConsultarInformacionUsuario">
+        <Component class="javax.swing.JButton" name="ConsultarInformacionUsuarioBtn">
           <Properties>
             <Property name="text" type="java.lang.String" value="Consultar informaci&#xf3;n de usuario"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ConsultarInformacionUsuarioMouseClicked"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ConsultarInformacionUsuarioActionPerformed"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ConsultarInformacionUsuarioBtnMouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ConsultarInformacionUsuarioBtnActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="ConsultarInformacionPeliculas">
+        <Component class="javax.swing.JButton" name="ConsultarInformacionPeliculasBtn">
           <Properties>
             <Property name="text" type="java.lang.String" value="Consultar informaci&#xf3;n de pel&#xed;culas"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ConsultarInformacionPeliculasMouseClicked"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ConsultarInformacionPeliculasActionPerformed"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ConsultarInformacionPeliculasBtnMouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ConsultarInformacionPeliculasBtnActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="ConsultarInformacionVolverAPaginaPrincipal">
+    <Component class="javax.swing.JButton" name="ConsultarInformacionVolverAPaginaPrincipalBtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="Volver a la p&#xe1;gina principal"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ConsultarInformacionVolverAPaginaPrincipalMouseClicked"/>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ConsultarInformacionVolverAPaginaPrincipalActionPerformed"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ConsultarInformacionVolverAPaginaPrincipalBtnMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ConsultarInformacionVolverAPaginaPrincipalBtnActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

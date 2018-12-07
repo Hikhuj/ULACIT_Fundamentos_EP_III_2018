@@ -28,35 +28,35 @@ public class InterfazMenuUsuarios extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        MenuUsuariosIngresarNuevoUsuario = new javax.swing.JButton();
-        MenuUsuariosEditarUsuario = new javax.swing.JButton();
-        MenuUsuariosVolverAPaginaPrincipal = new javax.swing.JButton();
+        MenuUsuariosIngresarNuevoUsuarioBtn = new javax.swing.JButton();
+        MenuUsuariosEditarUsuarioBtn = new javax.swing.JButton();
+        MenuUsuariosVolverAPaginaPrincipalBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Menú de usuarios", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
 
-        MenuUsuariosIngresarNuevoUsuario.setText("Ingresar nuevo usuario");
-        MenuUsuariosIngresarNuevoUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+        MenuUsuariosIngresarNuevoUsuarioBtn.setText("Ingresar nuevo usuario");
+        MenuUsuariosIngresarNuevoUsuarioBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                MenuUsuariosIngresarNuevoUsuarioMouseClicked(evt);
+                MenuUsuariosIngresarNuevoUsuarioBtnMouseClicked(evt);
             }
         });
-        MenuUsuariosIngresarNuevoUsuario.addActionListener(new java.awt.event.ActionListener() {
+        MenuUsuariosIngresarNuevoUsuarioBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuUsuariosIngresarNuevoUsuarioActionPerformed(evt);
+                MenuUsuariosIngresarNuevoUsuarioBtnActionPerformed(evt);
             }
         });
 
-        MenuUsuariosEditarUsuario.setText("Editar usuario");
-        MenuUsuariosEditarUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+        MenuUsuariosEditarUsuarioBtn.setText("Editar usuario");
+        MenuUsuariosEditarUsuarioBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                MenuUsuariosEditarUsuarioMouseClicked(evt);
+                MenuUsuariosEditarUsuarioBtnMouseClicked(evt);
             }
         });
-        MenuUsuariosEditarUsuario.addActionListener(new java.awt.event.ActionListener() {
+        MenuUsuariosEditarUsuarioBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuUsuariosEditarUsuarioActionPerformed(evt);
+                MenuUsuariosEditarUsuarioBtnActionPerformed(evt);
             }
         });
 
@@ -67,32 +67,32 @@ public class InterfazMenuUsuarios extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(MenuUsuariosIngresarNuevoUsuario)
-                    .addComponent(MenuUsuariosEditarUsuario))
+                    .addComponent(MenuUsuariosIngresarNuevoUsuarioBtn)
+                    .addComponent(MenuUsuariosEditarUsuarioBtn))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {MenuUsuariosEditarUsuario, MenuUsuariosIngresarNuevoUsuario});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {MenuUsuariosEditarUsuarioBtn, MenuUsuariosIngresarNuevoUsuarioBtn});
 
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(48, 48, 48)
-                .addComponent(MenuUsuariosIngresarNuevoUsuario)
+                .addComponent(MenuUsuariosIngresarNuevoUsuarioBtn)
                 .addGap(42, 42, 42)
-                .addComponent(MenuUsuariosEditarUsuario)
+                .addComponent(MenuUsuariosEditarUsuarioBtn)
                 .addContainerGap(68, Short.MAX_VALUE))
         );
 
-        MenuUsuariosVolverAPaginaPrincipal.setText("Volver a la página principal");
-        MenuUsuariosVolverAPaginaPrincipal.addMouseListener(new java.awt.event.MouseAdapter() {
+        MenuUsuariosVolverAPaginaPrincipalBtn.setText("Volver a la página principal");
+        MenuUsuariosVolverAPaginaPrincipalBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                MenuUsuariosVolverAPaginaPrincipalMouseClicked(evt);
+                MenuUsuariosVolverAPaginaPrincipalBtnMouseClicked(evt);
             }
         });
-        MenuUsuariosVolverAPaginaPrincipal.addActionListener(new java.awt.event.ActionListener() {
+        MenuUsuariosVolverAPaginaPrincipalBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuUsuariosVolverAPaginaPrincipalActionPerformed(evt);
+                MenuUsuariosVolverAPaginaPrincipalBtnActionPerformed(evt);
             }
         });
 
@@ -106,7 +106,7 @@ public class InterfazMenuUsuarios extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(208, Short.MAX_VALUE)
-                .addComponent(MenuUsuariosVolverAPaginaPrincipal)
+                .addComponent(MenuUsuariosVolverAPaginaPrincipalBtn)
                 .addGap(33, 33, 33))
         );
         layout.setVerticalGroup(
@@ -115,45 +115,45 @@ public class InterfazMenuUsuarios extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(MenuUsuariosVolverAPaginaPrincipal)
+                .addComponent(MenuUsuariosVolverAPaginaPrincipalBtn)
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void MenuUsuariosIngresarNuevoUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuUsuariosIngresarNuevoUsuarioMouseClicked
+    private void MenuUsuariosIngresarNuevoUsuarioBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuUsuariosIngresarNuevoUsuarioBtnMouseClicked
         //con eset codigo vamos a la ventana de Ingresar nuevo usuario y cerramos esta
         InterfazRegistrarClientes registrarClientes= new InterfazRegistrarClientes();
         registrarClientes.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_MenuUsuariosIngresarNuevoUsuarioMouseClicked
+    }//GEN-LAST:event_MenuUsuariosIngresarNuevoUsuarioBtnMouseClicked
 
-    private void MenuUsuariosEditarUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuUsuariosEditarUsuarioMouseClicked
+    private void MenuUsuariosEditarUsuarioBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuUsuariosEditarUsuarioBtnMouseClicked
         // con este codigo vamos a la ventana de editar Usuarios 
         InterfazEditarUsuario editarUsuario= new InterfazEditarUsuario();
         editarUsuario.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_MenuUsuariosEditarUsuarioMouseClicked
+    }//GEN-LAST:event_MenuUsuariosEditarUsuarioBtnMouseClicked
 
-    private void MenuUsuariosIngresarNuevoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuUsuariosIngresarNuevoUsuarioActionPerformed
+    private void MenuUsuariosIngresarNuevoUsuarioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuUsuariosIngresarNuevoUsuarioBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_MenuUsuariosIngresarNuevoUsuarioActionPerformed
+    }//GEN-LAST:event_MenuUsuariosIngresarNuevoUsuarioBtnActionPerformed
 
-    private void MenuUsuariosEditarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuUsuariosEditarUsuarioActionPerformed
+    private void MenuUsuariosEditarUsuarioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuUsuariosEditarUsuarioBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_MenuUsuariosEditarUsuarioActionPerformed
+    }//GEN-LAST:event_MenuUsuariosEditarUsuarioBtnActionPerformed
 
-    private void MenuUsuariosVolverAPaginaPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuUsuariosVolverAPaginaPrincipalActionPerformed
+    private void MenuUsuariosVolverAPaginaPrincipalBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuUsuariosVolverAPaginaPrincipalBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_MenuUsuariosVolverAPaginaPrincipalActionPerformed
+    }//GEN-LAST:event_MenuUsuariosVolverAPaginaPrincipalBtnActionPerformed
 
-    private void MenuUsuariosVolverAPaginaPrincipalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuUsuariosVolverAPaginaPrincipalMouseClicked
+    private void MenuUsuariosVolverAPaginaPrincipalBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuUsuariosVolverAPaginaPrincipalBtnMouseClicked
         // con este codigo volvemos al menu principal y cerramos la ventana actual
         InterfazMenuPrincipal menuPrincipal= new  InterfazMenuPrincipal();
         menuPrincipal.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_MenuUsuariosVolverAPaginaPrincipalMouseClicked
+    }//GEN-LAST:event_MenuUsuariosVolverAPaginaPrincipalBtnMouseClicked
 
     /**
      * @param args the command line arguments
@@ -191,9 +191,9 @@ public class InterfazMenuUsuarios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton MenuUsuariosEditarUsuario;
-    private javax.swing.JButton MenuUsuariosIngresarNuevoUsuario;
-    private javax.swing.JButton MenuUsuariosVolverAPaginaPrincipal;
+    private javax.swing.JButton MenuUsuariosEditarUsuarioBtn;
+    private javax.swing.JButton MenuUsuariosIngresarNuevoUsuarioBtn;
+    private javax.swing.JButton MenuUsuariosVolverAPaginaPrincipalBtn;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

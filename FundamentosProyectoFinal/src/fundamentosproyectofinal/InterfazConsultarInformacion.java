@@ -29,9 +29,9 @@ public class InterfazConsultarInformacion extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        ConsultarInformacionUsuario = new javax.swing.JButton();
-        ConsultarInformacionPeliculas = new javax.swing.JButton();
-        ConsultarInformacionVolverAPaginaPrincipal = new javax.swing.JButton();
+        ConsultarInformacionUsuarioBtn = new javax.swing.JButton();
+        ConsultarInformacionPeliculasBtn = new javax.swing.JButton();
+        ConsultarInformacionVolverAPaginaPrincipalBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -39,27 +39,27 @@ public class InterfazConsultarInformacion extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
-        ConsultarInformacionUsuario.setText("Consultar información de usuario");
-        ConsultarInformacionUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+        ConsultarInformacionUsuarioBtn.setText("Consultar información de usuario");
+        ConsultarInformacionUsuarioBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ConsultarInformacionUsuarioMouseClicked(evt);
+                ConsultarInformacionUsuarioBtnMouseClicked(evt);
             }
         });
-        ConsultarInformacionUsuario.addActionListener(new java.awt.event.ActionListener() {
+        ConsultarInformacionUsuarioBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ConsultarInformacionUsuarioActionPerformed(evt);
+                ConsultarInformacionUsuarioBtnActionPerformed(evt);
             }
         });
 
-        ConsultarInformacionPeliculas.setText("Consultar información de películas");
-        ConsultarInformacionPeliculas.addMouseListener(new java.awt.event.MouseAdapter() {
+        ConsultarInformacionPeliculasBtn.setText("Consultar información de películas");
+        ConsultarInformacionPeliculasBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ConsultarInformacionPeliculasMouseClicked(evt);
+                ConsultarInformacionPeliculasBtnMouseClicked(evt);
             }
         });
-        ConsultarInformacionPeliculas.addActionListener(new java.awt.event.ActionListener() {
+        ConsultarInformacionPeliculasBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ConsultarInformacionPeliculasActionPerformed(evt);
+                ConsultarInformacionPeliculasBtnActionPerformed(evt);
             }
         });
 
@@ -74,14 +74,14 @@ public class InterfazConsultarInformacion extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(ConsultarInformacionUsuario))
+                        .addComponent(ConsultarInformacionUsuarioBtn))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(ConsultarInformacionPeliculas)))
+                        .addComponent(ConsultarInformacionPeliculasBtn)))
                 .addContainerGap(54, Short.MAX_VALUE))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {ConsultarInformacionPeliculas, ConsultarInformacionUsuario});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {ConsultarInformacionPeliculasBtn, ConsultarInformacionUsuarioBtn});
 
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -89,21 +89,21 @@ public class InterfazConsultarInformacion extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(26, 26, 26)
-                .addComponent(ConsultarInformacionUsuario)
+                .addComponent(ConsultarInformacionUsuarioBtn)
                 .addGap(18, 18, 18)
-                .addComponent(ConsultarInformacionPeliculas)
+                .addComponent(ConsultarInformacionPeliculasBtn)
                 .addContainerGap(38, Short.MAX_VALUE))
         );
 
-        ConsultarInformacionVolverAPaginaPrincipal.setText("Volver a la página principal");
-        ConsultarInformacionVolverAPaginaPrincipal.addMouseListener(new java.awt.event.MouseAdapter() {
+        ConsultarInformacionVolverAPaginaPrincipalBtn.setText("Volver a la página principal");
+        ConsultarInformacionVolverAPaginaPrincipalBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ConsultarInformacionVolverAPaginaPrincipalMouseClicked(evt);
+                ConsultarInformacionVolverAPaginaPrincipalBtnMouseClicked(evt);
             }
         });
-        ConsultarInformacionVolverAPaginaPrincipal.addActionListener(new java.awt.event.ActionListener() {
+        ConsultarInformacionVolverAPaginaPrincipalBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ConsultarInformacionVolverAPaginaPrincipalActionPerformed(evt);
+                ConsultarInformacionVolverAPaginaPrincipalBtnActionPerformed(evt);
             }
         });
 
@@ -114,7 +114,7 @@ public class InterfazConsultarInformacion extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ConsultarInformacionVolverAPaginaPrincipal)
+                .addComponent(ConsultarInformacionVolverAPaginaPrincipalBtn)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -123,45 +123,45 @@ public class InterfazConsultarInformacion extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
-                .addComponent(ConsultarInformacionVolverAPaginaPrincipal)
+                .addComponent(ConsultarInformacionVolverAPaginaPrincipalBtn)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ConsultarInformacionUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarInformacionUsuarioActionPerformed
+    private void ConsultarInformacionUsuarioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarInformacionUsuarioBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ConsultarInformacionUsuarioActionPerformed
+    }//GEN-LAST:event_ConsultarInformacionUsuarioBtnActionPerformed
 
-    private void ConsultarInformacionPeliculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarInformacionPeliculasActionPerformed
+    private void ConsultarInformacionPeliculasBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarInformacionPeliculasBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ConsultarInformacionPeliculasActionPerformed
+    }//GEN-LAST:event_ConsultarInformacionPeliculasBtnActionPerformed
 
-    private void ConsultarInformacionUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConsultarInformacionUsuarioMouseClicked
+    private void ConsultarInformacionUsuarioBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConsultarInformacionUsuarioBtnMouseClicked
         // con este codigo vamos a la ventana de buscar usuario
         InterfazBuscarUsuario buscarUsuario= new InterfazBuscarUsuario();
         buscarUsuario.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_ConsultarInformacionUsuarioMouseClicked
+    }//GEN-LAST:event_ConsultarInformacionUsuarioBtnMouseClicked
 
-    private void ConsultarInformacionPeliculasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConsultarInformacionPeliculasMouseClicked
+    private void ConsultarInformacionPeliculasBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConsultarInformacionPeliculasBtnMouseClicked
         // con este codigo vamos a la ventana de buscar peliculas y cerramos esta
         InterfazBuscarPelicula buscarPelicula= new InterfazBuscarPelicula();
         buscarPelicula.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_ConsultarInformacionPeliculasMouseClicked
+    }//GEN-LAST:event_ConsultarInformacionPeliculasBtnMouseClicked
 
-    private void ConsultarInformacionVolverAPaginaPrincipalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConsultarInformacionVolverAPaginaPrincipalMouseClicked
+    private void ConsultarInformacionVolverAPaginaPrincipalBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ConsultarInformacionVolverAPaginaPrincipalBtnMouseClicked
           // con este codigo volvemos al menu principal y cerramos la ventana actual
         InterfazMenuPrincipal menuPrincipal= new  InterfazMenuPrincipal();
         menuPrincipal.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_ConsultarInformacionVolverAPaginaPrincipalMouseClicked
+    }//GEN-LAST:event_ConsultarInformacionVolverAPaginaPrincipalBtnMouseClicked
 
-    private void ConsultarInformacionVolverAPaginaPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarInformacionVolverAPaginaPrincipalActionPerformed
+    private void ConsultarInformacionVolverAPaginaPrincipalBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarInformacionVolverAPaginaPrincipalBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ConsultarInformacionVolverAPaginaPrincipalActionPerformed
+    }//GEN-LAST:event_ConsultarInformacionVolverAPaginaPrincipalBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -199,9 +199,9 @@ public class InterfazConsultarInformacion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ConsultarInformacionPeliculas;
-    private javax.swing.JButton ConsultarInformacionUsuario;
-    private javax.swing.JButton ConsultarInformacionVolverAPaginaPrincipal;
+    private javax.swing.JButton ConsultarInformacionPeliculasBtn;
+    private javax.swing.JButton ConsultarInformacionUsuarioBtn;
+    private javax.swing.JButton ConsultarInformacionVolverAPaginaPrincipalBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

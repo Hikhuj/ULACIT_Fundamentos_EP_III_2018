@@ -43,10 +43,10 @@
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="MenuPrincipalSalir" linkSize="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="MenuPrincipalConsultarInformacion" linkSize="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="MenuPrincipalMenuPeliculas" linkSize="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="MenuPrincipalMenuUsuario" linkSize="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="MenuPrincipalSalirBtn" linkSize="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="MenuPrincipalConsultarInformacionBtn" linkSize="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="MenuPrincipalMenuPeliculasBtn" linkSize="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="MenuPrincipalMenuUsuarioBtn" linkSize="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -64,20 +64,20 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" pref="64" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="MenuPrincipalMenuUsuario" linkSize="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="MenuPrincipalMenuUsuarioBtn" linkSize="2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                  <Component id="MenuPrincipalMenuPeliculas" linkSize="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="MenuPrincipalMenuPeliculasBtn" linkSize="2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                  <Component id="MenuPrincipalConsultarInformacion" linkSize="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="MenuPrincipalConsultarInformacionBtn" linkSize="2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="26" max="32767" attributes="0"/>
-                  <Component id="MenuPrincipalSalir" linkSize="2" min="-2" max="-2" attributes="0"/>
+                  <Component id="MenuPrincipalSalirBtn" linkSize="2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="MenuPrincipalMenuUsuario">
+        <Component class="javax.swing.JButton" name="MenuPrincipalMenuUsuarioBtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -85,10 +85,10 @@
             <Property name="text" type="java.lang.String" value="Menu usuarios"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuPrincipalMenuUsuarioActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuPrincipalMenuUsuarioBtnActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="MenuPrincipalMenuPeliculas">
+        <Component class="javax.swing.JButton" name="MenuPrincipalMenuPeliculasBtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -96,10 +96,10 @@
             <Property name="text" type="java.lang.String" value="Men&#xfa; pel&#xed;culas"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="MenuPrincipalMenuPeliculasMouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="MenuPrincipalMenuPeliculasBtnMouseClicked"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="MenuPrincipalConsultarInformacion">
+        <Component class="javax.swing.JButton" name="MenuPrincipalConsultarInformacionBtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -107,10 +107,10 @@
             <Property name="text" type="java.lang.String" value="Consultar Informaci&#xf3;n"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="MenuPrincipalConsultarInformacionMouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="MenuPrincipalConsultarInformacionBtnMouseClicked"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="MenuPrincipalSalir">
+        <Component class="javax.swing.JButton" name="MenuPrincipalSalirBtn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -118,7 +118,7 @@
             <Property name="text" type="java.lang.String" value="Salir"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuPrincipalSalirActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuPrincipalSalirBtnActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">

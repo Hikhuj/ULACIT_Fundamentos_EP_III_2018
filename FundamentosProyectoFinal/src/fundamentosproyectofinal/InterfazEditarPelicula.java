@@ -5,15 +5,20 @@
  */
 package fundamentosproyectofinal;
 
+import java.awt.HeadlessException;
+
 /**
  *
  * @author Karla
  */
 public class InterfazEditarPelicula extends javax.swing.JFrame {
 
-    /**
-     * Creates new form InterfazEditarPelicula
-     */
+    Menus menuEnInterfaz = new Menus();
+    InteraccionConCSV interaccionCSV=  new InteraccionConCSV ();
+    public static final String SEPARADOR = ",";
+    Interaccion interaccion= new Interaccion();
+    Miscelaneos miscelaneos= new Miscelaneos();
+    
     public InterfazEditarPelicula() {
         initComponents();
     }
@@ -29,24 +34,10 @@ public class InterfazEditarPelicula extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        EditarPeliculaIDPelicula = new javax.swing.JTextField();
-        EditarPeliculaNombre = new javax.swing.JTextField();
-        EditarPeliculaSinopsis = new javax.swing.JTextField();
-        EditarPeliculaYear = new javax.swing.JTextField();
-        EditarPeliculaDirector = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        EditarPeliculaGenero = new javax.swing.JComboBox<>();
-        jLabel8 = new javax.swing.JLabel();
-        EditarPeliculaTipoDisco = new javax.swing.JComboBox<>();
-        EditarPeliculaEstadoPelicula = new javax.swing.JComboBox<>();
-        EditarPeliculaGuardar = new javax.swing.JButton();
-        EditarPeliculaBorrar = new javax.swing.JButton();
-        EditarPeliculaVolverAlMenuPrincipal = new javax.swing.JButton();
+        EditarPeliculaIDPeliculaTxt = new javax.swing.JTextField();
+        EditarPeliculaBuscarBtn = new javax.swing.JButton();
+        EditarPeliculaLimpiarBtn = new javax.swing.JButton();
+        EditarPeliculaVolverAlMenuPrincipalBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,43 +45,11 @@ public class InterfazEditarPelicula extends javax.swing.JFrame {
 
         jLabel1.setText("ID Película:");
 
-        jLabel2.setText("Nombre:");
-
-        jLabel3.setText("Año:");
-
-        jLabel4.setText("Director:");
-
-        jLabel5.setText("Sinopsis:");
-
-        EditarPeliculaIDPelicula.addActionListener(new java.awt.event.ActionListener() {
+        EditarPeliculaIDPeliculaTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditarPeliculaIDPeliculaActionPerformed(evt);
+                EditarPeliculaIDPeliculaTxtActionPerformed(evt);
             }
         });
-
-        EditarPeliculaSinopsis.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditarPeliculaSinopsisActionPerformed(evt);
-            }
-        });
-
-        EditarPeliculaDirector.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditarPeliculaDirectorActionPerformed(evt);
-            }
-        });
-
-        jLabel6.setText("Género:");
-
-        jLabel7.setText("Tipo de Disco:");
-
-        EditarPeliculaGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jLabel8.setText("Estado Película:");
-
-        EditarPeliculaTipoDisco.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        EditarPeliculaEstadoPelicula.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -99,109 +58,53 @@ public class InterfazEditarPelicula extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel2)
-                        .addGap(141, 141, 141))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel4)
-                        .addGap(141, 141, 141))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(EditarPeliculaSinopsis, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(24, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(EditarPeliculaIDPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(EditarPeliculaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(62, 62, 62))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(EditarPeliculaYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(EditarPeliculaDirector, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(62, 62, 62))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(EditarPeliculaGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(76, 76, 76)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(EditarPeliculaTipoDisco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(EditarPeliculaEstadoPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(45, 45, 45))))
+                    .addComponent(jLabel1)
+                    .addComponent(EditarPeliculaIDPeliculaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {EditarPeliculaDirector, EditarPeliculaIDPelicula, EditarPeliculaNombre, EditarPeliculaYear});
-
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
+                .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(EditarPeliculaIDPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(EditarPeliculaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(EditarPeliculaYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(EditarPeliculaDirector, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(EditarPeliculaSinopsis, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(18, 18, 18)
-                        .addComponent(EditarPeliculaGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel7))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(EditarPeliculaTipoDisco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(EditarPeliculaEstadoPelicula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(EditarPeliculaIDPeliculaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
-        EditarPeliculaGuardar.setText("Guardar");
-        EditarPeliculaGuardar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditarPeliculaGuardarActionPerformed(evt);
-            }
-        });
-
-        EditarPeliculaBorrar.setText("Borrar");
-
-        EditarPeliculaVolverAlMenuPrincipal.setText("Volver al menú principal");
-        EditarPeliculaVolverAlMenuPrincipal.addMouseListener(new java.awt.event.MouseAdapter() {
+        EditarPeliculaBuscarBtn.setText("Buscar");
+        EditarPeliculaBuscarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                EditarPeliculaVolverAlMenuPrincipalMouseClicked(evt);
+                EditarPeliculaBuscarBtnMouseClicked(evt);
             }
         });
-        EditarPeliculaVolverAlMenuPrincipal.addActionListener(new java.awt.event.ActionListener() {
+        EditarPeliculaBuscarBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditarPeliculaVolverAlMenuPrincipalActionPerformed(evt);
+                EditarPeliculaBuscarBtnActionPerformed(evt);
+            }
+        });
+
+        EditarPeliculaLimpiarBtn.setText("Limpiar");
+        EditarPeliculaLimpiarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                EditarPeliculaLimpiarBtnMouseClicked(evt);
+            }
+        });
+        EditarPeliculaLimpiarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditarPeliculaLimpiarBtnActionPerformed(evt);
+            }
+        });
+
+        EditarPeliculaVolverAlMenuPrincipalBtn.setText("Volver al menú principal");
+        EditarPeliculaVolverAlMenuPrincipalBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                EditarPeliculaVolverAlMenuPrincipalBtnMouseClicked(evt);
+            }
+        });
+        EditarPeliculaVolverAlMenuPrincipalBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditarPeliculaVolverAlMenuPrincipalBtnActionPerformed(evt);
             }
         });
 
@@ -211,13 +114,13 @@ public class InterfazEditarPelicula extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(EditarPeliculaGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 29, Short.MAX_VALUE)
+                .addComponent(EditarPeliculaBuscarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(EditarPeliculaBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(EditarPeliculaLimpiarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(EditarPeliculaVolverAlMenuPrincipal)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(EditarPeliculaVolverAlMenuPrincipalBtn)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -226,41 +129,82 @@ public class InterfazEditarPelicula extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(EditarPeliculaGuardar)
-                    .addComponent(EditarPeliculaBorrar)
-                    .addComponent(EditarPeliculaVolverAlMenuPrincipal))
+                    .addComponent(EditarPeliculaBuscarBtn)
+                    .addComponent(EditarPeliculaLimpiarBtn)
+                    .addComponent(EditarPeliculaVolverAlMenuPrincipalBtn))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void EditarPeliculaSinopsisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarPeliculaSinopsisActionPerformed
+    private void EditarPeliculaBuscarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarPeliculaBuscarBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_EditarPeliculaSinopsisActionPerformed
+    }//GEN-LAST:event_EditarPeliculaBuscarBtnActionPerformed
 
-    private void EditarPeliculaIDPeliculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarPeliculaIDPeliculaActionPerformed
+    private void EditarPeliculaIDPeliculaTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarPeliculaIDPeliculaTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_EditarPeliculaIDPeliculaActionPerformed
+    }//GEN-LAST:event_EditarPeliculaIDPeliculaTxtActionPerformed
 
-    private void EditarPeliculaGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarPeliculaGuardarActionPerformed
+    private void EditarPeliculaVolverAlMenuPrincipalBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarPeliculaVolverAlMenuPrincipalBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_EditarPeliculaGuardarActionPerformed
+    }//GEN-LAST:event_EditarPeliculaVolverAlMenuPrincipalBtnActionPerformed
 
-    private void EditarPeliculaDirectorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarPeliculaDirectorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_EditarPeliculaDirectorActionPerformed
-
-    private void EditarPeliculaVolverAlMenuPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarPeliculaVolverAlMenuPrincipalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_EditarPeliculaVolverAlMenuPrincipalActionPerformed
-
-    private void EditarPeliculaVolverAlMenuPrincipalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EditarPeliculaVolverAlMenuPrincipalMouseClicked
+    private void EditarPeliculaVolverAlMenuPrincipalBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EditarPeliculaVolverAlMenuPrincipalBtnMouseClicked
         // con este codigo volvemos al menu principal y cerramos la ventana actual
         InterfazMenuPrincipal menuPrincipal= new  InterfazMenuPrincipal();
         menuPrincipal.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_EditarPeliculaVolverAlMenuPrincipalMouseClicked
+    }//GEN-LAST:event_EditarPeliculaVolverAlMenuPrincipalBtnMouseClicked
+
+    private void EditarPeliculaBuscarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EditarPeliculaBuscarBtnMouseClicked
+         int idBuscar;
+        
+        String [] info;
+        String [] infoTemp;
+        boolean done;
+
+        try {
+
+            idBuscar = Integer.parseInt(EditarPeliculaIDPeliculaTxt.getText());
+
+            info = interaccionCSV.buscarPelicula(String.valueOf(idBuscar));
+            
+            if(info != null){
+            
+                infoTemp = interaccion.editorPelicula (info);
+                
+                if(interaccionCSV.actualizarDatosPelicula(infoTemp, String.valueOf(idBuscar))){
+                    
+                    miscelaneos.actualizacionExitosa();
+                    
+                }else{
+                    
+                    miscelaneos.actualizacionSinExito();
+                    
+                }
+                
+            }else{
+                
+                miscelaneos.infoUsuarioInexistente();
+                
+            }
+
+        }catch(HeadlessException | NumberFormatException error2){
+
+            miscelaneos.mensajeErrorValorNuloONoNumerico();
+
+        }
+    }//GEN-LAST:event_EditarPeliculaBuscarBtnMouseClicked
+
+    private void EditarPeliculaLimpiarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarPeliculaLimpiarBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EditarPeliculaLimpiarBtnActionPerformed
+
+    private void EditarPeliculaLimpiarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EditarPeliculaLimpiarBtnMouseClicked
+        // con esto se limpiar
+        EditarPeliculaIDPeliculaTxt.setText("");
+    }//GEN-LAST:event_EditarPeliculaLimpiarBtnMouseClicked
 
     /**
      * @param args the command line arguments
@@ -298,25 +242,11 @@ public class InterfazEditarPelicula extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton EditarPeliculaBorrar;
-    private javax.swing.JTextField EditarPeliculaDirector;
-    private javax.swing.JComboBox<String> EditarPeliculaEstadoPelicula;
-    private javax.swing.JComboBox<String> EditarPeliculaGenero;
-    private javax.swing.JButton EditarPeliculaGuardar;
-    private javax.swing.JTextField EditarPeliculaIDPelicula;
-    private javax.swing.JTextField EditarPeliculaNombre;
-    private javax.swing.JTextField EditarPeliculaSinopsis;
-    private javax.swing.JComboBox<String> EditarPeliculaTipoDisco;
-    private javax.swing.JButton EditarPeliculaVolverAlMenuPrincipal;
-    private javax.swing.JTextField EditarPeliculaYear;
+    private javax.swing.JButton EditarPeliculaBuscarBtn;
+    private javax.swing.JTextField EditarPeliculaIDPeliculaTxt;
+    private javax.swing.JButton EditarPeliculaLimpiarBtn;
+    private javax.swing.JButton EditarPeliculaVolverAlMenuPrincipalBtn;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

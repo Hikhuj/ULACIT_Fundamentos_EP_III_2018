@@ -30,7 +30,7 @@ public class InterfazVideotecaBienvenida extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        BienvenidaMenuPrincipal = new javax.swing.JButton();
+        BienvenidaMenuPrincipalBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -39,15 +39,15 @@ public class InterfazVideotecaBienvenida extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo arreglado.jpg"))); // NOI18N
 
-        BienvenidaMenuPrincipal.setText("MENU PRINCIPAL");
-        BienvenidaMenuPrincipal.addMouseListener(new java.awt.event.MouseAdapter() {
+        BienvenidaMenuPrincipalBtn.setText("MENU PRINCIPAL");
+        BienvenidaMenuPrincipalBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BienvenidaMenuPrincipalMouseClicked(evt);
+                BienvenidaMenuPrincipalBtnMouseClicked(evt);
             }
         });
-        BienvenidaMenuPrincipal.addActionListener(new java.awt.event.ActionListener() {
+        BienvenidaMenuPrincipalBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BienvenidaMenuPrincipalActionPerformed(evt);
+                BienvenidaMenuPrincipalBtnActionPerformed(evt);
             }
         });
 
@@ -66,7 +66,7 @@ public class InterfazVideotecaBienvenida extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(128, 128, 128)
-                        .addComponent(BienvenidaMenuPrincipal)))
+                        .addComponent(BienvenidaMenuPrincipalBtn)))
                 .addContainerGap(72, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -77,7 +77,7 @@ public class InterfazVideotecaBienvenida extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addComponent(BienvenidaMenuPrincipal)
+                .addComponent(BienvenidaMenuPrincipalBtn)
                 .addContainerGap())
         );
 
@@ -101,15 +101,15 @@ public class InterfazVideotecaBienvenida extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BienvenidaMenuPrincipalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BienvenidaMenuPrincipalMouseClicked
+    private void BienvenidaMenuPrincipalBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BienvenidaMenuPrincipalBtnMouseClicked
             InterfazMenuPrincipal menu= new InterfazMenuPrincipal();
             menu.setVisible(true);
             this.dispose();
-    }//GEN-LAST:event_BienvenidaMenuPrincipalMouseClicked
+    }//GEN-LAST:event_BienvenidaMenuPrincipalBtnMouseClicked
 
-    private void BienvenidaMenuPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BienvenidaMenuPrincipalActionPerformed
+    private void BienvenidaMenuPrincipalBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BienvenidaMenuPrincipalBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BienvenidaMenuPrincipalActionPerformed
+    }//GEN-LAST:event_BienvenidaMenuPrincipalBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -148,7 +148,7 @@ public class InterfazVideotecaBienvenida extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BienvenidaMenuPrincipal;
+    private javax.swing.JButton BienvenidaMenuPrincipalBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

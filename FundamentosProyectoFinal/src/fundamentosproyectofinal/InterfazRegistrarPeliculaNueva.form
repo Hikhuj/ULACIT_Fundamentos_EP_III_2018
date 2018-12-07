@@ -25,12 +25,12 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="IngresarPeliculaNuevaGuardar" min="-2" pref="80" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+              <Component id="IngresarPeliculaNuevaGuardarBtn" min="-2" pref="80" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="IngresarPeliculaNuevaBorrar" min="-2" pref="80" max="-2" attributes="0"/>
+              <Component id="IngresarPeliculaNuevaLimpiarCasillasBtn" max="32767" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="IngresarPeliculaNuevaVolverAMenuPrincipal" min="-2" max="-2" attributes="0"/>
+              <Component id="IngresarPeliculaNuevaVolverAMenuPrincipalBtn" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -42,9 +42,9 @@
               <Component id="jPanel1" max="32767" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="IngresarPeliculaNuevaGuardar" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="IngresarPeliculaNuevaBorrar" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="IngresarPeliculaNuevaVolverAMenuPrincipal" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="IngresarPeliculaNuevaGuardarBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="IngresarPeliculaNuevaLimpiarCasillasBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="IngresarPeliculaNuevaVolverAMenuPrincipalBtn" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
           </Group>
@@ -74,21 +74,21 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="IngresarPeliculaNuevaSinopsis" max="32767" attributes="0"/>
+                                  <Component id="IngresarPeliculaNuevaSinopsisTxt" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="IngresarPeliculaNuevaYear" alignment="0" pref="150" max="32767" attributes="0"/>
-                                      <Component id="IngresarPeliculaNuevaIDPelicula" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="IngresarPeliculaNuevaYearTxt" alignment="0" pref="150" max="32767" attributes="0"/>
+                                      <Component id="IngresarPeliculaNuevaIDPeliculaTxt" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="IngresarPeliculaNuevaDirector" alignment="0" pref="149" max="32767" attributes="0"/>
-                                      <Component id="IngresarPeliculaNuevaNombre" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="IngresarPeliculaNuevaDirectorTxt" alignment="0" pref="149" max="32767" attributes="0"/>
+                                      <Component id="IngresarPeliculaNuevaNombreTxt" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -103,14 +103,14 @@
                                   <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="IngresarPeliculaNuevaGenero" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="77" max="32767" attributes="0"/>
-                                  <Component id="IngresarPeliculaNuevaTipoDisco" min="-2" max="-2" attributes="0"/>
+                                  <Component id="IngresarPeliculaNuevaGeneroCbx" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="38" max="32767" attributes="0"/>
+                                  <Component id="IngresarPeliculaNuevaTipoDiscoCbx" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="IngresarPeliculaNuevaEstadoPelicula" min="-2" max="-2" attributes="0"/>
+                              <Component id="IngresarPeliculaNuevaEstadoPeliculaCbx" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
@@ -129,8 +129,8 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="IngresarPeliculaNuevaIDPelicula" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="IngresarPeliculaNuevaNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="IngresarPeliculaNuevaIDPeliculaTxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="IngresarPeliculaNuevaNombreTxt" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -139,13 +139,13 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="IngresarPeliculaNuevaYear" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="IngresarPeliculaNuevaDirector" min="-2" max="-2" attributes="0"/>
+                      <Component id="IngresarPeliculaNuevaYearTxt" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="IngresarPeliculaNuevaDirectorTxt" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                          <Component id="IngresarPeliculaNuevaSinopsis" min="-2" pref="61" max="-2" attributes="0"/>
+                          <Component id="IngresarPeliculaNuevaSinopsisTxt" min="-2" pref="61" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
@@ -162,9 +162,9 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="IngresarPeliculaNuevaGenero" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="IngresarPeliculaNuevaTipoDisco" min="-2" max="-2" attributes="0"/>
-                      <Component id="IngresarPeliculaNuevaEstadoPelicula" min="-2" max="-2" attributes="0"/>
+                      <Component id="IngresarPeliculaNuevaGeneroCbx" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="IngresarPeliculaNuevaTipoDiscoCbx" min="-2" max="-2" attributes="0"/>
+                      <Component id="IngresarPeliculaNuevaEstadoPeliculaCbx" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -182,12 +182,12 @@
             <Property name="text" type="java.lang.String" value="Nombre:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="IngresarPeliculaNuevaIDPelicula">
+        <Component class="javax.swing.JTextField" name="IngresarPeliculaNuevaIDPeliculaTxt">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IngresarPeliculaNuevaIDPeliculaActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IngresarPeliculaNuevaIDPeliculaTxtActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="IngresarPeliculaNuevaNombre">
+        <Component class="javax.swing.JTextField" name="IngresarPeliculaNuevaNombreTxt">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
@@ -199,9 +199,9 @@
             <Property name="text" type="java.lang.String" value="Director:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="IngresarPeliculaNuevaYear">
+        <Component class="javax.swing.JTextField" name="IngresarPeliculaNuevaYearTxt">
         </Component>
-        <Component class="javax.swing.JTextField" name="IngresarPeliculaNuevaDirector">
+        <Component class="javax.swing.JTextField" name="IngresarPeliculaNuevaDirectorTxt">
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
@@ -226,12 +226,30 @@
             <Property name="text" type="java.lang.String" value="Estado pel&#xed;cula"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="IngresarPeliculaNuevaSinopsis">
+        <Component class="javax.swing.JTextField" name="IngresarPeliculaNuevaSinopsisTxt">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IngresarPeliculaNuevaSinopsisActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IngresarPeliculaNuevaSinopsisTxtActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JComboBox" name="IngresarPeliculaNuevaGenero">
+        <Component class="javax.swing.JComboBox" name="IngresarPeliculaNuevaGeneroCbx">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="7">
+                <StringItem index="0" value="Comedia"/>
+                <StringItem index="1" value="Romance"/>
+                <StringItem index="2" value="Drama"/>
+                <StringItem index="3" value="Scifi"/>
+                <StringItem index="4" value="Terror"/>
+                <StringItem index="5" value="Fantas&#xed;a"/>
+                <StringItem index="6" value="Independiente"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="IngresarPeliculaNuevaTipoDiscoCbx">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -246,22 +264,7 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="IngresarPeliculaNuevaTipoDisco">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
-              </StringArray>
-            </Property>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
-        </Component>
-        <Component class="javax.swing.JComboBox" name="IngresarPeliculaNuevaEstadoPelicula">
+        <Component class="javax.swing.JComboBox" name="IngresarPeliculaNuevaEstadoPeliculaCbx">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -278,22 +281,25 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="IngresarPeliculaNuevaGuardar">
+    <Component class="javax.swing.JButton" name="IngresarPeliculaNuevaGuardarBtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="Guardar"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="IngresarPeliculaNuevaBorrar">
+    <Component class="javax.swing.JButton" name="IngresarPeliculaNuevaLimpiarCasillasBtn">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Borrar"/>
+        <Property name="text" type="java.lang.String" value="Limpiar Casillas"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="IngresarPeliculaNuevaLimpiarCasillasBtnMouseClicked"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="IngresarPeliculaNuevaVolverAMenuPrincipal">
+    <Component class="javax.swing.JButton" name="IngresarPeliculaNuevaVolverAMenuPrincipalBtn">
       <Properties>
         <Property name="text" type="java.lang.String" value="Volver a men&#xfa; Principal"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="IngresarPeliculaNuevaVolverAMenuPrincipalMouseClicked"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="IngresarPeliculaNuevaVolverAMenuPrincipalBtnMouseClicked"/>
       </Events>
     </Component>
   </SubComponents>
