@@ -9,3 +9,14 @@ id,apellido,nombre,segundo_nombre,telefono_primario,genero,direccion_1,direccion
 8,Carioca,Calleb,J.,85482428,M,Caellasd as,Aser SUite #302,Nandayure,Guanacaste,Oficina,test@test.com,true,false
 9,Lopez,Karla,,85338103,O,Los Colegios,,San Jose,San Jose,Otro,karla@lopez.ac.cr,true,false
 10,MUMBAI,NombTest,J,88994422,M,Direccion1,,Sna Jose,San Jose,Otro,test@test.ed.cr,true,false
+
+11,,Martin,Marie,22556644,F,,,,San José,Hogar,@.com,true,false
+
+12,Rojas,Luis,Mario,55661122,F,Frente UCR,Residencial UCR,San Pedro,San José,Celular,luis@yahoo.com,true,false
+13,Arias,Alberto,,22336699,F,,,Puntarenas Centro,Puntarenas,Hogar,Albe@gmail.com,true,false
+14,Mateos,Miguelito,,33554411,M,,,,San José,miguel@yahoo.com,miguelmate@yahoo.com,true,false
+15,Mendoza,Javier,,55447711,M,,,,San José,Oficina,mmendoza@gmail.com,true,false
+16,Barboza,Lucas,,22334411,O,,,,San José,Oficina,lucas@yahoo.com,true,false
+17,Parker,Tomas,,22114477,O,,,,San José,Hogar,tparker@gmail.com,true,false
+18,Madrigal,Felipe,,44778899,M,,,,San José,Celular,felix@yahoo.com,true,false
+19,Rojas,Diego,,44772654,O,,,,San José,Celular,diego@yahoo.com,true,false

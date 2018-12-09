@@ -277,6 +277,11 @@ public class InterfazBuscarUsuario extends javax.swing.JFrame {
                 ConsultarUsuarioBuscarBtnMouseClicked(evt);
             }
         });
+        ConsultarUsuarioBuscarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ConsultarUsuarioBuscarBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -376,6 +381,10 @@ public class InterfazBuscarUsuario extends javax.swing.JFrame {
     private void ConsultarUsuarioVolverAlMenuPrincipalBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarUsuarioVolverAlMenuPrincipalBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ConsultarUsuarioVolverAlMenuPrincipalBtnActionPerformed
+
+    private void ConsultarUsuarioBuscarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarUsuarioBuscarBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ConsultarUsuarioBuscarBtnActionPerformed
 
     /**
      * @param args the command line arguments
