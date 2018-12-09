@@ -33,49 +33,18 @@ public class InterfazEditarUsuario extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        EditarUsuarioIDUsuarioTxt = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
         EditarUsuarioBuscarBtn = new javax.swing.JButton();
         EditarUsuarioLimpiarBtn = new javax.swing.JButton();
         EditarUsuarioVolveralMenuPrincipalBtn = new javax.swing.JButton();
+        EditarUsuarioIDUsuarioTxt = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("EDITAR USUARIO");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos Personales", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
-
-        jLabel2.setText("ID Usuario:");
-
-        EditarUsuarioIDUsuarioTxt.setToolTipText("");
-        EditarUsuarioIDUsuarioTxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditarUsuarioIDUsuarioTxtActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(EditarUsuarioIDUsuarioTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(160, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(EditarUsuarioIDUsuarioTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(103, Short.MAX_VALUE))
-        );
+        jLabel16.setText("ID Usuario:");
 
         EditarUsuarioBuscarBtn.setText("Buscar");
         EditarUsuarioBuscarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -88,11 +57,6 @@ public class InterfazEditarUsuario extends javax.swing.JFrame {
         EditarUsuarioLimpiarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 EditarUsuarioLimpiarBtnMouseClicked(evt);
-            }
-        });
-        EditarUsuarioLimpiarBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditarUsuarioLimpiarBtnActionPerformed(evt);
             }
         });
 
@@ -108,50 +72,42 @@ public class InterfazEditarUsuario extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel16)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(166, 166, 166)
+                        .addGap(94, 94, 94)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(EditarUsuarioIDUsuarioTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(EditarUsuarioBuscarBtn)
                                 .addGap(18, 18, 18)
-                                .addComponent(EditarUsuarioLimpiarBtn)
-                                .addGap(18, 18, 18)
-                                .addComponent(EditarUsuarioVolveralMenuPrincipalBtn)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(EditarUsuarioLimpiarBtn)))
+                        .addGap(18, 18, 18)
+                        .addComponent(EditarUsuarioVolveralMenuPrincipalBtn)))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(6, 6, 6)
                 .addComponent(jLabel1)
-                .addGap(1, 1, 1)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addGap(25, 25, 25)
+                .addComponent(jLabel16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(EditarUsuarioIDUsuarioTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(EditarUsuarioBuscarBtn)
                     .addComponent(EditarUsuarioLimpiarBtn)
-                    .addComponent(EditarUsuarioVolveralMenuPrincipalBtn)
-                    .addComponent(EditarUsuarioBuscarBtn))
+                    .addComponent(EditarUsuarioVolveralMenuPrincipalBtn))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void EditarUsuarioVolveralMenuPrincipalBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EditarUsuarioVolveralMenuPrincipalBtnMouseClicked
-         // con este codigo volvemos al menu principal y cerramos la ventana actual
-        InterfazMenuPrincipal menuPrincipal= new  InterfazMenuPrincipal();
-        menuPrincipal.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_EditarUsuarioVolveralMenuPrincipalBtnMouseClicked
-
-    private void EditarUsuarioIDUsuarioTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarUsuarioIDUsuarioTxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_EditarUsuarioIDUsuarioTxtActionPerformed
 
     private void EditarUsuarioBuscarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EditarUsuarioBuscarBtnMouseClicked
         int idBuscar;
@@ -193,14 +149,15 @@ public class InterfazEditarUsuario extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_EditarUsuarioBuscarBtnMouseClicked
 
-    private void EditarUsuarioLimpiarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarUsuarioLimpiarBtnActionPerformed
-        
-    }//GEN-LAST:event_EditarUsuarioLimpiarBtnActionPerformed
-
     private void EditarUsuarioLimpiarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EditarUsuarioLimpiarBtnMouseClicked
-        // con este codigo se limpia la casilla de ID Usuario
         EditarUsuarioIDUsuarioTxt.setText("");
     }//GEN-LAST:event_EditarUsuarioLimpiarBtnMouseClicked
+
+    private void EditarUsuarioVolveralMenuPrincipalBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EditarUsuarioVolveralMenuPrincipalBtnMouseClicked
+        InterfazMenuPrincipal menuPrincipal= new  InterfazMenuPrincipal();
+        menuPrincipal.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_EditarUsuarioVolveralMenuPrincipalBtnMouseClicked
 
     /**
      * @param args the command line arguments
@@ -243,7 +200,6 @@ public class InterfazEditarUsuario extends javax.swing.JFrame {
     private javax.swing.JButton EditarUsuarioLimpiarBtn;
     private javax.swing.JButton EditarUsuarioVolveralMenuPrincipalBtn;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel16;
     // End of variables declaration//GEN-END:variables
 }

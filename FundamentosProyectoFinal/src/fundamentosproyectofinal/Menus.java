@@ -23,6 +23,8 @@ public class Menus {
     Pelicula pelicula;
     InteraccionConCSV interaccionCSV = new InteraccionConCSV();
     Interaccion interaccion = new Interaccion();
+    InterfazRegistrarClientes interfazRegistrarClientes= new  InterfazRegistrarClientes();
+    InterfazRegistrarPeliculaNueva InterfazRegistrarPeliculaNueva= new InterfazRegistrarPeliculaNueva();
     
     
     /*      METODOS     */
@@ -169,19 +171,34 @@ public class Menus {
         
         // Crear arreglo donde almacenar informacion de usuario
         usuario = new Usuario(interaccionCSV.setIdNuevoUsuario(),
-                                interaccion.apellidoUsuarioLimpio(),
-                                interaccion.nombreUsuarioLimpio(),
-                                interaccion.segundoNombreUsuarioLimpio(),
-                                interaccion.telefonoLimpio(),
-                                interaccion.generoLimpio(),
-                                interaccion.direccion1UsuarioLimpio(),
-                                interaccion.direccion2UsuarioLimpio(),
-                                interaccion.ciudadLimpio(),
-                                interaccion.provinciaLimpio(),
-                                interaccion.tipoTelefonoLimpio(),
-                                interaccion.correoElectronico(),
+                                interfazRegistrarClientes.apellidoUsuarioLimpio(),
+                                interfazRegistrarClientes.nombreUsuarioLimpio(),
+                                interfazRegistrarClientes.segundoNombreUsuarioLimpio(),
+                                interfazRegistrarClientes.telefonoLimpio(),
+                                interfazRegistrarClientes.generoLimpio(),
+                                interfazRegistrarClientes.direccion1UsuarioLimpio(),
+                                interfazRegistrarClientes.direccion2UsuarioLimpio(),
+                                interfazRegistrarClientes.ciudadLimpio(),
+                                interfazRegistrarClientes.provinciaLimpio(),
+                                interfazRegistrarClientes.tipoTelefonoLimpio(),
+                                interfazRegistrarClientes.correoElectronico(),
                                 true,
                                 false);
+        
+//        usuario = new Usuario(interaccionCSV.setIdNuevoUsuario(),
+//                                interaccion.apellidoUsuarioLimpio(),
+//                                interaccion.nombreUsuarioLimpio(),
+//                                interaccion.segundoNombreUsuarioLimpio(),
+//                                interaccion.telefonoLimpio(),
+//                                interaccion.generoLimpio(),
+//                                interaccion.direccion1UsuarioLimpio(),
+//                                interaccion.direccion2UsuarioLimpio(),
+//                                interaccion.ciudadLimpio(),
+//                                interaccion.provinciaLimpio(),
+//                                interaccion.tipoTelefonoLimpio(),
+//                                interaccion.correoElectronico(),
+//                                true,
+//                                false);
                 
         // Escribir usuario nuevo
         interaccionCSV.crearUsuarioNuevo(usuario.getUsuarioNuevo());
@@ -301,14 +318,24 @@ public class Menus {
         miscelaneos.registroDePeliculaNueva();
         
         // Crear arreglo donde almacenar informacion de usuario
+        
         pelicula = new Pelicula(interaccionCSV.setIdNuevoPelicula(),
-                                interaccion.nombrePeliculaLimpio(),
-                                interaccion.anioLimpio(),
-                                interaccion.descripcionPeliculaLimpio(),
-                                interaccion.nombreDirectorPeliculaLimpio(),
-                                interaccion.generoPelicula(),
-                                interaccion.tipoDiscoPeliculaLimpio(),
-                                true);
+                                InterfazRegistrarPeliculaNueva.nombrePeliculaLimpio(),
+                                InterfazRegistrarPeliculaNueva.anioLimpio(),
+                                InterfazRegistrarPeliculaNueva.descripcionPeliculaLimpio(),
+                                InterfazRegistrarPeliculaNueva.nombreDirectorPeliculaLimpio(),
+                                InterfazRegistrarPeliculaNueva.generoPelicula(),
+                                InterfazRegistrarPeliculaNueva.tipoDiscoPeliculaLimpio(),
+                                InterfazRegistrarPeliculaNueva.estadoPelicula());
+                
+//        pelicula = new Pelicula(interaccionCSV.setIdNuevoPelicula(),
+//                                interaccion.nombrePeliculaLimpio(),
+//                                interaccion.anioLimpio(),
+//                                interaccion.descripcionPeliculaLimpio(),
+//                                interaccion.nombreDirectorPeliculaLimpio(),
+//                                interaccion.generoPelicula(),
+//                                interaccion.tipoDiscoPeliculaLimpio(),
+//                                true);
                 
         // Escribir usuario nuevo
         interaccionCSV.crearPeliculaNueva(pelicula.getPeliculaNueva());

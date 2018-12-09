@@ -4,16 +4,28 @@
  * and open the template in the editor.
  */
 package fundamentosproyectofinal;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Karla
  */
 public class InterfazRegistrarPeliculaNueva extends javax.swing.JFrame {
-
-    /**
-     * Creates new form InterfazIngresarPeliculaNueva
-     */
+    Miscelaneos miscelaneos = new Miscelaneos();
+    Usuario usuario;
+    Pelicula pelicula;
+    InteraccionConCSV interaccionCSV = new InteraccionConCSV();
+    Interaccion interaccion = new Interaccion();
+    
+     private final String [] datosDB = {"Id: ", 
+                                        "Nombre: ", 
+                                        "Anio: ", 
+                                        "Sinopsis: ",
+                                        "Director: ",
+                                        "Genero: ",
+                                        "Tipo de Disco: ",
+                                        "Pelicula rentada?: "};
+   
     public InterfazRegistrarPeliculaNueva() {
         initComponents();
     }
@@ -28,9 +40,7 @@ public class InterfazRegistrarPeliculaNueva extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        IngresarPeliculaNuevaIDPeliculaTxt = new javax.swing.JTextField();
         IngresarPeliculaNuevaNombreTxt = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -44,23 +54,16 @@ public class InterfazRegistrarPeliculaNueva extends javax.swing.JFrame {
         IngresarPeliculaNuevaGeneroCbx = new javax.swing.JComboBox<>();
         IngresarPeliculaNuevaTipoDiscoCbx = new javax.swing.JComboBox<>();
         IngresarPeliculaNuevaEstadoPeliculaCbx = new javax.swing.JComboBox<>();
-        IngresarPeliculaNuevaGuardarBtn = new javax.swing.JButton();
+        IngresarPeliculaNuevaCorroborarDatosBtn = new javax.swing.JButton();
         IngresarPeliculaNuevaLimpiarCasillasBtn = new javax.swing.JButton();
         IngresarPeliculaNuevaVolverAMenuPrincipalBtn = new javax.swing.JButton();
+        IngresarNuevaPeliculaGuardarBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ingresar Película Nueva", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
 
-        jLabel1.setText("ID Película:");
-
         jLabel2.setText("Nombre:");
-
-        IngresarPeliculaNuevaIDPeliculaTxt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IngresarPeliculaNuevaIDPeliculaTxtActionPerformed(evt);
-            }
-        });
 
         jLabel3.setText("Año:");
 
@@ -74,7 +77,7 @@ public class InterfazRegistrarPeliculaNueva extends javax.swing.JFrame {
 
         jLabel7.setText("Tipo de Disco:");
 
-        jLabel8.setText("Estado película");
+        jLabel8.setText("¿Película rentada?");
 
         IngresarPeliculaNuevaSinopsisTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,9 +87,31 @@ public class InterfazRegistrarPeliculaNueva extends javax.swing.JFrame {
 
         IngresarPeliculaNuevaGeneroCbx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Comedia", "Romance", "Drama", "Scifi", "Terror", "Fantasía", "Independiente" }));
 
-        IngresarPeliculaNuevaTipoDiscoCbx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        IngresarPeliculaNuevaTipoDiscoCbx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DVD", "Blu-ray DISK", "Otro" }));
+        IngresarPeliculaNuevaTipoDiscoCbx.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IngresarPeliculaNuevaTipoDiscoCbxActionPerformed(evt);
+            }
+        });
 
-        IngresarPeliculaNuevaEstadoPeliculaCbx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        IngresarPeliculaNuevaEstadoPeliculaCbx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "si", "no" }));
+        IngresarPeliculaNuevaEstadoPeliculaCbx.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IngresarPeliculaNuevaEstadoPeliculaCbxActionPerformed(evt);
+            }
+        });
+
+        IngresarPeliculaNuevaCorroborarDatosBtn.setText("Corroborar datos");
+        IngresarPeliculaNuevaCorroborarDatosBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                IngresarPeliculaNuevaCorroborarDatosBtnMouseClicked(evt);
+            }
+        });
+        IngresarPeliculaNuevaCorroborarDatosBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IngresarPeliculaNuevaCorroborarDatosBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -97,81 +122,87 @@ public class InterfazRegistrarPeliculaNueva extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel2)
+                                    .addComponent(IngresarPeliculaNuevaNombreTxt))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(IngresarPeliculaNuevaDirectorTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(IngresarPeliculaNuevaSinopsisTxt))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel3)
-                                    .addComponent(IngresarPeliculaNuevaYearTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                                    .addComponent(IngresarPeliculaNuevaIDPeliculaTxt))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel4)
-                                    .addComponent(IngresarPeliculaNuevaDirectorTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
-                                    .addComponent(IngresarPeliculaNuevaNombreTxt))))
+                                .addComponent(IngresarPeliculaNuevaSinopsisTxt)))
                         .addGap(20, 20, 20))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(IngresarPeliculaNuevaYearTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(IngresarPeliculaNuevaGeneroCbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(74, 74, 74))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel7)
-                                .addGap(62, 62, 62))
+                                .addGap(250, 250, 250)
+                                .addComponent(IngresarPeliculaNuevaCorroborarDatosBtn))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(IngresarPeliculaNuevaGeneroCbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                                .addComponent(IngresarPeliculaNuevaTipoDiscoCbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(73, 73, 73)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(IngresarPeliculaNuevaEstadoPeliculaCbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8))
-                        .addGap(45, 45, 45))))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(IngresarPeliculaNuevaTipoDiscoCbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel7))
+                                .addGap(73, 73, 73)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(IngresarPeliculaNuevaEstadoPeliculaCbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(49, 49, 49))
+                                    .addComponent(jLabel8))))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
+
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {IngresarPeliculaNuevaNombreTxt, IngresarPeliculaNuevaYearTxt});
+
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(IngresarPeliculaNuevaIDPeliculaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(IngresarPeliculaNuevaNombreTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(IngresarPeliculaNuevaNombreTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(IngresarPeliculaNuevaDirectorTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(IngresarPeliculaNuevaYearTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel5))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(IngresarPeliculaNuevaGeneroCbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(IngresarPeliculaNuevaSinopsisTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(IngresarPeliculaNuevaYearTxt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(IngresarPeliculaNuevaDirectorTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(IngresarPeliculaNuevaSinopsisTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel7)
-                                .addComponent(jLabel6))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel5)))
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(IngresarPeliculaNuevaGeneroCbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(IngresarPeliculaNuevaTipoDiscoCbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(IngresarPeliculaNuevaEstadoPeliculaCbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addComponent(IngresarPeliculaNuevaCorroborarDatosBtn)
+                .addContainerGap())
         );
-
-        IngresarPeliculaNuevaGuardarBtn.setText("Guardar");
 
         IngresarPeliculaNuevaLimpiarCasillasBtn.setText("Limpiar Casillas");
         IngresarPeliculaNuevaLimpiarCasillasBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -187,16 +218,28 @@ public class InterfazRegistrarPeliculaNueva extends javax.swing.JFrame {
             }
         });
 
+        IngresarNuevaPeliculaGuardarBtn.setText("Guardar");
+        IngresarNuevaPeliculaGuardarBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                IngresarNuevaPeliculaGuardarBtnMouseClicked(evt);
+            }
+        });
+        IngresarNuevaPeliculaGuardarBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IngresarNuevaPeliculaGuardarBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(IngresarPeliculaNuevaGuardarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(IngresarNuevaPeliculaGuardarBtn)
                 .addGap(18, 18, 18)
-                .addComponent(IngresarPeliculaNuevaLimpiarCasillasBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(IngresarPeliculaNuevaLimpiarCasillasBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(IngresarPeliculaNuevaVolverAMenuPrincipalBtn)
                 .addContainerGap())
@@ -208,19 +251,125 @@ public class InterfazRegistrarPeliculaNueva extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(IngresarPeliculaNuevaGuardarBtn)
                     .addComponent(IngresarPeliculaNuevaLimpiarCasillasBtn)
-                    .addComponent(IngresarPeliculaNuevaVolverAMenuPrincipalBtn))
+                    .addComponent(IngresarPeliculaNuevaVolverAMenuPrincipalBtn)
+                    .addComponent(IngresarNuevaPeliculaGuardarBtn))
                 .addGap(26, 26, 26))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
+     public String nombreDirectorPeliculaLimpio() {
 
-    private void IngresarPeliculaNuevaIDPeliculaTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresarPeliculaNuevaIDPeliculaTxtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_IngresarPeliculaNuevaIDPeliculaTxtActionPerformed
+        String nombre = IngresarPeliculaNuevaDirectorTxt.getText();
 
+        while (nombre.contains("1") || nombre.contains("2")
+                || nombre.contains("3") || nombre.contains("4")
+                || nombre.contains("5") || nombre.contains("6")
+                || nombre.contains("7") || nombre.contains("8")
+                || nombre.contains("9") || nombre.contains("0")) {
+            JOptionPane.showMessageDialog(null, "El nombre del director no debe contener números. Ingréselo de nuevo");
+            IngresarPeliculaNuevaDirectorTxt.setText("");
+            nombre = IngresarPeliculaNuevaDirectorTxt.getText();
+            
+            
+        }
+
+        String resultado = nombre.replace(',', '.');
+        
+        return resultado;
+
+    
+        
+    }
+    
+    public String generoPelicula() {
+        String generoPelicula= IngresarPeliculaNuevaGeneroCbx.getItemAt(IngresarPeliculaNuevaGeneroCbx.getSelectedIndex());
+        
+        return generoPelicula;
+        
+    }
+
+    public String nombrePeliculaLimpio() {
+        
+        String var = IngresarPeliculaNuevaNombreTxt.getText();
+        String resultado = var.replace(',', '.');
+        return resultado;
+        
+    }
+    
+    public String descripcionPeliculaLimpio() {
+        
+        String var = IngresarPeliculaNuevaSinopsisTxt.getText();
+        String resultado = var.replace(',', '.');
+        return resultado;
+        
+    }
+    
+    public int anioLimpio() {
+
+        // Variables
+        boolean done = false;
+        int result = 0;
+        String anioPelicula;
+
+        do {
+            
+            anioPelicula = IngresarPeliculaNuevaYearTxt.getText();
+            try {
+                
+                if(anioPelicula.length() == 4) {
+                    result = Integer.parseInt(anioPelicula);
+                    done = true;
+                }else{
+                    JOptionPane.showMessageDialog(null, "Año debe ser 4 digitos únicamente.", "Error", JOptionPane.ERROR_MESSAGE);
+                    IngresarPeliculaNuevaYearTxt.setText("0000");
+                    IngresarPeliculaNuevaYearTxt.getText();
+                }
+                
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "Debe ingresar numeros unicamente.", "Error", JOptionPane.ERROR_MESSAGE);
+                IngresarPeliculaNuevaYearTxt.setText("0000");
+                IngresarPeliculaNuevaYearTxt.getText();
+
+            }
+
+        } while (!done);
+        
+        return result;
+
+    }
+
+    
+    public String tipoDiscoPeliculaLimpio() {
+
+        String tipoDisco= IngresarPeliculaNuevaTipoDiscoCbx.getItemAt(IngresarPeliculaNuevaTipoDiscoCbx.getSelectedIndex());
+        
+        return tipoDisco;
+        
+    }
+    
+   
+    
+    public boolean estadoPelicula() {
+            
+        boolean result=true;
+        String estadoPelicula= IngresarPeliculaNuevaEstadoPeliculaCbx.getItemAt(IngresarPeliculaNuevaEstadoPeliculaCbx.getSelectedIndex());
+        int index= IngresarPeliculaNuevaEstadoPeliculaCbx.getSelectedIndex();
+            if(index==0)
+                result= true;
+            
+            else
+                result=false;
+            
+        return result;
+                    
+        
+        
+        
+    }
+    
     private void IngresarPeliculaNuevaSinopsisTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresarPeliculaNuevaSinopsisTxtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_IngresarPeliculaNuevaSinopsisTxtActionPerformed
@@ -235,7 +384,7 @@ public class InterfazRegistrarPeliculaNueva extends javax.swing.JFrame {
     private void IngresarPeliculaNuevaLimpiarCasillasBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IngresarPeliculaNuevaLimpiarCasillasBtnMouseClicked
         // con este codigo borramos los datos que puso el bibliotecologo.
         
-        IngresarPeliculaNuevaIDPeliculaTxt.setText("");
+       
         IngresarPeliculaNuevaNombreTxt.setText("");
         IngresarPeliculaNuevaYearTxt.setText("");
         IngresarPeliculaNuevaYearTxt.setText("");
@@ -246,6 +395,42 @@ public class InterfazRegistrarPeliculaNueva extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_IngresarPeliculaNuevaLimpiarCasillasBtnMouseClicked
+
+    private void IngresarPeliculaNuevaCorroborarDatosBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IngresarPeliculaNuevaCorroborarDatosBtnMouseClicked
+        // TODO add your handling code here:
+        
+        pelicula = new Pelicula(interaccionCSV.setIdNuevoPelicula(),
+                                nombrePeliculaLimpio(),
+                                anioLimpio(),
+                                descripcionPeliculaLimpio(),
+                                nombreDirectorPeliculaLimpio(),
+                                generoPelicula(),
+                                tipoDiscoPeliculaLimpio(),
+                                estadoPelicula()
+        );
+    }//GEN-LAST:event_IngresarPeliculaNuevaCorroborarDatosBtnMouseClicked
+
+    private void IngresarPeliculaNuevaCorroborarDatosBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresarPeliculaNuevaCorroborarDatosBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IngresarPeliculaNuevaCorroborarDatosBtnActionPerformed
+
+    private void IngresarNuevaPeliculaGuardarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IngresarNuevaPeliculaGuardarBtnMouseClicked
+        // TODO add your handling code here:
+        interaccionCSV.crearPeliculaNueva(pelicula.getPeliculaNueva());
+        JOptionPane.showMessageDialog(null, "Guardado con éxito");
+    }//GEN-LAST:event_IngresarNuevaPeliculaGuardarBtnMouseClicked
+
+    private void IngresarPeliculaNuevaTipoDiscoCbxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresarPeliculaNuevaTipoDiscoCbxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IngresarPeliculaNuevaTipoDiscoCbxActionPerformed
+
+    private void IngresarNuevaPeliculaGuardarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresarNuevaPeliculaGuardarBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IngresarNuevaPeliculaGuardarBtnActionPerformed
+
+    private void IngresarPeliculaNuevaEstadoPeliculaCbxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IngresarPeliculaNuevaEstadoPeliculaCbxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IngresarPeliculaNuevaEstadoPeliculaCbxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -284,18 +469,17 @@ public class InterfazRegistrarPeliculaNueva extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton IngresarNuevaPeliculaGuardarBtn;
+    private javax.swing.JButton IngresarPeliculaNuevaCorroborarDatosBtn;
     private javax.swing.JTextField IngresarPeliculaNuevaDirectorTxt;
     private javax.swing.JComboBox<String> IngresarPeliculaNuevaEstadoPeliculaCbx;
     private javax.swing.JComboBox<String> IngresarPeliculaNuevaGeneroCbx;
-    private javax.swing.JButton IngresarPeliculaNuevaGuardarBtn;
-    private javax.swing.JTextField IngresarPeliculaNuevaIDPeliculaTxt;
     private javax.swing.JButton IngresarPeliculaNuevaLimpiarCasillasBtn;
     private javax.swing.JTextField IngresarPeliculaNuevaNombreTxt;
     private javax.swing.JTextField IngresarPeliculaNuevaSinopsisTxt;
     private javax.swing.JComboBox<String> IngresarPeliculaNuevaTipoDiscoCbx;
     private javax.swing.JButton IngresarPeliculaNuevaVolverAMenuPrincipalBtn;
     private javax.swing.JTextField IngresarPeliculaNuevaYearTxt;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
