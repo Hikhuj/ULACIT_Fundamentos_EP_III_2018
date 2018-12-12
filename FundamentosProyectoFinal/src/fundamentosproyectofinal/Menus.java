@@ -326,7 +326,7 @@ public class Menus {
                                 InterfazRegistrarPeliculaNueva.nombreDirectorPeliculaLimpio(),
                                 InterfazRegistrarPeliculaNueva.generoPelicula(),
                                 InterfazRegistrarPeliculaNueva.tipoDiscoPeliculaLimpio(),
-                                InterfazRegistrarPeliculaNueva.estadoPelicula());
+                                false);
                 
 //        pelicula = new Pelicula(interaccionCSV.setIdNuevoPelicula(),
 //                                interaccion.nombrePeliculaLimpio(),

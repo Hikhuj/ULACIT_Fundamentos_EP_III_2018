@@ -7,3 +7,4 @@ id,nombre,anio,descripcion,director,genero_pelicula,tipo_disco,estado_pelicula
 6,Enter the Matrix,2018,un,director6,Fantasia,Blue-ray DISK,false
 7,Pelicula 7,1992,DescripcionPelicula,Roman Polanski,Drama,DVD,true
 8,TestMovie,2000,TestMovie,TestMovie,Comedia,DVD,false
+9,El Grinch7,2018,A grumpy Grinch plots to ruin Christmas for the village of Whoville. ,Yarrow Cheney,Comedia,DVD,false
