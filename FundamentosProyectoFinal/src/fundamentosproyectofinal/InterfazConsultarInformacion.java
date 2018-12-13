@@ -128,6 +128,7 @@ public class InterfazConsultarInformacion extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void ConsultarInformacionUsuarioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultarInformacionUsuarioBtnActionPerformed
