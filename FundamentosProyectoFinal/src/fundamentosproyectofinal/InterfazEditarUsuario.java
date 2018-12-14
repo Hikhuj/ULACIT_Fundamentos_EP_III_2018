@@ -76,9 +76,6 @@ public class InterfazEditarUsuario extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel16)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(94, 94, 94)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(EditarUsuarioIDUsuarioTxt, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
@@ -86,7 +83,8 @@ public class InterfazEditarUsuario extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(EditarUsuarioLimpiarBtn)))
                         .addGap(18, 18, 18)
-                        .addComponent(EditarUsuarioVolveralMenuPrincipalBtn)))
+                        .addComponent(EditarUsuarioVolveralMenuPrincipalBtn))
+                    .addComponent(jLabel1))
                 .addContainerGap(74, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -107,6 +105,7 @@ public class InterfazEditarUsuario extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void EditarUsuarioBuscarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EditarUsuarioBuscarBtnMouseClicked

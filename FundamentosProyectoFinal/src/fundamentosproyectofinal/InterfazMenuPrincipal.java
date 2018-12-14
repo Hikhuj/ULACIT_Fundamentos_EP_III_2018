@@ -69,6 +69,7 @@ public class InterfazMenuPrincipal extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Gill Sans Ultra Bold", 1, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("MENU PRINCIPAL VIDEOTEK");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -76,18 +77,14 @@ public class InterfazMenuPrincipal extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(MenuPrincipalSalirBtn)
-                            .addComponent(MenuPrincipalConsultarInformacionBtn)
-                            .addComponent(MenuPrincipalMenuPeliculasBtn)
-                            .addComponent(MenuPrincipalMenuUsuarioBtn)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(jLabel1)))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addGap(37, 37, 37)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
+                    .addComponent(MenuPrincipalMenuUsuarioBtn)
+                    .addComponent(MenuPrincipalMenuPeliculasBtn)
+                    .addComponent(MenuPrincipalConsultarInformacionBtn)
+                    .addComponent(MenuPrincipalSalirBtn))
+                .addGap(37, 37, 37))
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {MenuPrincipalConsultarInformacionBtn, MenuPrincipalMenuPeliculasBtn, MenuPrincipalMenuUsuarioBtn, MenuPrincipalSalirBtn});
@@ -95,15 +92,15 @@ public class InterfazMenuPrincipal extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(MenuPrincipalMenuUsuarioBtn)
                 .addGap(34, 34, 34)
                 .addComponent(MenuPrincipalMenuPeliculasBtn)
                 .addGap(32, 32, 32)
                 .addComponent(MenuPrincipalConsultarInformacionBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addComponent(MenuPrincipalSalirBtn)
                 .addGap(30, 30, 30))
         );
@@ -122,6 +119,7 @@ public class InterfazMenuPrincipal extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void MenuPrincipalSalirBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuPrincipalSalirBtnActionPerformed

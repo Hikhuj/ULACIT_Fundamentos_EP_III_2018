@@ -138,9 +138,8 @@ public class InterfazRegistrarPeliculaNueva extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(250, 250, 250)
                                 .addComponent(IngresarPeliculaNuevaCorroborarDatosBtn))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(IngresarPeliculaNuevaTipoDiscoCbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel7)))
+                            .addComponent(IngresarPeliculaNuevaTipoDiscoCbx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7))
                         .addGap(0, 19, Short.MAX_VALUE))))
         );
 
@@ -217,7 +216,7 @@ public class InterfazRegistrarPeliculaNueva extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addComponent(IngresarNuevaPeliculaGuardarBtn)
                 .addGap(18, 18, 18)
-                .addComponent(IngresarPeliculaNuevaLimpiarCasillasBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
+                .addComponent(IngresarPeliculaNuevaLimpiarCasillasBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 119, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(IngresarPeliculaNuevaVolverAMenuPrincipalBtn)
                 .addContainerGap())
@@ -236,6 +235,7 @@ public class InterfazRegistrarPeliculaNueva extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     
      public String nombreDirectorPeliculaLimpio() {
